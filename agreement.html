@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Agreement — Paul Walhus &amp; The Bergeron Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #c8973e;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --gray-100: #f3f2ef;
+      --gray-200: #e5e3de;
+      --gray-400: #9c9a94;
+      --gray-600: #5c5a55;
+      --text: #2d2b28;
+      --radius: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 14px;
+      background: var(--white);
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--navy); }
+    h1 { font-size: 1.8rem; text-align: center; margin-bottom: 4px; }
+    h2 { font-size: 1.2rem; margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--gray-200); }
+    h3 { font-size: 1rem; margin: 20px 0 8px; }
+    p { margin-bottom: 10px; }
+    ul, ol { margin: 8px 0 14px 24px; }
+    li { margin-bottom: 4px; }
+    strong { color: var(--navy); }
+
+    .header-sub {
+      text-align: center;
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+    }
+
+    .parties {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 24px 0;
+      padding: 20px 24px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+    }
+    .parties h3 { margin-top: 0; font-size: 0.9rem; color: var(--gold); font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+    .parties p { margin-bottom: 4px; font-size: 0.9rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.9rem;
+    }
+    th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--gray-200); }
+    tr:nth-child(even) { background: var(--gray-100); }
+    .money { color: var(--navy); font-weight: 700; }
+
+    .highlight {
+      background: var(--off-white);
+      border-left: 3px solid var(--gold);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.92rem;
+    }
+
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin: 48px 0 24px;
+    }
+    .sig-block { border-top: 1px solid var(--text); padding-top: 8px; }
+    .sig-block p { font-size: 0.85rem; margin-bottom: 2px; color: var(--gray-600); }
+    .sig-line { height: 48px; }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    @media print {
+      body { padding: 32px; font-size: 12px; }
+      h1 { font-size: 1.5rem; }
+      h2 { margin-top: 24px; }
+      .sig-line { height: 60px; }
+    }
+    @media (max-width: 600px) {
+      body { padding: 24px 20px; }
+      .parties, .sig-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Web Development Service Agreement</h1>
+  <p class="header-sub">Between Paul Walhus and The Bergeron Group</p>
+
+  <div class="parties">
+    <div>
+      <h3>Service Provider</h3>
+      <p><strong>Paul Walhus</strong></p>
+      <p>Web Developer &amp; AI Consultant</p>
+      <p>walhus@gmail.com</p>
+    </div>
+    <div>
+      <h3>Client</h3>
+      <p><strong>Nancy Bergeron</strong></p>
+      <p>The Bergeron Group</p>
+      <p>Keller Williams Realty Hot Springs</p>
+      <p>801 Central Ave, Ste 30</p>
+      <p>Hot Springs, AR 71901</p>
+    </div>
+  </div>
+
+  <p><strong>Effective Date:</strong> __________________, 2026</p>
+
+  <!-- SCOPE -->
+  <h2>1. Scope of Work</h2>
+  <p>Paul Walhus ("Provider") will deliver the following services to The Bergeron Group ("Client"):</p>
+
+  <h3>A. Website Development</h3>
+  <p>Provider will design, develop, and deploy a network of SEO-optimized real estate websites for the Client, each targeting specific real estate markets, neighborhoods, and buyer segments in the Hot Springs, Arkansas area.</p>
+  <ul>
+    <li>Each website is a custom, mobile-responsive, SEO-optimized site with unique content</li>
+    <li>Each site includes Schema.org structured data, Open Graph tags, FAQ sections, and contact forms</li>
+    <li>All sites are cross-linked to form a strategic backlink network</li>
+    <li>Sites are deployed to agreed-upon hosting with custom domain configuration, SSL, and analytics</li>
+  </ul>
+
+  <h3>B. Podcast Studio Setup</h3>
+  <p>Provider will design, configure, and set up a professional podcast studio at the Client's office, using equipment already in the Client's possession. Setup includes acoustic treatment, equipment configuration, recording software installation, and testing.</p>
+
+  <h3>C. Ongoing Services (Monthly)</h3>
+  <ul>
+    <li><strong>SEO &amp; Content Retainer:</strong> Content updates, ranking optimization, Google Analytics/Search Console monitoring, cross-link maintenance, and monthly performance reporting</li>
+    <li><strong>Podcast Production:</strong> Audio editing, show notes, graphics, and distribution for podcast episodes</li>
+    <li><strong>AI Services:</strong> AI-generated content, avatar videos, market reports, and social media assets</li>
+    <li><strong>Domain Management:</strong> DNS configuration, SSL certificates, domain renewals, and hosting maintenance</li>
+  </ul>
+
+  <!-- PRICING -->
+  <h2>2. Pricing &amp; Payment</h2>
+
+  <h3>One-Time Fees</h3>
+  <table>
+    <tr><th>Service</th><th>Rate</th><th>Notes</th></tr>
+    <tr>
+      <td>Website Development</td>
+      <td class="money">$420 per site</td>
+      <td>Invoiced upon completion and deployment of each site</td>
+    </tr>
+    <tr>
+      <td>Podcast Studio Setup</td>
+      <td class="money">$2,500</td>
+      <td>One-time fee, invoiced upon completion of studio setup</td>
+    </tr>
+  </table>
+
+  <h3>Monthly Recurring Fees</h3>
+  <table>
+    <tr><th>Service</th><th>Monthly Rate</th><th>Start Date</th></tr>
+    <tr>
+      <td>SEO &amp; Content Retainer</td>
+      <td class="money">$650/month</td>
+      <td>Begins when first 10 sites are live</td>
+    </tr>
+    <tr>
+      <td>Podcast Production</td>
+      <td class="money">$400/month</td>
+      <td>Begins when first episode is recorded</td>
+    </tr>
+    <tr>
+      <td>AI Services</td>
+      <td class="money">$400/month</td>
+      <td>Begins upon mutual agreement</td>
+    </tr>
+    <tr>
+      <td>Domain Management</td>
+      <td class="money">$150/month</td>
+      <td>Begins upon first site deployment</td>
+    </tr>
+  </table>
+
+  <h3>Payment Terms</h3>
+  <ul>
+    <li>Website builds are invoiced in batches upon completion and deployment of each batch</li>
+    <li>Monthly recurring services are invoiced on the 1st of each month</li>
+    <li>Payment is due within <strong>15 days</strong> of invoice date</li>
+    <li>Accepted payment methods: __________________ (check / Zelle / Venmo / other)</li>
+  </ul>
+
+  <div class="highlight">
+    <strong>Domain registration costs</strong> (approximately $10-15 per domain per year) are the responsibility of the Client. Provider will advise on which domains to register and may register domains on the Client's behalf with prior approval, to be reimbursed at cost.
+  </div>
+
+  <!-- TIMELINE -->
+  <h2>3. Timeline</h2>
+  <table>
+    <tr><th>Phase</th><th>Deliverable</th><th>Target Date</th></tr>
+    <tr>
+      <td>Phase 1</td>
+      <td>Hub site live + first 7 spoke sites deployed</td>
+      <td>End of April 2026</td>
+    </tr>
+    <tr>
+      <td>Phase 2</td>
+      <td>14 additional sites (21 total)</td>
+      <td>End of June 2026</td>
+    </tr>
+    <tr>
+      <td>Phase 3</td>
+      <td>20 additional sites (41 total)</td>
+      <td>End of September 2026</td>
+    </tr>
+    <tr>
+      <td>Phase 4</td>
+      <td>Remaining sites (50+ total)</td>
+      <td>End of December 2026</td>
+    </tr>
+    <tr>
+      <td>Podcast Studio</td>
+      <td>Studio setup complete, ready for recording</td>
+      <td>End of April 2026</td>
+    </tr>
+  </table>
+  <p>Timelines are estimates and may be adjusted by mutual agreement. Provider will communicate any anticipated delays promptly.</p>
+
+  <!-- CLIENT RESPONSIBILITIES -->
+  <h2>4. Client Responsibilities</h2>
+  <p>To enable timely delivery, the Client agrees to provide:</p>
+  <ul>
+    <li><strong>Domain registrar access:</strong> Login credentials for GoDaddy and Netfirms accounts (or delegate DNS management permissions) so Provider can configure domains</li>
+    <li><strong>Domain list export:</strong> CSV export of all domains from GoDaddy for audit and planning purposes</li>
+    <li><strong>Content input:</strong> Timely review and feedback on website content, photos, and branding materials</li>
+    <li><strong>Brand assets:</strong> Logos, professional photos, Keller Williams branding guidelines, and Realtor&reg; trademark requirements</li>
+    <li><strong>Domain registration approval:</strong> Timely approval for registering new domains as recommended by Provider</li>
+  </ul>
+
+  <!-- OWNERSHIP -->
+  <h2>5. Ownership &amp; Intellectual Property</h2>
+  <ul>
+    <li>All completed websites, content, and design assets created under this agreement are <strong>owned by the Client</strong> upon full payment</li>
+    <li>Provider retains the right to use work samples in a private portfolio (not public, per confidentiality agreement)</li>
+    <li>Client-provided materials (logos, photos, branding) remain the property of the Client</li>
+    <li>Domain names registered on the Client's behalf are owned by the Client</li>
+  </ul>
+
+  <!-- CONFIDENTIALITY -->
+  <h2>6. Confidentiality</h2>
+  <p>Both parties agree that the details of this project — including the multi-site SEO strategy, domain portfolio, website network architecture, and competitive positioning — are <strong>strictly confidential</strong>.</p>
+  <ul>
+    <li>Provider will not disclose project details, strategies, or domain plans to any third party without the Client's written consent</li>
+    <li>Provider's subcontractors and team members will be bound by the same confidentiality obligations</li>
+    <li>This obligation survives the termination of this agreement</li>
+  </ul>
+
+  <div class="highlight">
+    This confidentiality clause reflects the verbal agreement made on March 20, 2026 between Paul Walhus, Dorothy, and Nancy Bergeron to protect the Client's competitive advantage.
+  </div>
+
+  <!-- TERMINATION -->
+  <h2>7. Termination</h2>
+  <ul>
+    <li>Either party may terminate this agreement with <strong>30 days written notice</strong></li>
+    <li>Upon termination, Client will pay for all completed work and services rendered through the termination date</li>
+    <li>Provider will deliver all completed files, credentials, and access to the Client within 14 days of termination</li>
+    <li>Monthly recurring services end at the close of the current billing period following notice</li>
+  </ul>
+
+  <!-- REVISIONS & CHANGES -->
+  <h2>8. Revisions &amp; Scope Changes</h2>
+  <ul>
+    <li>Each website includes up to <strong>2 rounds of revisions</strong> after initial delivery</li>
+    <li>Additional revisions or significant scope changes beyond the original site concept will be billed at <strong>$50/hour</strong></li>
+    <li>New services or expanded scope will be agreed upon in writing before work begins</li>
+  </ul>
+
+  <!-- WORKSPACE -->
+  <h2>9. Workspace</h2>
+  <p>If mutually agreed, the Client may provide shared workspace at the Client's office (801 Central Ave, Ste 30, Hot Springs, AR 71901) for the Provider to use during the project. This arrangement is at-will and may be adjusted by either party at any time.</p>
+
+  <!-- LIMITATION -->
+  <h2>10. Limitation of Liability</h2>
+  <ul>
+    <li>Provider is not responsible for search engine ranking results, as rankings are determined by third-party algorithms beyond Provider's control. Provider will follow SEO best practices to maximize visibility.</li>
+    <li>Provider's total liability under this agreement shall not exceed the total fees paid by the Client in the preceding 3 months</li>
+    <li>Provider is not liable for any loss of data or business interruption caused by third-party services (hosting providers, domain registrars, form services)</li>
+  </ul>
+
+  <!-- AGREEMENT -->
+  <h2>11. Agreement</h2>
+  <p>By signing below, both parties agree to the terms outlined in this Service Agreement.</p>
+
+  <div class="sig-grid">
+    <div>
+      <div class="sig-line"></div>
+      <div class="sig-block">
+        <p><strong>Paul Walhus</strong></p>
+        <p>Service Provider</p>
+        <p>Date: __________________</p>
+      </div>
+    </div>
+    <div>
+      <div class="sig-line"></div>
+      <div class="sig-block">
+        <p><strong>Nancy Bergeron</strong></p>
+        <p>The Bergeron Group</p>
+        <p>Date: __________________</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <p>This agreement may be executed electronically or in print. Both formats are equally binding.</p>
+    <p>This document constitutes the entire agreement between the parties regarding the services described herein.</p>
+  </div>
+
+</body>
+</html>
