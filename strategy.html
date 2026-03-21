@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategy &amp; Next Steps — Bergeron Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f172a;
+      --navy-mid: #1e293b;
+      --navy-light: #334155;
+      --gold: #f59e0b;
+      --gold-light: #fbbf24;
+      --green: #22c55e;
+      --red: #ef4444;
+      --blue: #3b82f6;
+      --purple: #a855f7;
+      --white: #f8fafc;
+      --gray: #94a3b8;
+      --text: #e2e8f0;
+      --mono: 'JetBrains Mono', 'Courier New', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+    h1, h2 { font-family: 'Playfair Display', Georgia, serif; }
+    h1 { font-size: 2.4rem; color: var(--white); }
+    h2 { font-size: 1.5rem; color: var(--white); margin: 48px 0 16px; }
+    h3 { font-size: 1rem; font-weight: 700; margin: 20px 0 8px; }
+    p { margin-bottom: 10px; }
+    strong { color: var(--white); }
+    ul, ol { margin: 8px 0 16px 20px; }
+    li { margin-bottom: 5px; font-size: 0.93rem; }
+
+    .header {
+      padding: 64px 0 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--navy-light);
+    }
+    .header .label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .header .sub {
+      color: var(--gray);
+      font-size: 1rem;
+      max-width: 540px;
+      margin: 10px auto 0;
+    }
+
+    .card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-light);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 14px 0;
+    }
+
+    .phase {
+      border-left: 3px solid var(--navy-light);
+      padding-left: 24px;
+      margin: 24px 0;
+      position: relative;
+    }
+    .phase::before {
+      content: "";
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      position: absolute;
+      left: -8px;
+      top: 4px;
+    }
+    .phase-now::before { background: var(--green); box-shadow: 0 0 8px rgba(34,197,94,0.5); }
+    .phase-next::before { background: var(--gold); box-shadow: 0 0 8px rgba(245,158,11,0.4); }
+    .phase-later::before { background: var(--blue); box-shadow: 0 0 8px rgba(59,130,246,0.4); }
+    .phase-future::before { background: var(--purple); box-shadow: 0 0 8px rgba(168,85,247,0.4); }
+
+    .phase h3 { margin-top: 0; }
+    .phase-now h3 { color: var(--green); }
+    .phase-next h3 { color: var(--gold); }
+    .phase-later h3 { color: var(--blue); }
+    .phase-future h3 { color: var(--purple); }
+
+    .task {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.92rem;
+    }
+    .task:last-child { border-bottom: none; }
+    .task-check {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--navy-light);
+      border-radius: 4px;
+      margin-top: 2px;
+    }
+    .task-done .task-check {
+      background: var(--green);
+      border-color: var(--green);
+    }
+    .task-done .task-check::after {
+      content: "✓";
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    .task-critical .task-check { border-color: var(--red); }
+    .task-label { flex: 1; }
+    .task-tag {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+    .tag-done { background: rgba(34,197,94,0.15); color: var(--green); }
+    .tag-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+    .tag-next { background: rgba(245,158,11,0.15); color: var(--gold); }
+    .tag-idea { background: rgba(168,85,247,0.15); color: var(--purple); }
+
+    .warn {
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.3);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    .warn strong { color: var(--red); }
+
+    .highlight {
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.25);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+    .highlight strong { color: var(--gold); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.88rem;
+    }
+    th {
+      background: var(--navy-light);
+      color: var(--gold);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-family: var(--mono);
+    }
+    td { padding: 9px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .money { font-family: var(--mono); color: var(--green); font-weight: 600; }
+    .avail { color: var(--green); font-weight: 600; }
+
+    .divider {
+      height: 1px;
+      background: var(--navy-light);
+      margin: 48px 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--navy-light);
+      font-size: 0.8rem;
+      font-family: var(--mono);
+    }
+
+    @media (max-width: 600px) {
+      .header { padding: 40px 0 28px; }
+      h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="container">
+      <p class="label">Internal &bull; Strategy &amp; Execution Plan</p>
+      <h1>Bergeron Project Playbook</h1>
+      <p class="sub">Everything that needs to happen, in order, to turn this deal into a running business.</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- PHASE 0: THIS WEEK -->
+    <h2>This Week (Before April)</h2>
+    <p style="color:var(--gray)">These are blockers. Nothing else moves until these are done.</p>
+
+    <div class="phase phase-now">
+      <h3>Critical Path — Do Immediately</h3>
+
+      <div class="task task-critical">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Get Nancy's GoDaddy domain CSV export.</strong> Log in &rarr; My Products &rarr; Domains &rarr; Export. Without this, we're flying blind on what she owns, what's expiring, and what DNS to change.</span>
+        <span class="task-tag tag-critical">blocker</span>
+      </div>
+
+      <div class="task task-critical">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Get GoDaddy &amp; Netfirms login access.</strong> Needed to configure DNS and point domains to hosting.</span>
+        <span class="task-tag tag-critical">blocker</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Register priority domains</strong> — retirehotsprings.com, hsvhomesforsale.com, hotspringsluxuryhomes.com, lakefronthotsprings.com, and the other 7 available residential domains. ~$130 total. Before competitors grab them.</span>
+        <span class="task-tag tag-critical">urgent</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Send Brett Belau the hosting pitch</strong> (BrettBelau.html). Get his quote and architecture recommendation for 50+ sites.</span>
+        <span class="task-tag tag-next">this week</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Follow up with Charles</strong> regarding Chris's contact info (from meeting action items).</span>
+        <span class="task-tag tag-next">this week</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Set up invoicing system.</strong> How is Nancy paying? Invoice, check, Venmo, Zelle? Get this sorted before delivering work.</span>
+        <span class="task-tag tag-next">this week</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Simple scope agreement.</strong> Even a 1-page email confirming $420/site, retainer terms, confidentiality. Protects both sides.</span>
+        <span class="task-tag tag-next">this week</span>
+      </div>
+    </div>
+
+    <div class="warn">
+      <strong>Do not skip the contract/agreement.</strong> Even a simple email confirmation. You have a verbal deal and a confidentiality agreement with Dorothy — put the financial terms in writing before delivering billable work.
+    </div>
+
+    <!-- ALTERNATE HUB DOMAIN -->
+    <h2>Alternate Hub Domain</h2>
+    <p>thebergerongroup.com is the primary hub. But we should also grab a killer short domain as an alternate hub or redirect. These are available right now:</p>
+
+    <div class="card">
+      <table>
+        <tr><th>Domain</th><th>Why It's Great</th><th>Status</th></tr>
+        <tr>
+          <td><strong>realhotsprings.com</strong></td>
+          <td>"Real" = real estate + authentic. Short, premium, memorable. TOP PICK.</td>
+          <td class="avail">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>thespacity.com</strong></td>
+          <td>Hot Springs = "The Spa City". Locals love it. Great for podcast branding.</td>
+          <td class="avail">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>bergeron.homes</strong></td>
+          <td>Modern .homes TLD. Clean, brandable, premium feel.</td>
+          <td class="avail">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>spacityhomes.com</strong></td>
+          <td>Local nickname + clear buyer intent.</td>
+          <td class="avail">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>bergeronhq.com</strong></td>
+          <td>Short, modern, implies headquarters. Good for the AI command center brand.</td>
+          <td class="avail">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>teambergeron.com</strong></td>
+          <td>She already owns bergeronteam.com — this is the flip. Clean.</td>
+          <td class="avail">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>bergeron.properties</strong></td>
+          <td>Professional .properties TLD. Covers all property types.</td>
+          <td class="avail">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsreal.com</strong></td>
+          <td>Short, keyword-rich, easy to say.</td>
+          <td class="avail">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringshouses.com</strong></td>
+          <td>Direct buyer search term.</td>
+          <td class="avail">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>spacityrealty.com</strong></td>
+          <td>Spa City + realty. Professional.</td>
+          <td class="avail">AVAILABLE</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="highlight">
+      <strong>Recommendation:</strong> Register <strong>realhotsprings.com</strong> immediately (~$12). Use it as an alternate hub or premium redirect to thebergerongroup.com. It's too good and too cheap to leave on the table. Consider <strong>thespacity.com</strong> as a podcast brand domain.
+    </div>
+
+    <!-- PHASE 1: WEEKS 1-2 OF APRIL -->
+    <div class="divider"></div>
+    <h2>Phase 1: Foundation (Weeks 1-2 of April)</h2>
+
+    <div class="phase phase-next">
+      <h3>Deploy &amp; First Deliverables</h3>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Deploy thebergerongroup.com live</strong> — Cloudflare Pages, Brett's hosting, or LiquidWeb. Get the hub online with custom domain + SSL.</span>
+        <span class="task-tag tag-next">week 1</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Set up Web3Forms or Formspree</strong> — contact form must send real leads to Nancy's email with source-site tagging.</span>
+        <span class="task-tag tag-next">week 1</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Google Analytics + Search Console</strong> on the hub site. Baseline data from day one.</span>
+        <span class="task-tag tag-next">week 1</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Build the template system.</strong> Strip thebergerongroup.com down to a reusable base. CSS variables for per-site color accents. Modular content blocks. This is what lets you build sites fast.</span>
+        <span class="task-tag tag-next">week 1</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Build first 7 spoke sites</strong> — start with domains Nancy already owns: lakehamiltonhomesforsale.com, kellerwilliamshotsprings.com, hotspringspropertygroup.com, propertyforsaleinhotsprings.com, hotspringsnationalparkhomesforsale.com, hotspringsparkavenuerealestate.com, hotspringshistoricdistrictproperty.com</span>
+        <span class="task-tag tag-next">week 1-2</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Cross-link all live sites.</strong> Hub links to all spokes. Each spoke links to hub + 3-5 related spokes.</span>
+        <span class="task-tag tag-next">week 2</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Realtor® trademark formatting.</strong> Make sure all branding is compliant before going wide.</span>
+        <span class="task-tag tag-next">week 1</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Invoice Nancy: 7 sites &times; $420 = $2,940 + podcast studio setup $2,500 + domain management $150 = $5,590</strong></span>
+        <span class="task-tag tag-next">week 2</span>
+      </div>
+    </div>
+
+    <!-- PHASE 2: APRIL-MAY -->
+    <div class="divider"></div>
+    <h2>Phase 2: Build Momentum (April-May)</h2>
+
+    <div class="phase phase-later">
+      <h3>Scale Site Production &amp; Start Podcast</h3>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Build 14 more spoke sites</strong> (7 in April, 7 in May). Use newly registered domains + remaining owned domains.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Pedro builds podcast studio</strong> at Nancy's office. $600-750 flat fee from the $2,500 setup budget.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Record first podcast episode.</strong> Content feeds multiple websites. Start with "Why Hot Springs" or "Buying Lakefront on Lake Hamilton."</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>SEO retainer kicks in</strong> — $650/mo starting May. Content updates, cross-link optimization, ranking reports.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Show Nancy Search Console data.</strong> First indexing results. Even early data builds confidence and justifies continued investment.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Set up AI command center</strong> at Nancy's office. 2-3 desks. Being physically present generates more work naturally.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Image optimization pass.</strong> Compress all images, add WebP with JPG fallback, implement lazy loading. Speed = rankings.</span>
+      </div>
+    </div>
+
+    <!-- PHASE 3: JUNE-SEPTEMBER -->
+    <div class="divider"></div>
+    <h2>Phase 3: Full Stack Revenue (June-September)</h2>
+
+    <div class="phase phase-later">
+      <h3>All Revenue Streams Active</h3>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Build 20+ more sites</strong> — niche domains (hunting land, fixer-uppers, cabins, tiny homes, owner finance, etc.)</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>AI services launch</strong> — $400/mo. AI avatar videos, automated market reports, social media content.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Podcast production team running</strong> — Mark Britton, Brett Belau, Ian Morrish on remote production. $400/mo.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Register niche domains in batches</strong> as you're ready to build those sites. 22 available niche domains at ~$12 each.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Monthly revenue target: $4,120-$4,540.</strong> All 5 streams active: sites + retainer + podcast + AI + domain management.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Show Nancy real lead data.</strong> Which sites generate leads, which keywords rank, traffic growth. This is how you justify expanding scope.</span>
+      </div>
+    </div>
+
+    <!-- PHASE 4: Q4 AND BEYOND -->
+    <div class="divider"></div>
+    <h2>Phase 4: Compound &amp; Grow (Q4 2026+)</h2>
+
+    <div class="phase phase-future">
+      <h3>The Flywheel Kicks In</h3>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Complete remaining sites</strong> — reach 57 total by end of year.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Quarterly strategy review with Nancy &amp; Mark.</strong> Show ROI, discuss new opportunities, plan next year.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Sites compound in authority.</strong> Cross-links strengthen, domain age grows, rankings climb. The moat deepens.</span>
+      </div>
+
+      <div class="task">
+        <div class="task-check"></div>
+        <span class="task-label"><strong>Transition to recurring revenue mode.</strong> $2,650/mo from retainer + podcast + AI + domains + occasional new builds.</span>
+      </div>
+    </div>
+
+    <!-- WHAT NOT TO DO -->
+    <div class="divider"></div>
+    <h2>What Not To Do</h2>
+
+    <div class="warn">
+      <ul style="margin-left: 16px;">
+        <li><strong>Don't build all 57 sites at once.</strong> Deliver in batches, show results, build trust.</li>
+        <li><strong>Don't pitch more services</strong> until the first 10 sites are live and performing.</li>
+        <li><strong>Don't break confidentiality.</strong> This is Nancy's competitive edge. You and Dorothy agreed to this.</li>
+        <li><strong>Don't skip the contract.</strong> Get financial terms in writing before delivering billable work.</li>
+        <li><strong>Don't forget the Realtor® trademark.</strong> KW is strict about this — get it right from the start.</li>
+      </ul>
+    </div>
+
+    <!-- REVENUE SUMMARY -->
+    <div class="divider"></div>
+    <h2>Revenue Summary</h2>
+
+    <div class="card">
+      <table>
+        <tr><th>Period</th><th>Revenue</th><th>Avg/Month</th></tr>
+        <tr><td>Q2 2026 (Apr-Jun)</td><td class="money">$13,470</td><td class="money">$4,490</td></tr>
+        <tr><td>Q3 2026 (Jul-Sep)</td><td class="money">$13,200</td><td class="money">$4,400</td></tr>
+        <tr><td>Q4 2026 (Oct-Dec)</td><td class="money">$11,520</td><td class="money">$3,840</td></tr>
+        <tr><td><strong>2026 Total</strong></td><td class="money"><strong>$38,190</strong></td><td class="money"><strong>$4,243</strong></td></tr>
+        <tr><td>2027 Recurring</td><td class="money">$31,800</td><td class="money">$2,650</td></tr>
+        <tr><td><strong>2-Year Total</strong></td><td class="money"><strong>$69,990</strong></td><td></td></tr>
+      </table>
+      <p style="color:var(--gray); font-size:0.85rem; margin:8px 0 0;">From one client. One strategy. One system.</p>
+    </div>
+
+    <!-- TEAM -->
+    <div class="divider"></div>
+    <h2>The Team</h2>
+
+    <div class="card">
+      <table>
+        <tr><th>Person</th><th>Location</th><th>Role</th></tr>
+        <tr><td><strong>Paul Walhus</strong></td><td>Hot Springs, AR</td><td>Project lead, AI, site builds, LiquidWeb hosting</td></tr>
+        <tr><td><strong>Brett Belau</strong></td><td>Appleton, WI</td><td>B2 Web Studios CTO (25 yrs). Hosting, WordPress, senior web dev</td></tr>
+        <tr><td><strong>Chris Sabato</strong></td><td>Oregon</td><td>DigitalOcean Droplets, server infrastructure, apps</td></tr>
+        <tr><td><strong>Pedro</strong></td><td>Office Hours</td><td>Podcast studio build (on-site, $600-750)</td></tr>
+        <tr><td><strong>Mark Britton</strong></td><td>Office Hours</td><td>Podcast production (remote)</td></tr>
+        <tr><td><strong>Ian Morrish</strong></td><td>Office Hours</td><td>Podcast production (remote)</td></tr>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>CONFIDENTIAL &bull; Paul Walhus &bull; March 2026</p>
+  </div>
+
+</body>
+</html>
