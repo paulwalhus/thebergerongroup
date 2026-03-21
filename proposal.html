@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Network Proposal — The Bergeron Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #c8973e;
+      --gold-light: #d4a94f;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --gray-100: #f3f2ef;
+      --gray-200: #e5e3de;
+      --gray-600: #5c5a55;
+      --text: #2d2b28;
+      --green: #2a7c4f;
+      --red: #c0392b;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+      background: var(--white);
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; color: var(--navy); line-height: 1.3; }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; margin: 48px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--gold); }
+    h3 { font-size: 1.2rem; margin: 28px 0 12px; }
+    p { margin-bottom: 14px; }
+    strong { color: var(--navy); }
+    em { color: var(--gold); font-style: normal; font-weight: 600; }
+
+    /* Cover */
+    .cover {
+      background: var(--navy);
+      color: var(--white);
+      padding: 80px 32px;
+      text-align: center;
+    }
+    .cover h1 { color: var(--white); margin-bottom: 12px; }
+    .cover .subtitle { color: var(--gold); font-size: 1.3rem; font-weight: 300; margin-bottom: 8px; }
+    .cover .date { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+    .cover .tagline {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 24px auto 0;
+      line-height: 1.8;
+    }
+
+    /* Sections */
+    .section { padding: 40px 0; }
+    .section-alt { background: var(--off-white); padding: 40px 0; }
+
+    /* Highlight box */
+    .highlight {
+      background: var(--navy);
+      color: var(--white);
+      padding: 28px 32px;
+      border-radius: 12px;
+      margin: 24px 0;
+    }
+    .highlight strong { color: var(--gold); }
+    .highlight p { margin-bottom: 8px; }
+
+    /* Stats row */
+    .stats-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 24px 0;
+    }
+    .stat-box {
+      flex: 1;
+      min-width: 180px;
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .stat-box .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-box .label {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.92rem;
+    }
+    th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    tr:nth-child(even) { background: var(--gray-100); }
+    .status-available { color: var(--green); font-weight: 600; }
+    .status-owned { color: var(--navy); font-weight: 600; }
+    .status-taken { color: var(--red); font-weight: 600; }
+    .priority { color: var(--gold); font-weight: 700; }
+
+    /* Category cards */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .cat-card {
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 24px;
+      background: var(--white);
+    }
+    .cat-card h4 {
+      color: var(--gold);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+    .cat-card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .cat-card p { font-size: 0.9rem; color: var(--gray-600); margin: 0; }
+
+    /* Network diagram */
+    .network-box {
+      background: var(--off-white);
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      margin: 24px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 2;
+    }
+
+    /* CTA */
+    .cta-box {
+      background: linear-gradient(135deg, var(--navy) 0%, #243352 100%);
+      color: var(--white);
+      padding: 48px 40px;
+      border-radius: 16px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .cta-box h2 { color: var(--white); border: none; margin: 0 0 16px; }
+    .cta-box p { color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 600px; margin: 0 auto 24px; }
+    .cta-box .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      padding: 14px 36px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    /* List styles */
+    ul, ol { margin: 12px 0 16px 24px; }
+    li { margin-bottom: 6px; }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 32px;
+      color: var(--gray-600);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    @media print {
+      .cover { padding: 48px 32px; }
+      body { font-size: 12px; }
+      h2 { margin-top: 32px; }
+    }
+    @media (max-width: 600px) {
+      .cover { padding: 48px 20px; }
+      h1 { font-size: 1.8rem; }
+      .stats-row { flex-direction: column; }
+      .container { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover -->
+  <div class="cover">
+    <p class="subtitle">Prepared for Nancy &amp; Mark Bergeron</p>
+    <h1>The 50+ Site Website Network</h1>
+    <p class="tagline">A strategic proposal to dominate every real estate search in Hot Springs, Arkansas &mdash; from lakefront luxury to hunting land, RV parks to fixer-uppers &mdash; and turn your domain portfolio into a lead-generating empire.</p>
+    <p class="date">March 2026 &bull; Prepared by Paul Walhus</p>
+  </div>
+
+  <!-- The Opportunity -->
+  <div class="section">
+    <div class="container">
+      <h2>The Opportunity</h2>
+      <p>Nancy, you and Mark have already built something most agents only dream about:</p>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <span class="number">413+</span>
+          <span class="label">Homes Sold</span>
+        </div>
+        <div class="stat-box">
+          <span class="number">$110M+</span>
+          <span class="label">Sales Volume</span>
+        </div>
+        <div class="stat-box">
+          <span class="number">69+</span>
+          <span class="label">5-Star Reviews</span>
+        </div>
+        <div class="stat-box">
+          <span class="number">16+</span>
+          <span class="label">Domains You Own</span>
+        </div>
+      </div>
+
+      <p>But right now, <strong>those 16+ domains are sitting idle</strong> &mdash; they're registered, but they're not working for you. Every day they sit unused is a day a potential buyer searches Google, doesn't find you, and calls your competitor instead.</p>
+
+      <div class="highlight">
+        <p><strong>The big idea:</strong> We turn your existing domain portfolio &mdash; plus strategic new acquisitions &mdash; into a network of 50+ websites that dominate the first page of Google for <em>every</em> real estate search in Hot Springs and all of Arkansas.</p>
+        <p><strong>One website competes. Fifty websites dominate.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- How It Works -->
+  <div class="section-alt">
+    <div class="container">
+      <h2>How the Network Effect Works</h2>
+      <p>Each website targets a <em>different buyer search</em>. When all 30 sites link to each other, Google sees The Bergeron Group as THE authority on Hot Springs real estate. Each site makes every other site rank higher.</p>
+
+      <div class="network-box">
+        <strong style="font-size: 1.1rem; color: var(--gold);">thebergerongroup.com</strong><br>
+        THE HUB &mdash; Your Main Brand Site<br>
+        &darr; &nbsp; &darr; &nbsp; &darr; &nbsp; &darr; &nbsp; &darr;<br>
+        <span style="color: var(--navy);">
+        realestatehotsprings.com &bull; lakehamiltonhomesforsale.com<br>
+        retirehotsprings.com &bull; hsvhomesforsale.com<br>
+        hotspringsluxuryhomes.com &bull; sellinginhotsprings.com<br>
+        relocatetohotsprings.com &bull; cabinshotsprings.com<br>
+        hotspringsinvestments.com &bull; + 20 more niche sites all cross-linking
+        </span><br><br>
+        <em style="color: var(--green);">Every site strengthens every other site.</em>
+      </div>
+
+      <h3>Why This Works</h3>
+      <ul>
+        <li><strong>Cross-linking:</strong> 30 sites linking to each other creates a private authority network Google rewards with higher rankings</li>
+        <li><strong>Topical authority:</strong> Google sees 30 sites all about Hot Springs real estate and interprets The Bergeron Group as the definitive expert</li>
+        <li><strong>Keyword coverage:</strong> Each site targets different search terms &mdash; "lakefront homes," "retire in Hot Springs," "Hot Springs Village" &mdash; so you capture buyers at every stage</li>
+        <li><strong>Brand omnipresence:</strong> Buyers see The Bergeron Group everywhere they search, building trust before they ever pick up the phone</li>
+        <li><strong>Compounding asset:</strong> These sites get more powerful over time as they age and accumulate authority &mdash; competitors can't catch up</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Your Current Domains -->
+  <div class="section">
+    <div class="container">
+      <h2>Your Current Domain Portfolio</h2>
+      <p>You already own 16+ domains. Here's how I've organized them into strategic categories, with a plan for each:</p>
+
+      <h3>Brand &amp; Identity Domains</h3>
+      <table>
+        <tr><th>Domain</th><th>Purpose</th><th>Priority</th></tr>
+        <tr><td>thebergerongroup.com</td><td>Primary team brand &mdash; redirect to hub or build brand site</td><td class="priority">HIGH</td></tr>
+        <tr><td>nancybergeron.com</td><td>Personal brand &mdash; bio site or redirect to hub</td><td class="priority">HIGH</td></tr>
+        <tr><td>bergeronteam.com</td><td>Short team brand &mdash; redirect to hub</td><td>Medium</td></tr>
+        <tr><td>nancybergeronteam.com</td><td>Team brand variant &mdash; redirect to hub</td><td>Medium</td></tr>
+        <tr><td>bergeronrealtygroup.com</td><td>Professional brand &mdash; redirect to hub</td><td>Medium</td></tr>
+        <tr><td>brgreviews.com</td><td>Reviews &amp; reputation showcase site</td><td class="priority">HIGH</td></tr>
+      </table>
+
+      <h3>Brokerage / Corporate Domains</h3>
+      <table>
+        <tr><th>Domain</th><th>Purpose</th><th>Priority</th></tr>
+        <tr><td>kellerwilliamshotsprings.com</td><td>Captures KW brand searches &mdash; build or redirect</td><td class="priority">HIGH</td></tr>
+        <tr><td>kwhotsprings.com</td><td>Short KW brand &mdash; redirect to above</td><td>Medium</td></tr>
+        <tr><td>kellerwilliamsrealtyhotsprings.com</td><td>Full name variant &mdash; redirect</td><td>Low</td></tr>
+      </table>
+
+      <h3>Anchor / Hub Sites (Broad Hot Springs RE)</h3>
+      <table>
+        <tr><th>Domain</th><th>Purpose</th><th>Priority</th></tr>
+        <tr><td>thebergerongroup.com</td><td>THE HUB &mdash; main site [ALREADY BUILT]</td><td class="priority">BUILT</td></tr>
+        <tr><td>realestatehotsprings.com</td><td>Broad Hot Springs RE &mdash; spoke site</td><td class="priority">HIGH</td></tr>
+        <tr><td>hotspringspropertygroup.com</td><td>General RE brand site</td><td class="priority">HIGH</td></tr>
+        <tr><td>hotspringsrealtygroup.com</td><td>General RE brand variant</td><td>Medium</td></tr>
+        <tr><td>propertyforsaleinhotsprings.com</td><td>Buyer search intent &mdash; build niche site</td><td class="priority">HIGH</td></tr>
+        <tr><td>hotspringshomesforsale.ai</td><td>Modern AI domain &mdash; trendy, tech-forward</td><td class="priority">HIGH</td></tr>
+      </table>
+
+      <h3>Lake &amp; Waterfront Domains</h3>
+      <table>
+        <tr><th>Domain</th><th>Purpose</th><th>Priority</th></tr>
+        <tr><td>lakehamiltonhomesforsale.com</td><td>#1 lake keyword &mdash; full niche site</td><td class="priority">HIGH</td></tr>
+        <tr><td>lakehamiltonhomesforsale.ai</td><td>AI variant &mdash; redirect or secondary</td><td>Medium</td></tr>
+      </table>
+
+      <h3>Park Avenue &amp; Historic District</h3>
+      <table>
+        <tr><th>Domain</th><th>Purpose</th><th>Priority</th></tr>
+        <tr><td>hotspringsnationalparkhomesforsale.com</td><td>National Park proximity niche</td><td class="priority">HIGH</td></tr>
+        <tr><td>hotspringsparkavenuerealestate.com</td><td>Park Ave luxury niche</td><td class="priority">HIGH</td></tr>
+        <tr><td>hotspringsparkavenueproperty.com</td><td>Park Ave variant &mdash; redirect to above</td><td>Low</td></tr>
+        <tr><td>hotspringsparkavenuepropertyforsale.com</td><td>Long variant &mdash; redirect</td><td>Low</td></tr>
+        <tr><td>hotspringshistoricdistrictproperty.com</td><td>Historic district niche site</td><td class="priority">HIGH</td></tr>
+      </table>
+
+      <h3>Vacation Rentals &amp; Cabins</h3>
+      <table>
+        <tr><th>Domain</th><th>Purpose</th><th>Priority</th></tr>
+        <tr><td>cabinshotsprings.com</td><td>Cabin rental/sales niche</td><td class="priority">HIGH</td></tr>
+        <tr><td>rememberwhencabins.com</td><td>Branded cabin property</td><td>Medium</td></tr>
+        <tr><td>lakedegraycabins.com</td><td>Lake DeGray niche</td><td>Medium</td></tr>
+      </table>
+
+      <h3>Niche &amp; Lifestyle</h3>
+      <table>
+        <tr><th>Domain</th><th>Purpose</th><th>Priority</th></tr>
+        <tr><td>naturalchoicerealty.com</td><td>Tagline-branded &mdash; "The Natural Choice"</td><td>Medium</td></tr>
+        <tr><td>letsmaketheoffer.com</td><td>Buyer engagement / app concept</td><td>Medium</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- New Domains to Register -->
+  <div class="section-alt">
+    <div class="container">
+      <h2>New Domains to Register NOW</h2>
+      <p>These high-value domains are <em>currently available</em> &mdash; but they won't be for long. Each one targets a specific buyer search that will drive leads directly to The Bergeron Group.</p>
+
+      <table>
+        <tr><th>Domain</th><th>Category</th><th>Target Buyer</th><th>Status</th></tr>
+        <tr>
+          <td><strong>retirehotsprings.com</strong></td>
+          <td>Retirement</td>
+          <td>Retirees researching Hot Springs</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hsvhomesforsale.com</strong></td>
+          <td>Hot Springs Village</td>
+          <td>HSV buyers (massive market)</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsluxuryhomes.com</strong></td>
+          <td>Luxury</td>
+          <td>High-end buyers ($500K+)</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>lakefronthotsprings.com</strong></td>
+          <td>Lake / Waterfront</td>
+          <td>Waterfront home seekers</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringslakehomes.com</strong></td>
+          <td>Lake / Waterfront</td>
+          <td>Lake home searchers</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotsprings55plus.com</strong></td>
+          <td>Retirement / 55+</td>
+          <td>Active adult community seekers</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>relocatetohotsprings.com</strong></td>
+          <td>Relocation</td>
+          <td>Families moving to AR</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>sellinginhotsprings.com</strong></td>
+          <td>Seller-Focused</td>
+          <td>Homeowners ready to list</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsinvestments.com</strong></td>
+          <td>Investment / Airbnb</td>
+          <td>Investors seeking rental income</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsrental.com</strong></td>
+          <td>Rentals / STR</td>
+          <td>Short-term rental investors</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>newtohotsprings.com</strong></td>
+          <td>Relocation</td>
+          <td>Newcomers exploring the area</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <p><strong>Urgent:</strong> These domains are available today but could be registered by anyone &mdash; including your competitors &mdash; at any time. The cost to register is ~$10-15/year each. The cost of a competitor owning <em>retirehotsprings.com</em> or <em>hsvhomesforsale.com</em> is immeasurable.</p>
+      </div>
+
+      <h2>Niche &amp; Alternative Real Estate Domains</h2>
+      <p>Beyond traditional residential, these <em>overlooked, high-margin niches</em> represent some of the most profitable segments in real estate. RV parks, mobile home parks, hunting land, and owner-financed properties are where savvy investors are making serious money &mdash; and almost nobody is building websites for them in Hot Springs.</p>
+
+      <table>
+        <tr><th>Domain</th><th>Niche</th><th>Target Buyer</th><th>Status</th></tr>
+        <tr>
+          <td><strong>hotspringsMHP.com</strong></td>
+          <td>Mobile Home Parks</td>
+          <td>Investors seeking high-cap-rate assets</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>arkansashuntingland.com</strong></td>
+          <td>Hunting / Rec Land</td>
+          <td>Out-of-state hunters, land investors</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>ouachitalandforsale.com</strong></td>
+          <td>Recreational Land</td>
+          <td>Ouachita Mountain land buyers</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsacreage.com</strong></td>
+          <td>Acreage / Rural</td>
+          <td>Buyers wanting space and privacy</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>arkansastimberland.com</strong></td>
+          <td>Timber Land</td>
+          <td>Generational wealth / timber investors</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>ownerfinancehotsprings.com</strong></td>
+          <td>Owner Finance</td>
+          <td>Buyers seeking owner-financed deals</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsownerfinance.com</strong></td>
+          <td>Owner Finance</td>
+          <td>Alternate keyword targeting</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsfixerupper.com</strong></td>
+          <td>Flips / Renovation</td>
+          <td>HGTV-inspired flippers and renovators</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>fliphotsprings.com</strong></td>
+          <td>Flips / Renovation</td>
+          <td>House flippers seeking deals</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsduplex.com</strong></td>
+          <td>Multi-Family</td>
+          <td>Cash flow investors, house hackers</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsincomeproperty.com</strong></td>
+          <td>Income Property</td>
+          <td>Passive income investors</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsweddingvenue.com</strong></td>
+          <td>Wedding Venues</td>
+          <td>Venue investors, event entrepreneurs</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>arkansaseventvenues.com</strong></td>
+          <td>Event Venues</td>
+          <td>Commercial venue buyers statewide</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsbandb.com</strong></td>
+          <td>Bed &amp; Breakfast</td>
+          <td>Lifestyle + income buyers (tourism market)</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsbedandbreakfast.com</strong></td>
+          <td>Bed &amp; Breakfast</td>
+          <td>B&amp;B keyword variant</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsequestrian.com</strong></td>
+          <td>Equestrian</td>
+          <td>Horse property buyers (Oaklawn culture)</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>arkansashorseranch.com</strong></td>
+          <td>Horse Ranch</td>
+          <td>Ranch and equestrian buyers statewide</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringstinyhomes.com</strong></td>
+          <td>Tiny Homes</td>
+          <td>Minimalists, retirees downsizing</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>arkansastinyhouse.com</strong></td>
+          <td>Tiny Homes</td>
+          <td>Tiny home movement statewide</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>lakehamiltonboatslips.com</strong></td>
+          <td>Marina / Boat Slips</td>
+          <td>Boat owners seeking dock access</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsseniorliving.com</strong></td>
+          <td>Senior Living</td>
+          <td>Assisted living facility investors</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>hotspringsbusinessforsale.com</strong></td>
+          <td>Commercial</td>
+          <td>Small business buyers</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+        <tr>
+          <td><strong>arkansasstorageforsale.com</strong></td>
+          <td>Self-Storage</td>
+          <td>Storage facility investors</td>
+          <td class="status-available">AVAILABLE</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <p><strong>Why niche domains matter:</strong> A buyer Googling "Hot Springs fixer upper" or "Arkansas hunting land" has <em>extremely high intent</em>. These searches have almost zero competition online. One website ranking for "owner finance Hot Springs" could generate leads worth tens of thousands in commissions &mdash; for a domain that costs $12/year.</p>
+      </div>
+
+      <h3>Domains Already Taken (Competitor Alert)</h3>
+      <table>
+        <tr><th>Domain</th><th>Owned By</th><th>Concern Level</th></tr>
+        <tr><td>hotspringsvillagehomes.com</td><td>RE/MAX agent (Alissa Nead)</td><td class="status-taken">Competitor has this!</td></tr>
+        <tr><td>bergeronrealty.com</td><td>Another KW agent (Gail Bergeron)</td><td class="status-taken">Name conflict</td></tr>
+        <tr><td>luxuryhotsprings.com</td><td>Parked / registered</td><td>Unavailable</td></tr>
+        <tr><td>hsvrealty.com</td><td>Parked / registered</td><td>Unavailable</td></tr>
+        <tr><td>lakehamiltonrealty.com</td><td>Parked / registered</td><td>Unavailable</td></tr>
+      </table>
+      <p><em>This is exactly why registering available domains quickly matters &mdash; your competitors are already doing it.</em></p>
+    </div>
+  </div>
+
+  <!-- What Each Site Includes -->
+  <div class="section">
+    <div class="container">
+      <h2>What Every Site Includes</h2>
+      <p>Each website in the network is a fully professional, SEO-optimized site &mdash; not a cheap redirect or placeholder.</p>
+
+      <div class="cat-grid">
+        <div class="cat-card">
+          <h4>Design</h4>
+          <h3>Professional &amp; Branded</h3>
+          <p>Bergeron Group branding, responsive on all devices, fast-loading, professional photography integration</p>
+        </div>
+        <div class="cat-card">
+          <h4>SEO</h4>
+          <h3>Search Engine Optimized</h3>
+          <p>Unique keyword targeting, Schema.org structured data, meta tags, FAQ sections that appear in Google's "People Also Ask"</p>
+        </div>
+        <div class="cat-card">
+          <h4>Content</h4>
+          <h3>Unique, Niche-Specific</h3>
+          <p>800-1200 words of original content per site targeting specific buyer searches. No duplicate content.</p>
+        </div>
+        <div class="cat-card">
+          <h4>Lead Capture</h4>
+          <h3>Contact Forms That Convert</h3>
+          <p>Every site funnels leads directly to Nancy's email, tagged by source so you know which site generated each lead</p>
+        </div>
+        <div class="cat-card">
+          <h4>Analytics</h4>
+          <h3>Track Everything</h3>
+          <p>Google Analytics + Search Console on every site. Know exactly how many visitors, which keywords, and where leads come from.</p>
+        </div>
+        <div class="cat-card">
+          <h4>Mark's Edge</h4>
+          <h3>Inspection Expertise</h3>
+          <p>Every site highlights Mark's certified home inspection background &mdash; a differentiator NO other Hot Springs agent can claim</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Mark Advantage -->
+  <div class="section-alt">
+    <div class="container">
+      <h2>The Mark Bergeron Advantage</h2>
+      <p>This deserves its own section because it's your <em>secret weapon</em>.</p>
+      <p>No other real estate team in Hot Springs has a licensed realtor who is also a <strong>former certified home inspector</strong>. This is content gold that we weave into every single site:</p>
+      <ul>
+        <li><strong>Lake sites:</strong> "What Mark looks for in waterfront home inspections &mdash; dock foundations, seawall integrity, flood zone risks"</li>
+        <li><strong>Luxury sites:</strong> "Mark's inspection checklist for high-end properties &mdash; HVAC systems, foundation analysis, roof assessment"</li>
+        <li><strong>Retirement sites:</strong> "Peace of mind for retirees &mdash; Mark inspects every home so you don't inherit someone else's problems"</li>
+        <li><strong>Investment sites:</strong> "Before you buy a rental property, Mark evaluates the true cost of ownership"</li>
+        <li><strong>First-time buyer sites:</strong> "Mark's trained eye catches what other agents miss &mdash; saving you thousands"</li>
+      </ul>
+      <p>This builds trust across the entire network and gives buyers a compelling reason to choose The Bergeron Group over every other agent in town.</p>
+    </div>
+  </div>
+
+  <!-- Podcast Studio -->
+  <div class="section">
+    <div class="container">
+      <h2>Podcast: Build Your Brand Authority</h2>
+      <p>A podcast is the ultimate trust-builder in real estate. Nancy &amp; Mark sharing market insights, neighborhood guides, and buyer/seller tips positions The Bergeron Group as <em>the</em> voice of Hot Springs real estate.</p>
+
+      <div class="cat-grid">
+        <div class="cat-card">
+          <h4>Studio Setup</h4>
+          <h3>Professional In-Office Studio</h3>
+          <p>We'll transform the room at your office into a professional podcast studio using the gear you already have. Full acoustic treatment, equipment configuration, and software setup.</p>
+        </div>
+        <div class="cat-card">
+          <h4>Production</h4>
+          <h3>Full-Service Production</h3>
+          <p>A dedicated production team handles editing, show notes, graphics, and distribution. You record &mdash; we handle everything else, from mixing to publishing.</p>
+        </div>
+        <div class="cat-card">
+          <h4>SEO Synergy</h4>
+          <h3>Content That Feeds the Network</h3>
+          <p>Every episode becomes SEO content across your 50+ websites &mdash; show notes, transcripts, and blog posts that drive organic traffic and reinforce your topical authority.</p>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <p><strong>Why podcast + websites = unbeatable:</strong> Your podcast episodes become content for all 50+ sites. A single episode about "buying lakefront on Lake Hamilton" feeds lakehamiltonhomesforsale.com, lakefronthotsprings.com, and the hub site. One recording, multiple SEO touchpoints.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The ROI -->
+  <div class="section">
+    <div class="container">
+      <h2>The Return on Investment</h2>
+      <p>Let's talk numbers.</p>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <span class="number">~$250K</span>
+          <span class="label">Avg Home Price</span>
+        </div>
+        <div class="stat-box">
+          <span class="number">~$7,500</span>
+          <span class="label">Avg Commission / Side</span>
+        </div>
+        <div class="stat-box">
+          <span class="number">50+</span>
+          <span class="label">Websites Working 24/7</span>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <p><strong>If 50+ websites generate just 1 extra lead per month combined:</strong></p>
+        <p>12 extra deals/year &times; $7,500 commission = <strong>$90,000+ in additional annual revenue</strong></p>
+        <p>Even <strong>1 extra deal per quarter</strong> from these sites pays for the entire project many times over.</p>
+      </div>
+
+      <h3>The Compounding Effect</h3>
+      <ul>
+        <li><strong>Month 1-3:</strong> Sites go live, Google begins indexing, initial traffic</li>
+        <li><strong>Month 3-6:</strong> Sites start ranking for long-tail keywords, first organic leads arrive</li>
+        <li><strong>Month 6-12:</strong> Authority builds, cross-links strengthen all sites, consistent lead flow</li>
+        <li><strong>Year 2+:</strong> Established domain authority makes these sites nearly impossible for competitors to outrank</li>
+      </ul>
+      <p>This is a <strong>compounding asset</strong>, not an expense. The longer these sites exist, the more valuable they become.</p>
+    </div>
+  </div>
+
+  <!-- Competitive Moat -->
+  <div class="section-alt">
+    <div class="container">
+      <h2>The Competitive Moat</h2>
+      <p>Once this network is built, any competitor trying to replicate it would need to:</p>
+      <ol>
+        <li>Register 50+ domains (many of the best ones will already be yours)</li>
+        <li>Write 50+ sites' worth of unique, quality content</li>
+        <li>Build the cross-linking network from scratch</li>
+        <li>Wait 6-12 months for Google to index and rank them</li>
+        <li>Compete against your sites that already have months or years of established authority</li>
+      </ol>
+
+      <div class="highlight">
+        <p><strong>A competitor already owns hotspringsvillagehomes.com</strong> (a RE/MAX agent). They understand the value of niche domains. Every available domain you don't register is an opportunity for a competitor to take.</p>
+        <p>This is a moat that <strong>gets deeper every month</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase Plan -->
+  <div class="section">
+    <div class="container">
+      <h2>Rollout Plan</h2>
+
+      <h3>Phase 1: Foundation (Weeks 1-2)</h3>
+      <ul>
+        <li>Deploy thebergerongroup.com to live hosting [already built]</li>
+        <li>Register all available priority domains before competitors do</li>
+        <li>Finalize master template system for rapid site production</li>
+      </ul>
+
+      <h3>Phase 2: Core Network (Weeks 3-6)</h3>
+      <ul>
+        <li>Build and launch 8-10 highest-priority niche sites</li>
+        <li>Implement cross-linking between all live sites</li>
+        <li>Submit all sites to Google Search Console</li>
+        <li>Set up analytics and lead tracking</li>
+      </ul>
+
+      <h3>Phase 3: Full Network (Weeks 7-14)</h3>
+      <ul>
+        <li>Build remaining 15-20 sites</li>
+        <li>Complete cross-linking mesh across all sites</li>
+        <li>Optimize based on early search data</li>
+        <li>Set up branded redirects for secondary domains</li>
+      </ul>
+
+      <h3>Phase 4: Optimize &amp; Grow (Ongoing)</h3>
+      <ul>
+        <li>Monthly content updates and market reports</li>
+        <li>Ranking tracking and SEO optimization</li>
+        <li>Add new sites as opportunities emerge</li>
+        <li>Quarterly strategy reviews with Nancy &amp; Mark</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Domain Audit -->
+  <div class="section-alt">
+    <div class="container">
+      <h2>Urgent: Your Domain Audit</h2>
+      <p>Nancy, you currently own <strong>30+ domains</strong> — and every single one that isn't attached to a live website is <em>costing you money and doing nothing</em>. Domain renewals add up to hundreds per year with zero return.</p>
+
+      <div class="highlight">
+        <p><strong>Action needed:</strong> We need a complete export of your domain portfolio from GoDaddy. This gives us:</p>
+        <ul style="margin:12px 0 0 20px; color: rgba(255,255,255,0.85);">
+          <li><strong>Expiration dates</strong> — so we never accidentally lose a valuable domain</li>
+          <li><strong>DNS settings</strong> — so we can point each domain to its new website</li>
+          <li><strong>Auto-renewal status</strong> — so we can prioritize domains about to expire</li>
+          <li><strong>Hidden gems</strong> — you may own domains you've forgotten about that are perfect for a niche site</li>
+          <li><strong>Consolidation opportunities</strong> — some domains can be merged, others redirected to save costs</li>
+        </ul>
+      </div>
+
+      <h3>How to Export from GoDaddy (2 minutes)</h3>
+      <ol>
+        <li>Log in to <strong>GoDaddy.com</strong> &rarr; click <strong>My Products</strong></li>
+        <li>Go to <strong>Domains</strong> &rarr; <strong>All Domains</strong></li>
+        <li>Click the <strong>Export</strong> or <strong>Download</strong> button (top right of domain list)</li>
+        <li>Choose <strong>CSV format</strong> and save the file</li>
+        <li>Email or share the CSV file with me</li>
+      </ol>
+      <p>This single file lets me map every domain you own to a strategy, identify which ones need websites built, which should redirect, and which are approaching renewal. <strong>Without this, we're flying blind.</strong></p>
+
+      <div class="highlight">
+        <p><strong>Also needed: GoDaddy &amp; Netfirms account access</strong></p>
+        <p>To point your domains to their new websites, I'll need temporary access to your domain registrar accounts (GoDaddy and Netfirms). This lets me configure DNS records, set up hosting, and ensure every domain is working correctly. Your credentials stay private — I only need enough access to manage the DNS settings.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Next Steps -->
+  <div class="section">
+    <div class="container">
+      <h2>Next Steps</h2>
+      <p>We're ready to start building your real estate empire. Here's what happens next:</p>
+
+      <div class="highlight">
+        <h3 style="color: var(--gold); margin-top:0;">This Week</h3>
+        <ol style="color: rgba(255,255,255,0.85); margin: 12px 0 0 20px;">
+          <li><strong>Export your GoDaddy domain list</strong> (CSV) and share it with me</li>
+          <li><strong>Share GoDaddy &amp; Netfirms login access</strong> so I can configure DNS</li>
+          <li>I'll complete the domain audit and finalize the site priority list</li>
+          <li>Register available high-priority domains before competitors take them</li>
+        </ol>
+      </div>
+
+      <div class="highlight" style="margin-top: 16px;">
+        <h3 style="color: var(--gold); margin-top:0;">By End of April</h3>
+        <ol style="color: rgba(255,255,255,0.85); margin: 12px 0 0 20px;">
+          <li>thebergerongroup.com deployed live with your custom domain</li>
+          <li>First 7 niche sites built, branded, and live</li>
+          <li>Cross-linking network established between all live sites</li>
+          <li>Google Search Console &amp; Analytics configured on every site</li>
+          <li>Podcast studio setup complete and ready for first recording</li>
+        </ol>
+      </div>
+
+      <div class="cta-box" style="margin-top: 32px;">
+        <h2>Every Day These Domains Sit Idle Is a Day Your Competitors Get Ahead</h2>
+        <p>You've already invested in 30+ domains. Let's put them to work. The sooner we start, the sooner they start generating leads.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Prepared by Paul Walhus &bull; March 2026</p>
+  </div>
+
+</body>
+</html>

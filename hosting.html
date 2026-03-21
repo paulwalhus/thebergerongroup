@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hosting Proposal — The Bergeron Group Website Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --navy-light: #243352;
+      --gold: #c8973e;
+      --gold-light: #d4a94f;
+      --gold-pale: #f5ebd8;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --gray-100: #f3f2ef;
+      --gray-200: #e5e3de;
+      --gray-400: #9c9a94;
+      --gray-600: #5c5a55;
+      --text: #2d2b28;
+      --green: #2a7c4f;
+      --green-light: #d4edda;
+      --red: #c0392b;
+      --red-light: #f8d7da;
+      --blue: #2563eb;
+      --radius: 8px;
+      --radius-lg: 16px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+      background: var(--white);
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; color: var(--navy); line-height: 1.3; }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; margin: 48px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--gold); }
+    h3 { font-size: 1.2rem; margin: 28px 0 12px; }
+    p { margin-bottom: 14px; }
+    strong { color: var(--navy); }
+    em { color: var(--gold); font-style: normal; font-weight: 600; }
+    code { font-family: 'JetBrains Mono', monospace; background: var(--gray-100); padding: 2px 8px; border-radius: 4px; font-size: 0.88rem; }
+    ul, ol { margin: 12px 0 16px 24px; }
+    li { margin-bottom: 6px; }
+
+    .cover {
+      background: var(--navy);
+      color: var(--white);
+      padding: 72px 32px;
+      text-align: center;
+    }
+    .cover h1 { color: var(--white); margin-bottom: 12px; }
+    .cover .subtitle { color: var(--gold); font-size: 1.3rem; font-weight: 300; margin-bottom: 8px; }
+    .cover .date { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+    .cover .tagline {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin: 20px auto 0;
+    }
+
+    .section { padding: 40px 0; }
+    .section-alt { background: var(--off-white); padding: 40px 0; }
+
+    .highlight {
+      background: var(--navy);
+      color: var(--white);
+      padding: 28px 32px;
+      border-radius: 12px;
+      margin: 24px 0;
+    }
+    .highlight strong { color: var(--gold); }
+    .highlight p { margin-bottom: 8px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.92rem;
+    }
+    th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    tr:nth-child(even) { background: var(--gray-100); }
+    .money { font-family: 'JetBrains Mono', monospace; color: var(--green); font-weight: 600; }
+    .money-red { font-family: 'JetBrains Mono', monospace; color: var(--red); font-weight: 600; }
+    .free { color: var(--green); font-weight: 700; }
+    .check { color: var(--green); font-size: 1.2rem; }
+    .x-mark { color: var(--red); font-size: 1.2rem; }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 24px 0;
+    }
+    .compare-card {
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 2px solid var(--gray-200);
+    }
+    .compare-card.recommended {
+      border-color: var(--gold);
+      background: linear-gradient(180deg, var(--gold-pale) 0%, var(--white) 40%);
+      position: relative;
+    }
+    .compare-card.recommended::before {
+      content: "RECOMMENDED";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 4px 16px;
+      border-radius: 20px;
+    }
+    .compare-card h3 { margin-top: 0; }
+    .compare-card .price {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .compare-card .freq { color: var(--gray-600); font-size: 0.85rem; }
+    .compare-card ul { margin-top: 16px; list-style: none; padding: 0; }
+    .compare-card li { padding: 6px 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9rem; }
+    .compare-card li:last-child { border-bottom: none; }
+
+    .savings-box {
+      background: var(--green-light);
+      border: 2px solid var(--green);
+      border-radius: var(--radius-lg);
+      padding: 24px 32px;
+      text-align: center;
+      margin: 24px 0;
+    }
+    .savings-box .big {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .warning-box {
+      background: var(--red-light);
+      border: 1px solid var(--red);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .warning-box strong { color: var(--red); }
+
+    .footer {
+      text-align: center;
+      padding: 32px;
+      color: var(--gray-600);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    @media (max-width: 700px) {
+      .compare-grid { grid-template-columns: 1fr; }
+      .cover { padding: 48px 20px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover">
+    <p class="subtitle">Prepared for Nancy &amp; Mark Bergeron</p>
+    <h1>Hosting &amp; Infrastructure Proposal</h1>
+    <p class="tagline">How to host 50+ websites reliably, securely, and cost-effectively &mdash; without paying $20/month per site.</p>
+    <p class="date">March 2026 &bull; Prepared by Paul Walhus</p>
+  </div>
+
+  <!-- The Problem -->
+  <div class="section">
+    <div class="container">
+      <h2>The Challenge</h2>
+      <p>Most realtors pay for traditional web hosting &mdash; $10-30/month per site on platforms like GoDaddy, Squarespace, or Wix. For a single website, that's manageable. But when you're running <strong>50+ sites</strong>, traditional hosting would cost:</p>
+
+      <div class="savings-box" style="background: var(--red-light); border-color: var(--red);">
+        <p style="margin:0; color: var(--red); font-weight: 600;">Traditional hosting for 50+ sites</p>
+        <span class="big" style="color: var(--red);">$6,000 - $18,000/year</span>
+        <p style="margin:8px 0 0; color: var(--gray-600);">At $10-30/month per site &times; 50 sites</p>
+      </div>
+
+      <p>That's money going straight to hosting companies instead of into your business. There's a much better way.</p>
+    </div>
+  </div>
+
+  <!-- The Solution -->
+  <div class="section-alt">
+    <div class="container">
+      <h2>The Solution: Modern Static Hosting</h2>
+      <p>Your websites are built with clean, fast HTML/CSS/JS &mdash; no WordPress, no databases, no server maintenance. This means we can use <em>modern static hosting platforms</em> that are faster, more secure, and dramatically cheaper than traditional hosting.</p>
+
+      <h3>Why Static Sites Win</h3>
+      <ul>
+        <li><strong>Speed:</strong> Static sites load 3-10x faster than WordPress. Google rewards fast sites with higher rankings.</li>
+        <li><strong>Security:</strong> No database = no SQL injection, no WordPress plugin vulnerabilities, no hacking targets. Your sites are virtually unhackable.</li>
+        <li><strong>Uptime:</strong> Served from global CDN networks (300+ edge locations worldwide). 99.99% uptime guaranteed.</li>
+        <li><strong>Zero maintenance:</strong> No server updates, no plugin patches, no PHP version conflicts. It just works.</li>
+        <li><strong>Free HTTPS:</strong> Every site gets a free SSL certificate automatically. The padlock shows in every browser.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hosting Options Comparison -->
+  <div class="section">
+    <div class="container">
+      <h2>Hosting Options Compared</h2>
+
+      <h3>Static Hosting (Best for our sites)</h3>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Cloudflare Pages</th>
+          <th>GitHub Pages</th>
+          <th>Netlify</th>
+          <th>GoDaddy / Wix</th>
+        </tr>
+        <tr>
+          <td><strong>Monthly Cost (50 sites)</strong></td>
+          <td class="money">$0</td>
+          <td class="money">$0</td>
+          <td class="money">$0 - $19</td>
+          <td class="money-red">$500 - $1,500</td>
+        </tr>
+        <tr>
+          <td><strong>Custom Domains</strong></td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+        </tr>
+        <tr>
+          <td><strong>Free SSL/HTTPS</strong></td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+          <td>Extra cost</td>
+        </tr>
+        <tr>
+          <td><strong>Global CDN</strong></td>
+          <td class="check">&#10003; (fastest)</td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+          <td class="x-mark">&#10007;</td>
+        </tr>
+        <tr>
+          <td><strong>Page Load Speed</strong></td>
+          <td>Fastest</td>
+          <td>Fast</td>
+          <td>Fast</td>
+          <td>Slow</td>
+        </tr>
+        <tr>
+          <td><strong>Uptime SLA</strong></td>
+          <td>100% SLA</td>
+          <td>99.9%</td>
+          <td>99.99%</td>
+          <td>99.9%</td>
+        </tr>
+        <tr>
+          <td><strong>Sites Limit</strong></td>
+          <td>Unlimited</td>
+          <td>Unlimited</td>
+          <td>500</td>
+          <td>1 per plan</td>
+        </tr>
+        <tr>
+          <td><strong>Bandwidth</strong></td>
+          <td>Unlimited</td>
+          <td>100GB/mo</td>
+          <td>100GB/mo</td>
+          <td>Limited</td>
+        </tr>
+        <tr>
+          <td><strong>DDoS Protection</strong></td>
+          <td class="check">&#10003; Enterprise-grade</td>
+          <td>Basic</td>
+          <td>Basic</td>
+          <td>Basic</td>
+        </tr>
+        <tr>
+          <td><strong>Annual Cost (50 sites)</strong></td>
+          <td class="money">$0</td>
+          <td class="money">$0</td>
+          <td class="money">$0 - $228</td>
+          <td class="money-red">$6,000 - $18,000</td>
+        </tr>
+      </table>
+
+      <h3>VPS &amp; Managed Hosting (Already in place + future growth)</h3>
+      <p>We already have server infrastructure ready to go, and team members with deep hosting and web development expertise.</p>
+
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>LiquidWeb (We already have this)</th>
+          <th>DigitalOcean Droplets</th>
+        </tr>
+        <tr>
+          <td><strong>What It Is</strong></td>
+          <td>Managed VPS &amp; dedicated hosting</td>
+          <td>Cloud virtual servers (VPS)</td>
+        </tr>
+        <tr>
+          <td><strong>Status</strong></td>
+          <td class="money">Already set up &mdash; can host 30+ sites now</td>
+          <td>Available for future expansion</td>
+        </tr>
+        <tr>
+          <td><strong>Best For</strong></td>
+          <td>WordPress, managed hosting, reliable performance with 24/7 support</td>
+          <td>Custom apps, APIs, AI tools, dev environments</td>
+        </tr>
+        <tr>
+          <td><strong>Starting Price</strong></td>
+          <td>$15-59/mo per VPS</td>
+          <td class="money">$4/mo per Droplet</td>
+        </tr>
+        <tr>
+          <td><strong>Support</strong></td>
+          <td class="check">&#10003; 24/7 human support (phone, chat) &mdash; LiquidWeb is known for this</td>
+          <td>Community + docs</td>
+        </tr>
+        <tr>
+          <td><strong>Backups</strong></td>
+          <td class="check">&#10003; Included</td>
+          <td>$1/mo automatic</td>
+        </tr>
+        <tr>
+          <td><strong>Scalability</strong></td>
+          <td class="check">&#10003; Upgrade anytime</td>
+          <td class="check">&#10003; Resize in seconds</td>
+        </tr>
+        <tr>
+          <td><strong>Team Resource</strong></td>
+          <td><strong>Paul Walhus</strong> &mdash; already manages the LiquidWeb account</td>
+          <td><strong>Chris Sabato</strong> (Oregon) &mdash; runs production apps on Droplets</td>
+        </tr>
+      </table>
+
+      <h3>Our Web Development Team</h3>
+      <p>This isn't a one-person operation. We have experienced professionals ready to support the network:</p>
+
+      <table>
+        <tr>
+          <th>Team Member</th>
+          <th>Location</th>
+          <th>Expertise</th>
+          <th>Role</th>
+        </tr>
+        <tr>
+          <td><strong>Paul Walhus</strong></td>
+          <td>Hot Springs, AR</td>
+          <td>AI, web development, hosting (LiquidWeb)</td>
+          <td>Project lead, site builds, AI integration</td>
+        </tr>
+        <tr>
+          <td><strong>Brett Belau</strong></td>
+          <td>Appleton, WI</td>
+          <td>CTO &amp; Partner at B2 Web Studios. 25 years in web dev, WordPress, e-commerce, SEO, mobile apps</td>
+          <td>Senior web development, WordPress, technical consulting</td>
+        </tr>
+        <tr>
+          <td><strong>Chris Sabato</strong></td>
+          <td>Oregon</td>
+          <td>DigitalOcean Droplets, server infrastructure, custom applications</td>
+          <td>Server infrastructure, dynamic apps, API development</td>
+        </tr>
+        <tr>
+          <td><strong>Pedro</strong></td>
+          <td>Office Hours</td>
+          <td>Hardware setup, studio configuration</td>
+          <td>Podcast studio build (on-site)</td>
+        </tr>
+        <tr>
+          <td><strong>Mark Britton</strong></td>
+          <td>Office Hours</td>
+          <td>Content production</td>
+          <td>Podcast production (remote)</td>
+        </tr>
+        <tr>
+          <td><strong>Ian Morrish</strong></td>
+          <td>Office Hours</td>
+          <td>Content production</td>
+          <td>Podcast production (remote)</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <p><strong>Why this matters:</strong> You're not hiring a freelancer &mdash; you're getting a team. Brett Belau alone brings 25 years and a full agency (B2 Web Studios) behind him. Chris Sabato runs production server infrastructure daily. Combined with Paul's AI expertise and LiquidWeb hosting already in place, your 50+ site network has enterprise-level support at a fraction of what an agency would charge.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommendation -->
+  <div class="section-alt">
+    <div class="container">
+      <h2>My Recommendation</h2>
+
+      <div class="compare-grid">
+        <div class="compare-card recommended">
+          <h3>Cloudflare Pages</h3>
+          <span class="price">$0</span> <span class="freq">/month for all 50+ sites</span>
+          <ul>
+            <li><span class="check">&#10003;</span> Unlimited sites &amp; bandwidth</li>
+            <li><span class="check">&#10003;</span> Fastest global CDN (300+ cities)</li>
+            <li><span class="check">&#10003;</span> Enterprise DDoS protection</li>
+            <li><span class="check">&#10003;</span> Free SSL on every domain</li>
+            <li><span class="check">&#10003;</span> 100% uptime SLA</li>
+            <li><span class="check">&#10003;</span> Analytics built in</li>
+            <li><span class="check">&#10003;</span> Easy DNS management if we move domains to Cloudflare Registrar</li>
+          </ul>
+        </div>
+        <div class="compare-card">
+          <h3>GitHub Pages + Cloudflare DNS</h3>
+          <span class="price">$0</span> <span class="freq">/month for all 50+ sites</span>
+          <ul>
+            <li><span class="check">&#10003;</span> Unlimited public repos</li>
+            <li><span class="check">&#10003;</span> Free SSL on custom domains</li>
+            <li><span class="check">&#10003;</span> Git-based deployment (version control)</li>
+            <li><span class="check">&#10003;</span> Reliable uptime</li>
+            <li><span class="check">&#10003;</span> Cloudflare CDN layered on top</li>
+            <li><span class="x-mark">&#10007;</span> 100GB bandwidth limit</li>
+            <li><span class="x-mark">&#10007;</span> Slightly more complex setup</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <p><strong>Primary recommendation: Cloudflare Pages</strong></p>
+        <p>Cloudflare is the world's largest web performance and security company. Their Pages product hosts unlimited sites with unlimited bandwidth, the fastest CDN on the planet, enterprise-grade security, and it's <strong>completely free</strong>. This is what the pros use.</p>
+        <p><strong>Backup: GitHub Pages + Cloudflare DNS</strong> as a fallback if we need version-controlled deployments for any specific site.</p>
+        <p style="margin-bottom:0"><strong>Growth path:</strong> We already have a <strong>LiquidWeb</strong> account that can host 30+ sites today. When you're ready for dynamic features (AI lead tools, listing feeds, the letsmaketheoffer.com app), we scale up using LiquidWeb or <strong>DigitalOcean Droplets</strong> (Chris Sabato, Oregon) &mdash; starting at just $4-15/month. Plus <strong>Brett Belau</strong> (B2 Web Studios, Appleton WI &mdash; 25 years in web dev) is on the team for senior development support.</p>
+      </div>
+
+      <div class="savings-box">
+        <p style="margin:0; color: var(--green); font-weight: 600;">Your annual hosting savings</p>
+        <span class="big">$6,000 - $18,000</span>
+        <p style="margin:8px 0 0; color: var(--gray-600);">vs. traditional hosting at $10-30/site/month</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Domain Management -->
+  <div class="section">
+    <div class="container">
+      <h2>Domain Management Strategy</h2>
+
+      <h3>Current State</h3>
+      <p>Your domains are currently spread across <strong>GoDaddy</strong> and <strong>Netfirms</strong>. This split makes management harder and more expensive. Here's what I recommend:</p>
+
+      <h3>Option A: Consolidate to Cloudflare Registrar</h3>
+      <ul>
+        <li>Transfer all domains to Cloudflare Registrar</li>
+        <li>Cloudflare charges <strong>at-cost pricing</strong> &mdash; no markup, no renewal tricks</li>
+        <li>Typical .com renewal: <strong>$9.77/year</strong> (vs. GoDaddy's $20-22/year)</li>
+        <li>50 domains: <strong>~$489/year</strong> at Cloudflare vs. <strong>~$1,000+/year</strong> at GoDaddy</li>
+        <li>DNS management integrated with hosting &mdash; everything in one dashboard</li>
+      </ul>
+
+      <h3>Option B: Keep GoDaddy, Use Cloudflare DNS Only</h3>
+      <ul>
+        <li>Keep domains registered at GoDaddy (no transfer hassle)</li>
+        <li>Point nameservers to Cloudflare for free DNS management</li>
+        <li>Still get Cloudflare's CDN, security, and performance benefits</li>
+        <li>Higher annual renewal costs but simpler transition</li>
+      </ul>
+
+      <div class="highlight">
+        <p><strong>Either way, step one is the same:</strong> Export your complete domain list from GoDaddy as a CSV file. This gives us the full picture &mdash; every domain, every expiration date, every DNS setting &mdash; so we can build a migration plan with zero downtime.</p>
+      </div>
+
+      <h3>Domain Cost Comparison</h3>
+      <table>
+        <tr>
+          <th>Registrar</th>
+          <th>.com Renewal</th>
+          <th>50 Domains / Year</th>
+          <th>DNS Management</th>
+        </tr>
+        <tr>
+          <td>GoDaddy</td>
+          <td class="money-red">$20.17/yr</td>
+          <td class="money-red">$1,009/yr</td>
+          <td>Basic</td>
+        </tr>
+        <tr>
+          <td>Netfirms</td>
+          <td class="money-red">$17.99/yr</td>
+          <td class="money-red">$900/yr</td>
+          <td>Basic</td>
+        </tr>
+        <tr>
+          <td><strong>Cloudflare Registrar</strong></td>
+          <td class="money">$9.77/yr</td>
+          <td class="money">$489/yr</td>
+          <td>Advanced + Free CDN</td>
+        </tr>
+      </table>
+
+      <div class="savings-box">
+        <p style="margin:0; color: var(--green); font-weight: 600;">Annual domain savings with Cloudflare</p>
+        <span class="big">$500+/year</span>
+        <p style="margin:8px 0 0; color: var(--gray-600);">Plus free CDN, DDoS protection, and analytics on every domain</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Forms -->
+  <div class="section-alt">
+    <div class="container">
+      <h2>Contact Forms &amp; Lead Capture</h2>
+      <p>Every site in the network needs a contact form that sends leads directly to your email. Here's how we handle this across 50+ sites:</p>
+
+      <table>
+        <tr>
+          <th>Service</th>
+          <th>Free Tier</th>
+          <th>Paid Tier</th>
+          <th>Best For</th>
+        </tr>
+        <tr>
+          <td><strong>Formspree</strong></td>
+          <td>50 submissions/mo</td>
+          <td>$8/mo (1,000 subs)</td>
+          <td>Simple, reliable, easy setup</td>
+        </tr>
+        <tr>
+          <td><strong>Netlify Forms</strong></td>
+          <td>100 submissions/mo</td>
+          <td>Included in Pro plan</td>
+          <td>If using Netlify hosting</td>
+        </tr>
+        <tr>
+          <td><strong>Web3Forms</strong></td>
+          <td>250 submissions/mo</td>
+          <td>$6/mo (unlimited)</td>
+          <td>Best free tier, no backend needed</td>
+        </tr>
+      </table>
+
+      <div class="highlight">
+        <p><strong>Recommendation:</strong> Start with <strong>Web3Forms</strong> (250 free submissions/month). Each form is tagged with the source site so you know exactly which domain generated each lead. If volume grows beyond 250/month, upgrade to Formspree Pro at $8/month for all 50+ sites combined.</p>
+      </div>
+
+      <h3>Lead Tagging System</h3>
+      <p>Every contact form includes a hidden field identifying the source website. When a lead comes in, you'll see:</p>
+      <ul>
+        <li><strong>Source:</strong> lakehamiltonhomesforsale.com</li>
+        <li><strong>Name:</strong> John Smith</li>
+        <li><strong>Interest:</strong> Buying a lakefront home</li>
+        <li><strong>Phone:</strong> (555) 123-4567</li>
+      </ul>
+      <p>This tells you instantly which niche attracted the lead, so you can tailor your response. Over time, this data shows you which sites are your top lead generators.</p>
+    </div>
+  </div>
+
+  <!-- Email & Analytics -->
+  <div class="section">
+    <div class="container">
+      <h2>Analytics &amp; Performance Tracking</h2>
+
+      <h3>Every Site Gets</h3>
+      <ul>
+        <li><strong>Google Analytics 4</strong> &mdash; visitor counts, traffic sources, user behavior</li>
+        <li><strong>Google Search Console</strong> &mdash; which keywords you rank for, click-through rates, indexing status</li>
+        <li><strong>Cloudflare Analytics</strong> &mdash; real-time traffic, performance metrics, security events</li>
+      </ul>
+
+      <h3>Monthly Report</h3>
+      <p>Each month you'll receive a summary showing:</p>
+      <ul>
+        <li>Total visitors across all 50+ sites</li>
+        <li>Top-performing sites by traffic and leads</li>
+        <li>Keyword rankings and movements</li>
+        <li>Lead count by source site</li>
+        <li>Recommendations for optimization</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Total Infrastructure Cost -->
+  <div class="section-alt">
+    <div class="container">
+      <h2>Total Infrastructure Cost Summary</h2>
+
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Monthly</th>
+          <th>Annual</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>Hosting (Cloudflare Pages)</td>
+          <td class="money">$0</td>
+          <td class="money">$0</td>
+          <td>Free for all 50+ sites</td>
+        </tr>
+        <tr>
+          <td>SSL Certificates</td>
+          <td class="money">$0</td>
+          <td class="money">$0</td>
+          <td>Free with Cloudflare</td>
+        </tr>
+        <tr>
+          <td>CDN / Performance</td>
+          <td class="money">$0</td>
+          <td class="money">$0</td>
+          <td>Free with Cloudflare</td>
+        </tr>
+        <tr>
+          <td>DDoS Protection</td>
+          <td class="money">$0</td>
+          <td class="money">$0</td>
+          <td>Free with Cloudflare</td>
+        </tr>
+        <tr>
+          <td>Contact Forms (Web3Forms)</td>
+          <td class="money">$0</td>
+          <td class="money">$0</td>
+          <td>Free tier (250 subs/mo)</td>
+        </tr>
+        <tr>
+          <td>Domain Renewals (Cloudflare)</td>
+          <td>~$41</td>
+          <td>~$489</td>
+          <td>50 domains at cost ($9.77 each)</td>
+        </tr>
+        <tr>
+          <td>Google Analytics</td>
+          <td class="money">$0</td>
+          <td class="money">$0</td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td>Google Search Console</td>
+          <td class="money">$0</td>
+          <td class="money">$0</td>
+          <td>Free</td>
+        </tr>
+        <tr style="background: var(--navy); color: var(--white);">
+          <td><strong style="color:var(--white)">Total Infrastructure</strong></td>
+          <td><strong style="color:var(--gold)">~$41/mo</strong></td>
+          <td><strong style="color:var(--gold)">~$489/yr</strong></td>
+          <td style="color:var(--gold)">Domain renewals only</td>
+        </tr>
+      </table>
+
+      <div class="savings-box">
+        <p style="margin:0; color: var(--green); font-weight: 600;">Total annual savings vs. traditional hosting + registrar</p>
+        <span class="big">$6,500 - $18,500/year</span>
+        <p style="margin:8px 0 0; color: var(--gray-600);">Your only real cost is ~$10/year per domain renewal. Everything else is free.</p>
+      </div>
+
+      <div class="highlight">
+        <p><strong>Bottom line:</strong> By using modern infrastructure instead of traditional hosting, we save Nancy thousands of dollars per year while delivering <em>faster, more secure, more reliable</em> websites than any competitor running WordPress on shared hosting.</p>
+        <p style="margin-bottom:0">Those savings can be reinvested into more sites, more content, and more marketing &mdash; widening the competitive moat even further.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Next Steps -->
+  <div class="section">
+    <div class="container">
+      <h2>What I Need From You</h2>
+      <ol>
+        <li><strong>Export your GoDaddy domain list as CSV</strong> &mdash; Log in &rarr; My Products &rarr; Domains &rarr; Export. This takes 2 minutes and gives us the complete picture.</li>
+        <li><strong>Share Netfirms account details</strong> &mdash; so I can inventory domains held there as well.</li>
+        <li><strong>Temporary DNS access</strong> &mdash; I'll need to update nameservers to point to Cloudflare. Once configured, your sites go live instantly.</li>
+      </ol>
+
+      <div class="highlight">
+        <p style="margin-bottom:0"><strong>Zero downtime guarantee:</strong> No existing website or email will go down during migration. We set up the new hosting first, verify everything works, then flip the DNS switch. It's seamless.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Prepared by Paul Walhus &bull; March 2026</p>
+  </div>
+
+</body>
+</html>
