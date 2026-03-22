@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Analytics 4 — REPLACE G-XXXXXXXXXX with actual Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Google Search Console — REPLACE content value after verification -->
+  <meta name="google-site-verification" content="PASTE_VERIFICATION_STRING_HERE">
+
   <title>Hot Springs AR Real Estate | Nancy &amp; Mark Bergeron | Homes for Sale in Hot Springs, Arkansas</title>
   <meta name="description" content="Find your dream home in Hot Springs, Arkansas with Nancy &amp; Mark Bergeron — The Bergeron Group at Keller Williams. 413+ homes sold. Lake Hamilton, Hot Springs Village, luxury &amp; lakefront homes.">
   <meta name="keywords" content="Hot Springs AR real estate, homes for sale Hot Springs Arkansas, Hot Springs Village homes, Lake Hamilton waterfront, lakefront homes Hot Springs, realtors Hot Springs AR, Keller Williams Hot Springs, luxury homes Hot Springs, Hot Springs AR realtor, buy home Hot Springs">
@@ -190,10 +203,12 @@
   <section class="section about" id="about">
     <div class="container">
       <div class="section-header">
-        <img src="images/logo-circle-seal.jpeg" alt="The Bergeron Group seal" class="about-seal">
         <span class="section-tag">Meet Your Realtors</span>
         <h2>Nancy &amp; Mark Bergeron</h2>
         <p class="section-intro">The top-producing real estate team in Hot Springs and Hot Springs Village, Arkansas</p>
+      </div>
+      <div style="text-align:center; margin-bottom:32px;">
+        <img src="images/nancy-mark-bergeron-portrait.webp" alt="Nancy and Mark Bergeron, REALTORS - The Bergeron Group, Hot Springs Arkansas" style="width:280px; height:280px; object-fit:cover; border-radius:50%; box-shadow: 0 8px 32px rgba(0,0,0,0.15); border: 4px solid var(--gold);">
       </div>
       <div class="about-grid">
         <div class="about-card">
@@ -209,8 +224,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
           <h3>Mark Bergeron</h3>
-          <p class="about-title">Licensed Realtor &amp; Former Certified Home Inspector</p>
-          <p>Mark's background as a <strong>certified home inspector</strong> gives The Bergeron Group an unmatched edge. He spots potential issues other agents miss, providing expert-level insight into construction quality, property condition, and long-term value. Mark protects your investment with knowledge that goes far beyond the typical real estate transaction.</p>
+          <p class="about-title">Licensed REALTOR&reg; &amp; Former Certified Home Inspector</p>
+          <p>Few real estate teams in Hot Springs offer the advantage of a licensed REALTOR&reg; with a background as a certified home inspector. Mark's experience brings a depth of insight that goes far beyond the standard buying process &mdash; adding <strong>clarity, confidence, and a more informed perspective</strong> for every client.</p>
         </div>
       </div>
       <div class="about-bottom">
@@ -247,8 +262,8 @@
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
-          <h3>Home Inspections Insight</h3>
-          <p>Mark's background as a certified home inspector means our team evaluates properties with a trained eye. We identify potential issues <strong>before they become costly surprises</strong>, protecting your investment.</p>
+          <h3>Property Expertise</h3>
+          <p>Mark's background as a certified home inspector enhances the experience by adding an additional layer of knowledge, perspective, and care. This does not replace licensed third-party inspections &mdash; it <strong>adds confidence throughout the process</strong>.</p>
           <a href="#contact" class="service-link">Learn More &rarr;</a>
         </div>
         <div class="service-card">
@@ -279,6 +294,40 @@
     </div>
   </section>
 
+  <!-- The Mark Bergeron Advantage -->
+  <section class="section mark-advantage" id="mark-advantage">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Edge</span>
+        <h2>The Mark Bergeron Advantage</h2>
+      </div>
+      <p class="section-intro" style="max-width:720px; margin: 0 auto 24px; text-align:center;">Few real estate teams offer the advantage of a licensed REALTOR&reg; with a background as a certified home inspector. Mark's expertise adds clarity and confidence across every property type.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Lake Properties</h3>
+          <p>Shoreline conditions, dock structures, and environmental factors that influence long-term value.</p>
+        </div>
+        <div class="service-card">
+          <h3>Luxury Homes</h3>
+          <p>A discerning eye for construction quality, system performance, and overall property integrity.</p>
+        </div>
+        <div class="service-card">
+          <h3>Retirement Purchases</h3>
+          <p>Greater confidence in the durability and livability of a home over time.</p>
+        </div>
+        <div class="service-card">
+          <h3>Investment Properties</h3>
+          <p>Insight into maintenance considerations and the true cost of ownership.</p>
+        </div>
+        <div class="service-card">
+          <h3>First-Time Buyers</h3>
+          <p>The ability to recognize details others may overlook, supporting smarter decisions.</p>
+        </div>
+      </div>
+      <p style="text-align:center; color: var(--gray-600); font-size: 0.9rem; margin-top: 20px;">Mark's background does not replace licensed third-party inspections. It enhances the experience by adding an additional layer of knowledge and care throughout the process.</p>
+    </div>
+  </section>
+
   <!-- Photo Divider -->
   <div class="photo-divider photo-divider-lake" role="presentation"></div>
 
@@ -292,28 +341,28 @@
       </div>
       <div class="areas-grid">
         <article class="area-card">
-          <div class="area-img area-img-hotsprings"></div>
+          <div class="area-img area-img-hotsprings" role="img" aria-label="Downtown Hot Springs Arkansas skyline at sunset with Bathhouse Row and Ouachita Mountains"></div>
           <div class="area-info">
             <h3>Hot Springs, AR</h3>
             <p>The heart of it all — historic Bathhouse Row, vibrant downtown dining, Oaklawn Racing Casino Resort, and Hot Springs National Park. Find everything from charming historic homes to modern new construction.</p>
           </div>
         </article>
         <article class="area-card">
-          <div class="area-img area-img-village"></div>
+          <div class="area-img area-img-village" role="img" aria-label="Hot Springs Village Arkansas golf course homes and gated community"></div>
           <div class="area-info">
             <h3>Hot Springs Village</h3>
             <p>America's largest gated community with 9 golf courses, 11 lakes, miles of trails, and resort-style living. Perfect for retirees, second-home buyers, and anyone seeking a peaceful, amenity-rich lifestyle.</p>
           </div>
         </article>
         <article class="area-card">
-          <div class="area-img area-img-hamilton"></div>
+          <div class="area-img area-img-hamilton" role="img" aria-label="Aerial view of Lake Hamilton bridge marina and waterfront condos in Hot Springs Arkansas"></div>
           <div class="area-info">
             <h3>Lake Hamilton</h3>
             <p>Over 200 miles of shoreline with breathtaking waterfront homes, private docks, and year-round lake living. Lake Hamilton is the crown jewel of Hot Springs' lakefront real estate.</p>
           </div>
         </article>
         <article class="area-card">
-          <div class="area-img area-img-catherine"></div>
+          <div class="area-img area-img-catherine" role="img" aria-label="Lake Catherine waterfront homes and natural scenery near Hot Springs Arkansas"></div>
           <div class="area-info">
             <h3>Lake Catherine</h3>
             <p>A quieter, more secluded lake experience with stunning natural beauty. Lake Catherine State Park and waterfront homes offer an idyllic retreat just minutes from downtown Hot Springs.</p>
@@ -383,7 +432,7 @@
         </blockquote>
         <blockquote class="testimonial-card">
           <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>"Mark's home inspection background saved us from a costly mistake. He spotted foundation issues that the seller's inspector missed completely. That alone was worth choosing The Bergeron Group."</p>
+          <p>"The Bergeron Group's knowledge and attention to detail gave us so much more confidence in our purchase. They brought a level of insight we didn't get from any other agent we talked to."</p>
           <footer>— First-Time Buyer, Hot Springs</footer>
         </blockquote>
       </div>
@@ -408,7 +457,7 @@
         </details>
         <details class="faq-item">
           <summary>What makes The Bergeron Group different from other Hot Springs realtors?</summary>
-          <p>We combine Nancy's top-producing sales expertise with Mark's certified home inspection background — a rare combination that protects buyers and maximizes value for sellers. Plus, our full-service marketing system (professional photography, digital ads, magazine exposure, custom landing pages) gives every listing maximum exposure.</p>
+          <p>We combine Nancy's top-producing sales expertise with Mark's background as a certified home inspector — a distinct advantage that adds clarity, confidence, and a more informed perspective for every client. Plus, our full-service marketing system (professional photography, digital ads, magazine exposure, custom landing pages) gives every listing maximum exposure.</p>
         </details>
         <details class="faq-item">
           <summary>Can you help me find lakefront or waterfront homes on Lake Hamilton?</summary>
@@ -465,7 +514,20 @@
             </div>
           </div>
         </div>
-        <form class="contact-form" id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Web3Forms — REPLACE with actual access key from https://web3forms.com -->
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+
+          <!-- Lead Source Tracking — each site gets its own value -->
+          <input type="hidden" name="source" value="thebergerongroup.com">
+          <input type="hidden" name="subject" value="New Lead from thebergerongroup.com">
+
+          <!-- Spam Protection (honeypot) -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+          <!-- Redirect after submission -->
+          <input type="hidden" name="redirect" value="https://www.thebergerongroup.com/#contact">
+
           <div class="form-group">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" required placeholder="John & Jane Smith">

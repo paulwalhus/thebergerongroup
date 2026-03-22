@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast Service Agreement — Paul Walhus &amp; The Bergeron Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #c8973e;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --gray-100: #f3f2ef;
+      --gray-200: #e5e3de;
+      --gray-400: #9c9a94;
+      --gray-600: #5c5a55;
+      --text: #2d2b28;
+      --radius: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 14px;
+      background: var(--white);
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--navy); }
+    h1 { font-size: 1.8rem; text-align: center; margin-bottom: 4px; }
+    h2 { font-size: 1.2rem; margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--gray-200); }
+    h3 { font-size: 1rem; margin: 20px 0 8px; }
+    p { margin-bottom: 10px; }
+    ul, ol { margin: 8px 0 14px 24px; }
+    li { margin-bottom: 4px; }
+    strong { color: var(--navy); }
+
+    .header-sub {
+      text-align: center;
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+    }
+
+    .parties {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 24px 0;
+      padding: 20px 24px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+    }
+    .parties h3 { margin-top: 0; font-size: 0.9rem; color: var(--gold); font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+    .parties p { margin-bottom: 4px; font-size: 0.9rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.9rem;
+    }
+    th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--gray-200); }
+    tr:nth-child(even) { background: var(--gray-100); }
+    .money { color: var(--navy); font-weight: 700; }
+
+    .highlight {
+      background: var(--off-white);
+      border-left: 3px solid var(--gold);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.92rem;
+    }
+
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin: 48px 0 24px;
+    }
+    .sig-block { border-top: 1px solid var(--text); padding-top: 8px; }
+    .sig-block p { font-size: 0.85rem; margin-bottom: 2px; color: var(--gray-600); }
+    .sig-line { height: 48px; }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    @media print {
+      body { padding: 32px; font-size: 12px; }
+      h1 { font-size: 1.5rem; }
+      h2 { margin-top: 24px; }
+      .sig-line { height: 60px; }
+    }
+    @media (max-width: 600px) {
+      body { padding: 24px 20px; }
+      .parties, .sig-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Podcast Service Agreement</h1>
+  <p class="header-sub">Between Paul Walhus and The Bergeron Group</p>
+
+  <div class="parties">
+    <div>
+      <h3>Service Provider</h3>
+      <p><strong>Paul Walhus</strong></p>
+      <p>Web Developer &amp; AI Consultant</p>
+      <p>walhus@gmail.com</p>
+    </div>
+    <div>
+      <h3>Client</h3>
+      <p><strong>Nancy Bergeron</strong></p>
+      <p>The Bergeron Group</p>
+      <p>Keller Williams Realty Hot Springs</p>
+      <p>801 Central Ave, Ste 30</p>
+      <p>Hot Springs, AR 71901</p>
+    </div>
+  </div>
+
+  <p><strong>Effective Date:</strong> __________________, 2026</p>
+
+  <!-- SCOPE -->
+  <h2>1. Scope of Work</h2>
+  <p>Paul Walhus ("Provider") will deliver the following podcast services to The Bergeron Group ("Client"):</p>
+
+  <h3>A. Studio Setup (One-Time)</h3>
+  <p>Provider will design, configure, and set up a professional podcast recording environment at the Client's office, using equipment already in the Client's possession where possible. Setup includes:</p>
+  <ul>
+    <li>Acoustic assessment and sound treatment of the recording space</li>
+    <li>Microphone, headphone, and audio interface configuration</li>
+    <li>Recording software installation, configuration, and template creation</li>
+    <li>Test recordings and quality assurance</li>
+    <li>Training session for Client on how to start and stop recordings</li>
+  </ul>
+
+  <h3>B. Weekly Production Services</h3>
+  <p>For each episode recorded by the Client, Provider will deliver:</p>
+  <ul>
+    <li><strong>Audio editing:</strong> Noise removal, level balancing, intro/outro, and final mix</li>
+    <li><strong>Show notes:</strong> Written summary, key takeaways, and timestamps</li>
+    <li><strong>Transcript:</strong> Full episode transcript formatted as a blog post for the Client's website network</li>
+    <li><strong>Distribution:</strong> Publishing to Spotify, Apple Podcasts, Amazon Music, and other major platforms</li>
+    <li><strong>Social media clips:</strong> 3-5 short audio or video clips per episode for social media use</li>
+    <li><strong>Website integration:</strong> Episode content published to relevant sites in the Client's website network</li>
+  </ul>
+
+  <!-- PRICING -->
+  <h2>2. Pricing &amp; Payment</h2>
+
+  <h3>One-Time Fees</h3>
+  <table>
+    <tr><th>Service</th><th>Rate</th><th>Notes</th></tr>
+    <tr>
+      <td>Studio Setup</td>
+      <td class="money">$2,500</td>
+      <td>Invoiced upon completion of studio setup and training</td>
+    </tr>
+  </table>
+
+  <h3>Monthly Production Fee</h3>
+  <table>
+    <tr><th>Service</th><th>Monthly Rate</th><th>Includes</th></tr>
+    <tr>
+      <td>Podcast Production</td>
+      <td class="money">$400/month</td>
+      <td>Up to 4 episodes per month: editing, show notes, transcript, distribution, social clips, and website integration</td>
+    </tr>
+  </table>
+
+  <div class="highlight">
+    <strong>Additional episodes</strong> beyond 4 per month will be billed at <strong>$75 per episode</strong>. This covers editing, show notes, transcript, and distribution for each additional episode.
+  </div>
+
+  <h3>Payment Terms</h3>
+  <ul>
+    <li>Studio setup is invoiced upon completion</li>
+    <li>Monthly production fee is invoiced on the 1st of each month</li>
+    <li>Payment is due within <strong>14 days</strong> of invoice date</li>
+    <li>Accepted payment methods: __________________ (check / Zelle / Venmo / other)</li>
+  </ul>
+
+  <div class="highlight">
+    <strong>Equipment costs:</strong> Any additional equipment recommended by Provider (microphones, acoustic panels, cables, etc.) is the responsibility of the Client. Provider will recommend options at multiple price points and will not purchase equipment without the Client's prior approval.
+  </div>
+
+  <!-- CLIENT RESPONSIBILITIES -->
+  <h2>3. Client Responsibilities</h2>
+  <p>To ensure consistent production, the Client agrees to:</p>
+  <ul>
+    <li><strong>Record weekly:</strong> Record one episode per week (approximately 20-45 minutes) using the studio setup provided</li>
+    <li><strong>Deliver raw audio:</strong> Send the raw recording file to Provider within 24 hours of recording</li>
+    <li><strong>Episode topics:</strong> Collaborate with Provider on a monthly content calendar to align episodes with the website network strategy</li>
+    <li><strong>Guest coordination:</strong> Schedule and confirm any guest interviews; Provider will supply interview prep questions if requested</li>
+    <li><strong>Review window:</strong> Review and approve show notes and transcript within 48 hours of delivery, or they will be published as-is</li>
+  </ul>
+
+  <!-- TIMELINE -->
+  <h2>4. Timeline</h2>
+  <table>
+    <tr><th>Milestone</th><th>Deliverable</th><th>Target</th></tr>
+    <tr>
+      <td>Week 1</td>
+      <td>Studio setup, equipment configuration, and training</td>
+      <td>Within 7 days of agreement signing</td>
+    </tr>
+    <tr>
+      <td>Week 2</td>
+      <td>First episode recorded and produced</td>
+      <td>Within 14 days of agreement signing</td>
+    </tr>
+    <tr>
+      <td>Week 3</td>
+      <td>Episode live on all podcast platforms</td>
+      <td>Within 21 days of agreement signing</td>
+    </tr>
+    <tr>
+      <td>Ongoing</td>
+      <td>Weekly episode production</td>
+      <td>Every week thereafter</td>
+    </tr>
+  </table>
+
+  <!-- TURNAROUND -->
+  <h2>5. Production Turnaround</h2>
+  <ul>
+    <li>Provider will deliver the edited episode, show notes, and transcript within <strong>3 business days</strong> of receiving the raw recording</li>
+    <li>Social media clips will be delivered within <strong>5 business days</strong> of receiving the raw recording</li>
+    <li>Episodes will be published to podcast platforms within <strong>24 hours</strong> of Client approval (or after 48-hour review window expires)</li>
+  </ul>
+
+  <!-- OWNERSHIP -->
+  <h2>6. Ownership &amp; Intellectual Property</h2>
+  <ul>
+    <li>All podcast episodes, transcripts, show notes, and derivative content are <strong>owned by the Client</strong> upon full payment</li>
+    <li>Client retains full rights to all recorded audio and may repurpose content in any way</li>
+    <li>Provider retains the right to be credited as producer in show notes and episode descriptions</li>
+    <li>Podcast platform accounts (Spotify, Apple, etc.) will be created under the Client's name and are owned by the Client</li>
+  </ul>
+
+  <!-- CONFIDENTIALITY -->
+  <h2>7. Confidentiality</h2>
+  <p>Both parties agree that production details, strategy, content calendars, and unpublished episode content are <strong>confidential</strong> and will not be shared with third parties without written consent.</p>
+
+  <!-- PAUSE & TERMINATION -->
+  <h2>8. Pause &amp; Termination</h2>
+  <ul>
+    <li>Client may <strong>pause</strong> monthly production for up to 2 months per calendar year with 14 days written notice. No monthly fees are charged during paused months.</li>
+    <li>Either party may terminate this agreement with <strong>30 days written notice</strong></li>
+    <li>Upon termination, Client will pay for all completed work through the termination date</li>
+    <li>Provider will deliver all completed files, platform credentials, and access to the Client within 14 days of termination</li>
+    <li>Studio setup fee is non-refundable once setup is complete</li>
+  </ul>
+
+  <!-- REVISIONS -->
+  <h2>9. Revisions</h2>
+  <ul>
+    <li>Each episode includes <strong>1 round of revisions</strong> to the edited audio after initial delivery</li>
+    <li>Show notes and transcript revisions are unlimited within the 48-hour review window</li>
+    <li>Additional audio revision rounds beyond the first are billed at <strong>$40/hour</strong></li>
+  </ul>
+
+  <!-- LIMITATION -->
+  <h2>10. Limitation of Liability</h2>
+  <ul>
+    <li>Provider is not responsible for podcast platform policies, algorithm changes, or download/listener counts, as these are determined by third-party platforms</li>
+    <li>Provider's total liability under this agreement shall not exceed the total fees paid by the Client in the preceding 3 months</li>
+    <li>Client is responsible for the accuracy of all statements made during recorded episodes</li>
+  </ul>
+
+  <!-- AGREEMENT -->
+  <h2>11. Agreement</h2>
+  <p>By signing below, both parties agree to the terms outlined in this Podcast Service Agreement.</p>
+
+  <div class="sig-grid">
+    <div>
+      <div class="sig-line"></div>
+      <div class="sig-block">
+        <p><strong>Paul Walhus</strong></p>
+        <p>Service Provider</p>
+        <p>Date: __________________</p>
+      </div>
+    </div>
+    <div>
+      <div class="sig-line"></div>
+      <div class="sig-block">
+        <p><strong>Nancy Bergeron</strong></p>
+        <p>The Bergeron Group</p>
+        <p>Date: __________________</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <p>This agreement may be executed electronically or in print. Both formats are equally binding.</p>
+    <p>This document constitutes the entire agreement between the parties regarding the podcast services described herein.</p>
+  </div>
+
+</body>
+</html>
