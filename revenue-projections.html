@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revenue Projections — The Bergeron Group Website Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #c8973e;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --gray-100: #f3f2ef;
+      --gray-200: #e5e3de;
+      --gray-400: #9c9a94;
+      --gray-600: #5c5a55;
+      --text: #2d2b28;
+      --green: #2a7c4f;
+      --radius: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+      background: var(--white);
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--navy); }
+    h1 { font-size: 2rem; text-align: center; margin-bottom: 4px; }
+    h2 { font-size: 1.4rem; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--gold); }
+    h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin: 8px 0 16px 24px; }
+    li { margin-bottom: 6px; }
+    strong { color: var(--navy); }
+
+    .subtitle { text-align: center; color: var(--gray-600); font-size: 1rem; margin-bottom: 40px; }
+
+    .highlight {
+      background: var(--navy); color: var(--white);
+      padding: 24px 28px; border-radius: var(--radius); margin: 24px 0;
+    }
+    .highlight strong { color: var(--gold); }
+    .highlight p { margin-bottom: 8px; }
+
+    .callout {
+      background: var(--off-white); border-left: 4px solid var(--gold);
+      padding: 20px 24px; margin: 20px 0; border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .green-box {
+      background: #f0f8f4; border-left: 4px solid var(--green);
+      padding: 20px 24px; margin: 20px 0; border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.92rem; }
+    th { background: var(--navy); color: var(--white); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--gray-200); }
+    tr:nth-child(even) { background: var(--gray-100); }
+    .money { color: var(--navy); font-weight: 700; }
+    .big-money { color: var(--green); font-weight: 700; font-size: 1.05rem; }
+
+    .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin: 24px 0; }
+    .stat-box {
+      flex: 1; min-width: 120px; background: var(--off-white);
+      border: 1px solid var(--gray-200); border-radius: var(--radius);
+      padding: 20px; text-align: center;
+    }
+    .stat-box .number { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold); display: block; }
+    .stat-box .label { font-size: 0.75rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 1px; }
+
+    .scenario {
+      border: 2px solid var(--gray-200); border-radius: var(--radius);
+      padding: 28px; margin: 20px 0;
+    }
+    .scenario-gold { border-color: var(--gold); }
+    .scenario-green { border-color: var(--green); background: #fafff8; }
+    .scenario h3 { margin-top: 0; }
+
+    .footer-note { text-align: center; font-size: 0.85rem; color: var(--gray-400); margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--gray-200); }
+
+    @media print { body { padding: 32px; font-size: 13px; } }
+    @media (max-width: 600px) { body { padding: 24px 20px; } .stat-row { flex-direction: column; } }
+  </style>
+</head>
+<body>
+
+  <h1>What This Network Can Generate</h1>
+  <p class="subtitle">Revenue projections for The Bergeron Group website network</p>
+
+  <!-- BASELINE -->
+  <h2>Your Current Numbers</h2>
+  <p>Let's start with what we know about your business today:</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <span class="number">413+</span>
+      <span class="label">Homes Sold (Career)</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">~$250K</span>
+      <span class="label">Avg Home Price</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">~$7,500</span>
+      <span class="label">Avg Commission / Side</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">7,700</span>
+      <span class="label">Leads in Database</span>
+    </div>
+  </div>
+
+  <p>Your team closed 30+ deals last year from leads you generated. At $7,500 average commission per side, that's roughly <strong>$225,000+ in commission revenue</strong> from your lead flow alone.</p>
+
+  <p>Now let's look at what happens when we add 50+ websites generating new leads you're not getting today.</p>
+
+  <!-- PEOPLE ARE SEARCHING RIGHT NOW -->
+  <h2>People Are Already Searching for This</h2>
+
+  <p>These aren't hypothetical buyers. Real people are typing these searches into Google <em>right now</em>, every single day, looking for exactly the properties you sell:</p>
+
+  <table>
+    <tr><th>What People Search</th><th>Est. Monthly Searches</th><th>Your Site That Captures This</th><th>Competition</th></tr>
+    <tr><td>"Hot Springs AR real estate"</td><td class="money">1,500 - 3,000</td><td>thebergerongroup.com (hub)</td><td>High — but your network outflanks them</td></tr>
+    <tr><td>"homes for sale Hot Springs Arkansas"</td><td class="money">1,200 - 2,500</td><td>realestatehotsprings.com</td><td>High — you already own this domain</td></tr>
+    <tr><td>"Hot Springs Village homes for sale"</td><td class="money">800 - 1,500</td><td>hsvhomesforsale.com</td><td>Moderate — RE/MAX dominates, but beatable</td></tr>
+    <tr><td>"Lake Hamilton homes for sale"</td><td class="money">400 - 800</td><td>lakehamiltonhomesforsale.com</td><td>Low-Moderate — you already own this domain</td></tr>
+    <tr><td>"retire to Hot Springs Arkansas"</td><td class="money">200 - 500</td><td>retirehotsprings.com</td><td>Very Low — almost nobody targets this</td></tr>
+    <tr><td>"Arkansas hunting land for sale"</td><td class="money">600 - 1,200</td><td>arkansashuntingland.com</td><td>Low — land sites are thin and outdated</td></tr>
+    <tr><td>"Hot Springs investment property"</td><td class="money">150 - 400</td><td>hotspringsinvestments.com</td><td>Very Low — no dedicated sites exist</td></tr>
+    <tr><td>"Hot Springs fixer upper"</td><td class="money">100 - 300</td><td>hotspringsfixerupper.com</td><td>Zero — nobody targets this at all</td></tr>
+    <tr><td>"owner finance Hot Springs"</td><td class="money">100 - 250</td><td>ownerfinancehotsprings.com</td><td>Zero — completely wide open</td></tr>
+    <tr><td>"Hot Springs luxury homes"</td><td class="money">150 - 400</td><td>hotspringsluxuryhomes.com</td><td>Low — no dedicated luxury site exists</td></tr>
+    <tr><td>"RV park for sale Arkansas"</td><td class="money">200 - 500</td><td>hotspringsrvpark.com</td><td>Very Low — niche commercial, no local sites</td></tr>
+    <tr><td>"Hot Springs Airbnb investment"</td><td class="money">100 - 300</td><td>hotspringsairbnb.com</td><td>Zero — nobody is targeting this</td></tr>
+  </table>
+
+  <div class="highlight">
+    <p><strong>Add it up:</strong> These 12 example searches alone represent an estimated <strong>5,500 - 12,000 searches per month</strong> — and this is just a fraction of the 196 domains we've identified. Even capturing 2-3% of these searches as leads gives you dozens of new prospects every month that your competitors never see.</p>
+    <p style="margin-top:8px;">Notice the competition column. The broad searches like "Hot Springs real estate" are competitive — but the niche searches like "owner finance Hot Springs" and "Hot Springs fixer upper" have <strong>zero competition</strong>. That's where your niche sites win immediately.</p>
+  </div>
+
+  <!-- THE MATH -->
+  <h2>How the Math Works</h2>
+
+  <p>Every niche website targets buyers who are <em>already searching for exactly what you sell</em>. When someone Googles "Lake Hamilton homes for sale" or "retire to Hot Springs" and lands on your site, that's a <strong>high-intent lead</strong> — not a cold call, not a random click. They came looking for you.</p>
+
+  <p>Here's the conversion math we use to project revenue:</p>
+
+  <table>
+    <tr><th>Step</th><th>Metric</th><th>Industry Benchmark</th></tr>
+    <tr><td>Website visitors</td><td>Unique visitors per site per month</td><td>Varies by niche — 50 to 500+</td></tr>
+    <tr><td>Visitor &rarr; Lead</td><td>Contact form submission rate</td><td>2-5% for real estate niche sites</td></tr>
+    <tr><td>Lead &rarr; Client</td><td>Lead-to-close conversion rate</td><td>3-5% for online real estate leads</td></tr>
+    <tr><td>Client &rarr; Commission</td><td>Average commission per side</td><td>$7,500 (based on $250K avg price)</td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>Why niche sites convert better than general sites:</strong> Someone searching "Hot Springs fixer upper" has a very specific intent. They're not casually browsing — they're actively looking for that exact type of property. Niche sites convert at 2-3x the rate of general real estate sites because the visitor and the content are a perfect match.
+  </div>
+
+  <!-- SCENARIOS -->
+  <h2>Revenue Scenarios</h2>
+  <p>These projections show <strong>new revenue on top of your existing business</strong>. Nothing is taken away from what you're already doing — this is all additive.</p>
+
+  <!-- CONSERVATIVE -->
+  <div class="scenario">
+    <h3>Conservative — "We're Just Getting Started"</h3>
+    <p><em>50 sites, modest traffic, things are still ramping up</em></p>
+    <table>
+      <tr><th>Metric</th><th>Numbers</th></tr>
+      <tr><td>Live websites</td><td>50</td></tr>
+      <tr><td>Avg leads per site per month</td><td>0.5 (1 lead every 2 months per site)</td></tr>
+      <tr><td>Total new leads per month</td><td>25</td></tr>
+      <tr><td>Total new leads per year</td><td>300</td></tr>
+      <tr><td>Lead-to-close rate</td><td>5%</td></tr>
+      <tr><td>Closed deals per year</td><td class="money">15</td></tr>
+      <tr><td>Avg commission per deal</td><td>$7,500</td></tr>
+      <tr><td><strong>New annual revenue</strong></td><td class="big-money">$112,500</td></tr>
+    </table>
+    <p>Even in the most conservative scenario — half a lead per site per month — the network generates <strong>$112,500 in new annual revenue</strong>. That's 15 extra deals your team wouldn't have gotten otherwise.</p>
+  </div>
+
+  <!-- MODERATE -->
+  <div class="scenario scenario-gold">
+    <h3>Moderate — "The Network Is Working"</h3>
+    <p><em>50 sites, solid traffic, Google authority is established</em></p>
+    <table>
+      <tr><th>Metric</th><th>Numbers</th></tr>
+      <tr><td>Live websites</td><td>50</td></tr>
+      <tr><td>Avg leads per site per month</td><td>1</td></tr>
+      <tr><td>Total new leads per month</td><td>50</td></tr>
+      <tr><td>Total new leads per year</td><td>600</td></tr>
+      <tr><td>Lead-to-close rate</td><td>5%</td></tr>
+      <tr><td>Closed deals per year</td><td class="money">30</td></tr>
+      <tr><td>Avg commission per deal</td><td>$7,500</td></tr>
+      <tr><td><strong>New annual revenue</strong></td><td class="big-money">$225,000</td></tr>
+    </table>
+    <p>At one lead per site per month, the network <strong>doubles your team's current lead-generated deal flow</strong>. 30 new deals at $7,500 each = $225,000 in new revenue. This is where you start thinking about adding agents.</p>
+  </div>
+
+  <!-- AGGRESSIVE -->
+  <div class="scenario scenario-green">
+    <h3>Aggressive — "We're Dominating"</h3>
+    <p><em>50 sites with strong rankings, some sites producing 3-5 leads/month, content engine running</em></p>
+    <table>
+      <tr><th>Metric</th><th>Numbers</th></tr>
+      <tr><td>Live websites</td><td>50</td></tr>
+      <tr><td>Avg leads per site per month</td><td>2</td></tr>
+      <tr><td>Total new leads per month</td><td>100</td></tr>
+      <tr><td>Total new leads per year</td><td>1,200</td></tr>
+      <tr><td>Lead-to-close rate</td><td>5%</td></tr>
+      <tr><td>Closed deals per year</td><td class="money">60</td></tr>
+      <tr><td>Avg commission per deal</td><td>$7,500</td></tr>
+      <tr><td><strong>New annual revenue</strong></td><td class="big-money">$450,000</td></tr>
+    </table>
+    <p>Two leads per site per month is very achievable for established niche sites. At this level, your website network alone is generating <strong>$450,000 in annual revenue</strong> — more than most entire real estate teams earn. This is where you're hiring agents just to handle the volume.</p>
+  </div>
+
+  <!-- BEYOND 50 -->
+  <div class="scenario scenario-green">
+    <h3>The Full Steamroller — 100+ Sites</h3>
+    <p><em>We go beyond 50, covering every micro-niche, every neighborhood, every property type in Arkansas</em></p>
+    <table>
+      <tr><th>Metric</th><th>Numbers</th></tr>
+      <tr><td>Live websites</td><td>100+</td></tr>
+      <tr><td>Avg leads per site per month</td><td>1.5</td></tr>
+      <tr><td>Total new leads per month</td><td>150+</td></tr>
+      <tr><td>Total new leads per year</td><td>1,800+</td></tr>
+      <tr><td>Lead-to-close rate</td><td>5%</td></tr>
+      <tr><td>Closed deals per year</td><td class="money">90+</td></tr>
+      <tr><td>Avg commission per deal</td><td>$7,500</td></tr>
+      <tr><td><strong>New annual revenue</strong></td><td class="big-money">$675,000+</td></tr>
+    </table>
+    <p>At 100+ sites, you're not just the top agent in Hot Springs. You're generating nearly <strong>$700,000 in new annual revenue from organic leads alone</strong> — no ad spend, no CINC fees, no paying for clicks. And the sites keep getting stronger every month.</p>
+  </div>
+
+  <!-- COMPARISON -->
+  <h2>What You're Investing vs. What You're Getting</h2>
+
+  <table>
+    <tr><th>Scenario</th><th>Annual Build Cost<br>(one-time)</th><th>Annual Domain Mgmt</th><th>Total Annual Cost</th><th>New Annual Revenue</th><th>ROI</th></tr>
+    <tr>
+      <td>Conservative (50 sites)</td>
+      <td>$21,000</td>
+      <td>$2,400</td>
+      <td class="money">$23,400</td>
+      <td class="big-money">$112,500</td>
+      <td class="big-money">4.8x</td>
+    </tr>
+    <tr>
+      <td>Moderate (50 sites)</td>
+      <td>$21,000</td>
+      <td>$2,400</td>
+      <td class="money">$23,400</td>
+      <td class="big-money">$225,000</td>
+      <td class="big-money">9.6x</td>
+    </tr>
+    <tr>
+      <td>Aggressive (50 sites)</td>
+      <td>$21,000</td>
+      <td>$2,400</td>
+      <td class="money">$23,400</td>
+      <td class="big-money">$450,000</td>
+      <td class="big-money">19.2x</td>
+    </tr>
+    <tr>
+      <td>Full Steamroller (100+)</td>
+      <td>$42,000</td>
+      <td>$4,800</td>
+      <td class="money">$46,800</td>
+      <td class="big-money">$675,000+</td>
+      <td class="big-money">14.4x</td>
+    </tr>
+  </table>
+
+  <div class="highlight">
+    <p><strong>Key insight:</strong> The build cost is a one-time investment. You pay $420 to build a site once — and it generates leads for <em>years</em>. Year 2 costs are just domain management ($2,400-$4,800/year) while the revenue keeps flowing. By year 2, even the conservative scenario delivers a <strong>47x return</strong> on your ongoing costs.</p>
+  </div>
+
+  <!-- CINC COMPARISON -->
+  <h2>What You're Paying Now vs. What You'd Pay Here</h2>
+
+  <p>Nancy, you're already paying for lead generation through CINC. Let's put the numbers side by side:</p>
+
+  <table>
+    <tr><th></th><th>CINC (What You Pay Now)</th><th>Website Network (What We're Building)</th></tr>
+    <tr><td><strong>Monthly cost</strong></td><td class="money">$899 - $1,299/month</td><td class="money">$4/month per site ($200/month at 50 sites)</td></tr>
+    <tr><td><strong>Annual cost</strong></td><td class="money">$10,788 - $15,588/year + ad spend</td><td class="money">$2,400/year (ongoing) + one-time build cost</td></tr>
+    <tr><td><strong>Ad spend on top</strong></td><td class="money">$7,000+/year minimum</td><td class="money">$0 — organic traffic only</td></tr>
+    <tr><td><strong>Total annual cost</strong></td><td class="money">$17,000 - $23,000+/year</td><td class="money">$2,400/year (after sites are built)</td></tr>
+    <tr><td><strong>What you own</strong></td><td style="color:var(--red);">Nothing. Stop paying &rarr; it all disappears.</td><td class="big-money">Everything. Every site, every domain, forever.</td></tr>
+    <tr><td><strong>Leads belong to</strong></td><td>Stored in CINC's system</td><td>Sent directly to YOUR email</td></tr>
+    <tr><td><strong>If you cancel</strong></td><td style="color:var(--red);">Website gone. Leads inaccessible. Starts over.</td><td class="big-money">Sites still live. Still ranking. Still generating leads.</td></tr>
+    <tr><td><strong>MLS integration</strong></td><td>Yes — included</td><td>Not yet — this is Phase 2 (IDX integration)</td></tr>
+    <tr><td><strong>Niche market coverage</strong></td><td>One general site</td><td>50+ niche sites covering every market</td></tr>
+  </table>
+
+  <div class="highlight">
+    <p><strong>The ownership question:</strong> Nancy, how many years have you been paying CINC? At $1,000-$1,500/month, that's $12,000-$18,000 per year. Over 3 years, that's $36,000-$54,000 spent — and <strong>you own nothing from it</strong>. The day you stop paying, it all vanishes.</p>
+    <p style="margin-top:8px;">Every dollar you invest in the website network builds something <strong>you own permanently</strong>. The sites keep working whether you're paying for new builds or not. Three years from now, your 50+ sites will still be ranking, still generating leads, still feeding your team — and your only ongoing cost is $200/month for domain management.</p>
+    <p style="margin-top:8px;"><strong>This isn't an expense. It's equity.</strong></p>
+  </div>
+
+  <div class="callout">
+    <strong>To be clear:</strong> I'm not saying cancel CINC right now. CINC has MLS integration that we don't have yet, and it's generating leads today. We run the website network alongside CINC. But as the organic leads grow and we explore IDX integration in Phase 2, you'll be in a position to decide when — and if — you still need them.
+  </div>
+
+  <!-- THE COMPOUNDING EFFECT -->
+  <h2>The Compounding Effect</h2>
+
+  <p>These numbers actually get <em>better</em> over time, not worse. Here's why:</p>
+
+  <table>
+    <tr><th>Year</th><th>What's Happening</th><th>Impact on Revenue</th></tr>
+    <tr>
+      <td><strong>Year 1</strong></td>
+      <td>Sites go live, Google starts indexing, authority begins building</td>
+      <td>Conservative scenario — leads are ramping up</td>
+    </tr>
+    <tr>
+      <td><strong>Year 2</strong></td>
+      <td>Sites have 12+ months of age, rankings solidify, cross-links are mature</td>
+      <td>Moderate scenario — steady lead flow, sites climbing in rankings</td>
+    </tr>
+    <tr>
+      <td><strong>Year 3+</strong></td>
+      <td>Established domain authority, content library is massive, competitors can't catch up</td>
+      <td>Aggressive scenario — sites are ranking page 1 for high-value keywords</td>
+    </tr>
+  </table>
+
+  <div class="callout">
+    <strong>The sites never stop working.</strong> Unlike paid ads that stop the moment you stop paying, these websites are permanent assets. A site you build today will still be generating leads in 2029, 2030, and beyond — with no additional build cost. The only ongoing cost is $4/month for domain management.
+  </div>
+
+  <!-- QUARTER BY QUARTER -->
+  <h2>What the First Year Actually Looks Like</h2>
+
+  <p>The scenarios above show annual totals, but let's be realistic about the ramp-up. SEO doesn't happen overnight — it builds. Here's what to expect quarter by quarter:</p>
+
+  <table>
+    <tr><th>Quarter</th><th>Sites Live</th><th>What's Happening</th><th>Est. Leads</th><th>Est. Deals</th><th>Est. Revenue</th></tr>
+    <tr>
+      <td><strong>Q2 2026</strong><br>(Apr-Jun)</td>
+      <td>8-21</td>
+      <td>Sites launching, Google indexing, early traffic from low-competition niches</td>
+      <td>10-20</td>
+      <td>0-1</td>
+      <td>$0 - $7,500</td>
+    </tr>
+    <tr>
+      <td><strong>Q3 2026</strong><br>(Jul-Sep)</td>
+      <td>21-41</td>
+      <td>Rankings climbing, cross-links maturing, niche sites starting to rank page 1-2</td>
+      <td>30-60</td>
+      <td>1-3</td>
+      <td>$7,500 - $22,500</td>
+    </tr>
+    <tr>
+      <td><strong>Q4 2026</strong><br>(Oct-Dec)</td>
+      <td>41-50+</td>
+      <td>Full network live, authority compounding, consistent lead flow established</td>
+      <td>50-100</td>
+      <td>2-5</td>
+      <td>$15,000 - $37,500</td>
+    </tr>
+    <tr>
+      <td><strong>Q1 2027</strong><br>(Jan-Mar)</td>
+      <td>50+</td>
+      <td>Sites have 6-12 months of age, rankings solidifying, content engine running</td>
+      <td>60-120</td>
+      <td>3-6</td>
+      <td>$22,500 - $45,000</td>
+    </tr>
+  </table>
+
+  <div class="callout">
+    <strong>Setting honest expectations:</strong> Q2 will be slow. Google needs time to index and rank new sites. You might see your first lead in month 2 or 3. By Q3, things start moving. By Q4, the flywheel is spinning. By year 2, you're in the moderate-to-aggressive scenario and wondering how you ever ran the business without this. <strong>The agents who quit in month 2 because "it's not working yet" are the ones who lose. The ones who stay the course win everything.</strong>
+  </div>
+
+  <!-- ONE SITE HITS BIG -->
+  <h2>What Happens When ONE Site Hits Big</h2>
+
+  <p>The projections above average across 50 sites. But that's not how it really works. In reality, a few sites will outperform dramatically — and one breakout hit can change everything.</p>
+
+  <div class="scenario scenario-green">
+    <h3>Imagine: arkansashuntingland.com Ranks #1</h3>
+    <p>There are an estimated 600-1,200 searches per month for "Arkansas hunting land" — and right now, nobody in Hot Springs has a dedicated site targeting this. The existing results are generic land listing portals with no local expertise.</p>
+    <p>If arkansashuntingland.com ranks in the top 3 on Google:</p>
+    <table>
+      <tr><th>Metric</th><th>Numbers</th></tr>
+      <tr><td>Monthly searches</td><td>800 (mid-estimate)</td></tr>
+      <tr><td>Click-through rate (top 3 result)</td><td>15-25%</td></tr>
+      <tr><td>Monthly visitors to YOUR site</td><td>120-200</td></tr>
+      <tr><td>Lead conversion rate</td><td>3%</td></tr>
+      <tr><td>Leads per month from this ONE site</td><td class="money">4-6</td></tr>
+      <tr><td>Leads per year</td><td class="money">48-72</td></tr>
+      <tr><td>Deals per year (5% close rate)</td><td class="money">2-4</td></tr>
+      <tr><td>Avg hunting land deal</td><td>$300K - $500K</td></tr>
+      <tr><td>Commission per deal</td><td>$9,000 - $15,000</td></tr>
+      <tr><td><strong>Annual revenue from ONE site</strong></td><td class="big-money">$18,000 - $60,000</td></tr>
+    </table>
+    <p><strong>One site. One niche. $18,000-$60,000 per year.</strong> That single site pays for the entire 50-site network build — and you have 49 other sites also producing.</p>
+  </div>
+
+  <p>Now imagine the same thing happening with lakehamiltonhomesforsale.com (higher prices, bigger commissions), or hotspringsrvpark.com (commercial deals at $1M+), or hotspringsluxuryhomes.com (your elite clients). <strong>You don't need all 50 sites to be home runs. You just need a few to break through — and the rest pay for themselves with steady singles and doubles.</strong></p>
+
+  <!-- LUXURY UPSIDE -->
+  <h2>The Luxury &amp; Land Upside</h2>
+
+  <p>The $7,500 average commission is based on a $250,000 average home price. But several of your niche sites target <strong>much higher-value transactions</strong>:</p>
+
+  <table>
+    <tr><th>Niche</th><th>Typical Price Range</th><th>Commission Per Side</th></tr>
+    <tr><td>Lake Hamilton waterfront</td><td>$400K - $1.5M</td><td class="money">$12,000 - $45,000</td></tr>
+    <tr><td>Luxury estates</td><td>$500K - $2M+</td><td class="money">$15,000 - $60,000</td></tr>
+    <tr><td>Horse ranches / equestrian</td><td>$300K - $1M+</td><td class="money">$9,000 - $30,000</td></tr>
+    <tr><td>Commercial / business sales</td><td>$200K - $2M+</td><td class="money">$6,000 - $60,000+</td></tr>
+    <tr><td>Hunting land / timber (100+ acres)</td><td>$200K - $1M+</td><td class="money">$6,000 - $30,000</td></tr>
+    <tr><td>RV parks / campgrounds</td><td>$500K - $3M+</td><td class="money">$15,000 - $90,000</td></tr>
+    <tr><td>B&amp;Bs / wedding venues</td><td>$400K - $2M+</td><td class="money">$12,000 - $60,000</td></tr>
+  </table>
+
+  <div class="highlight">
+    <p><strong>One lakefront estate sale at $1.2M = $36,000 commission.</strong> One RV park sale at $2M = $60,000 commission. These are the niche markets where a single deal from a single website pays for the <em>entire 50-site network build</em> — and then some. The projections above use $7,500 average. The real numbers could be dramatically higher.</p>
+  </div>
+
+  <!-- WHAT THIS MEANS FOR THE TEAM -->
+  <h2>What This Means for Your Team</h2>
+
+  <p>More leads means you need more agents to handle them. That's a good problem to have.</p>
+
+  <table>
+    <tr><th>Scenario</th><th>New Leads/Month</th><th>New Deals/Year</th><th>Agents Needed to Handle</th></tr>
+    <tr><td>Conservative</td><td>25</td><td>15</td><td>Current team can handle this</td></tr>
+    <tr><td>Moderate</td><td>50</td><td>30</td><td>1-2 additional agents</td></tr>
+    <tr><td>Aggressive</td><td>100</td><td>60</td><td>3-4 additional agents</td></tr>
+    <tr><td>Full Steamroller</td><td>150+</td><td>90+</td><td>5-6+ agents — you're running a large team</td></tr>
+  </table>
+
+  <p>This is how you get to where you told me you want to be: <strong>the business runs itself, your agents are fed, and you handle only the elite clients you choose</strong>. The website network is the engine that feeds everyone.</p>
+
+  <!-- WHY THIS KEEPS GETTING BETTER -->
+  <h2>Why This Keeps Getting Better</h2>
+
+  <p>Nancy, the projections on this page are based on what's possible today. But the technology behind what I do is advancing faster than at any point in history — and I'm not watching from the sidelines. I'm in the middle of it.</p>
+
+  <p>I work with <strong>advanced AI tools</strong> that allow me to build, optimize, and manage websites at a level that traditional web developers simply can't match. These tools are evolving every month, which means your sites get better, faster, and smarter over time — without costing you more.</p>
+
+  <div class="callout">
+    <strong>What this means for you:</strong> The sites I build today will be good. The sites I build in six months will be better. And every site I've already built gets improved as new capabilities become available. You're not buying a static product — you're buying into a platform that keeps getting more powerful.
+  </div>
+
+  <p>And I don't work alone. I'm backed by a <strong>large team of AI, media, and technology professionals</strong> who meet online daily to share expertise, test new tools, and push each other forward. This group has been running every single day since 2020 and includes some of the sharpest minds in AI, digital marketing, video production, and web technology.</p>
+
+  <p>When a breakthrough happens in AI or digital marketing — and they're happening weekly right now — I hear about it the same day from people who are already using it. That means your website network benefits from capabilities your competitors won't even know about for months.</p>
+
+  <div class="highlight">
+    <p><strong>What your competitors have:</strong> A web developer who checks in once a month. Maybe an IT person who dabbles in websites. They hear about new technology when it shows up in the news.</p>
+    <p><strong>What you have:</strong> A dedicated technology partner backed by a large team of AI professionals who are meeting online around the clock, sharing methods and techniques, and bringing every advantage directly to your business.</p>
+    <p style="margin-top:12px;">That gap between you and your competitors? <strong>It's going to widen every month.</strong></p>
+  </div>
+
+  <!-- SOMETHING TO THINK ABOUT DOWN THE ROAD -->
+  <h2>Something to Think About Down the Road</h2>
+
+  <p>Nancy, this isn't part of our agreement right now — and it doesn't need to be. But I want to plant a seed for something we can revisit once the sites are live and producing results.</p>
+
+  <p>Right now, the deal is simple: I build your sites, you pay per site, done. That works. But here's what I've been thinking about for the long term.</p>
+
+  <h3>What Keeps Me Up at Night Working on Your Sites</h3>
+
+  <p>I'll be honest with you. Once your sites are built and delivered, I've been paid. There's not a strong financial reason for me to keep obsessing over whether lakehamiltonhomesforsale.com moves from page 3 to page 1 on Google, or whether the contact form on retirehotsprings.com is converting at 2% or 5%. I mean, I care — but I want to <em>really</em> care. I want your success to keep me up at night.</p>
+
+  <p>That's why, down the road — once we can both see the leads flowing and the tracking data is solid — I'd love to explore a <strong>small performance marketing bonus</strong> that keeps me invested in making every site better, month after month, year after year.</p>
+
+  <div class="callout">
+    <strong>What this might look like (just as a conversation starter):</strong> A flat marketing services bonus — something like $400-600 — paid only when a tracked lead from one of my sites results in a closed deal. Not a percentage, not a commission share. A flat marketing fee for a measurable result, the same kind of arrangement companies like Zillow, CINC, and HomeLight use every day. It's a standard marketing services model.
+  </div>
+
+  <h3>Why This Would Be Good for You</h3>
+  <ul>
+    <li><strong>You'd never pay it unless you made money first.</strong> No closed deal from my site = no bonus. Zero risk.</li>
+    <li><strong>It keeps me invested for the long haul.</strong> I'd be constantly optimizing your sites, adding content, improving rankings, testing what works — not because you asked me to, but because every lead that converts means we both win.</li>
+    <li><strong>It's a fraction of what you pay elsewhere.</strong> CINC charges a monthly subscription. Zillow charges per lead. OpCity and HomeLight take 25-35% of your commission. A flat $400-600 on a $7,500+ commission is 5-8% — and only when it works.</li>
+    <li><strong>It only counts leads we can prove came from my sites.</strong> That's what the source tracking is for. If the lead didn't come from a site I built, it doesn't apply.</li>
+  </ul>
+
+  <h3>No Pressure — Just Planting the Seed</h3>
+
+  <p>I'm not asking you to agree to this today or anytime soon. Let's get the sites built, get them live, see the leads come in, and <em>then</em> have this conversation with real data in front of us. If the sites generate 10 leads in the first quarter, we'll know. If they generate 50, we'll really know. At that point, we can talk about what makes sense for both of us.</p>
+
+  <div class="green-box">
+    <p><strong>The bottom line:</strong> I want to build something where we both win for a long time — not just during the build phase. The best partnerships are the ones where both sides have skin in the game. When your sites succeed, I want to feel that too. That's what makes me your most motivated marketing partner instead of just another vendor.</p>
+  </div>
+
+  <!-- THE BIG PICTURE -->
+  <h2>The Big Picture</h2>
+
+  <p>Nancy, let's zoom out. Here's where The Bergeron Group is headed:</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <span class="number">$112K</span>
+      <span class="label">Conservative (Year 1)</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">$225K</span>
+      <span class="label">Moderate (Year 2)</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">$450K</span>
+      <span class="label">Aggressive (Year 3)</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">$675K+</span>
+      <span class="label">Full Steamroller</span>
+    </div>
+  </div>
+
+  <p>And remember — this is <strong>on top of</strong> your existing business, your CINC leads, your referrals, your repeat clients, your sphere. The website network doesn't replace anything. It adds an entirely new revenue stream that compounds every year and feeds your entire team.</p>
+
+  <p>You said you want to get to where the business manages itself and you only handle the elite clients. Look at the aggressive scenario: 60 new deals a year flowing to your agents from the website network, while you cherry-pick the $750K lakefront and the $1.5M commercial deals for yourself.</p>
+
+  <p><strong>That's the future we're building. Starting today.</strong></p>
+
+  <div class="footer-note">
+    <p>Prepared by Paul Walhus &bull; March 23, 2026</p>
+    <p style="margin-top:4px; font-size: 0.75rem;">Revenue projections are estimates based on industry benchmarks and are not guaranteed. Actual results depend on market conditions, site performance, and lead conversion.</p>
+  </div>
+
+</body>
+</html>

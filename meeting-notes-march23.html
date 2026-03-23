@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bergeron Group — Website Network Briefing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #c8973e;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --gray-100: #f3f2ef;
+      --gray-200: #e5e3de;
+      --gray-400: #9c9a94;
+      --gray-600: #5c5a55;
+      --text: #2d2b28;
+      --green: #2a7c4f;
+      --red: #c0392b;
+      --radius: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 15px;
+      background: var(--white);
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--navy); }
+    h1 { font-size: 2rem; text-align: center; margin-bottom: 4px; }
+    h2 { font-size: 1.4rem; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--gold); }
+    h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin: 8px 0 16px 24px; }
+    li { margin-bottom: 6px; }
+    strong { color: var(--navy); }
+
+    .subtitle {
+      text-align: center;
+      color: var(--gray-600);
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    .highlight {
+      background: var(--navy);
+      color: var(--white);
+      padding: 24px 28px;
+      border-radius: var(--radius);
+      margin: 24px 0;
+    }
+    .highlight strong { color: var(--gold); }
+    .highlight p { margin-bottom: 8px; }
+
+    .callout {
+      background: var(--off-white);
+      border-left: 4px solid var(--gold);
+      padding: 20px 24px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .green-box {
+      background: #f0f8f4;
+      border-left: 4px solid var(--green);
+      padding: 20px 24px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.92rem;
+    }
+    th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--gray-200); }
+    tr:nth-child(even) { background: var(--gray-100); }
+
+    .stat-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 24px 0;
+    }
+    .stat-box {
+      flex: 1;
+      min-width: 140px;
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-box .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-box .label {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    @media print {
+      body { padding: 32px; font-size: 13px; }
+      .highlight { background: var(--gray-100) !important; color: var(--text) !important; border: 2px solid var(--navy); }
+      .highlight strong { color: var(--navy) !important; }
+    }
+    @media (max-width: 600px) {
+      body { padding: 24px 20px; }
+      .stat-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>The Bergeron Group Website Network</h1>
+  <p class="subtitle">Briefing for Nancy &amp; Mark Bergeron &bull; March 23, 2026</p>
+
+  <!-- THE MOMENT -->
+  <h2>The Perfect Storm</h2>
+
+  <p>Nancy, you told me you just got The Bergeron Group into the MLS as your own agency <strong>a week ago</strong>. You haven't done the chamber ribbon cutting yet. You haven't put the skins on the windows yet. You're still training new agents. You're building the kiosk. The coffee house opens in May.</p>
+
+  <p>Everything is launching at once — and that's not a problem, <strong>that's an advantage</strong>. Because we're not retrofitting an old brand. We're building The Bergeron Group's entire digital empire from the ground up, right alongside every other piece of the puzzle.</p>
+
+  <p>You said you want to sneak up on the enemy and hit them with shock and awe. That's exactly what this is.</p>
+
+  <div class="highlight">
+    <p><strong>What's already built and ready for you to see today:</strong></p>
+    <ul style="margin:12px 0 0 20px; color: rgba(255,255,255,0.85);">
+      <li>thebergerongroup.com — your anchor hub site with your real Hot Springs and Lake Hamilton photos</li>
+      <li>The Mark Bergeron Advantage — written with your approved language, zero liability</li>
+      <li>Lead tracking system — every form tells you which site the lead came from</li>
+      <li>Keller Williams branding — fully compliant on every page, every site</li>
+      <li>196 niche domains researched across 20+ market segments</li>
+      <li>Complete rollout strategy and phased execution plan</li>
+    </ul>
+  </div>
+
+  <!-- WHAT THIS SOLVES FOR YOU -->
+  <h2>What This Solves for You</h2>
+
+  <p>Nancy, you work until 8 o'clock every night. Mark checks out at five to handle the house, the dogs, the cooking. You love technology but you don't have time for it. You're training new agents, managing your team, fielding client calls, writing offers, doing inspections, handling counter-offers — and somewhere in there you're supposed to also market yourself and grow the business.</p>
+
+  <p><strong>This network solves that problem.</strong> Once these sites are live, they work for you 24 hours a day, 7 days a week. No ad spend. No posting to social media. No watching AI training videos you don't have time for. The sites generate leads while you sleep, while you're showing houses, while you're closing deals.</p>
+
+  <div class="callout">
+    <strong>Your exact words:</strong> <em>"I'm hoping that eventually it just manages itself and I can get my agents fed and I can just handle only the elite clients that I want to keep."</em> — That's exactly what this builds toward.
+  </div>
+
+  <!-- FEEDING YOUR TEAM -->
+  <h2>Feeding Your Team</h2>
+
+  <p>You have three buyer's agents right now, two or three more coming. Your agents sold 30+ houses last year — from leads you generated and handed them. That model works, but it depends entirely on <em>you</em> generating and handing off every single lead.</p>
+
+  <p>With 50+ niche websites generating leads, <strong>the network feeds the team</strong>. Leads come in tagged by source — you see "this lead came from hotspringsfixerupper.com, they're looking for a flip under $200K" — and you route it to the right agent. You don't have to generate every lead yourself anymore. The steamroller does it for you.</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <span class="number">50+</span>
+      <span class="label">Websites Generating Leads</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">20+</span>
+      <span class="label">Niche Markets</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">24/7</span>
+      <span class="label">Working for You</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">$0</span>
+      <span class="label">Monthly Ad Spend</span>
+    </div>
+  </div>
+
+  <p>And here's the thing you said that matters most: you want to bring on mega agents — top producers who want a home base, a transaction coordinator, a marketing team. When you can show a prospective agent <strong>"we have 50+ websites generating leads across every niche market in Hot Springs"</strong> — that's a recruiting pitch nobody else in town can make.</p>
+
+  <!-- NICHE MARKETS -->
+  <h2>Markets Nobody Else Is Touching</h2>
+
+  <p>Right now your leads come from traditional residential — people searching for houses. These websites open up <strong>entirely new revenue streams</strong> that almost nobody in Hot Springs is competing for online:</p>
+
+  <table>
+    <tr><th>Niche Market</th><th>Why It Matters</th><th>Example Domains</th></tr>
+    <tr><td><strong>Lake &amp; Waterfront</strong></td><td>Premium properties, highest commissions</td><td>lakehamiltonhomesforsale.com, lakecatherinehomes.com</td></tr>
+    <tr><td><strong>Retirement &amp; 55+</strong></td><td>Massive migration to Hot Springs</td><td>retirehotsprings.com, hotsprings55plus.com</td></tr>
+    <tr><td><strong>Investment &amp; Airbnb</strong></td><td>Out-of-state investors search online first</td><td>hotspringsinvestments.com, hotspringsairbnb.com</td></tr>
+    <tr><td><strong>Hunting &amp; Rec Land</strong></td><td>High-value land deals, Texas/OK buyers</td><td>arkansashuntingland.com, ouachitalandforsale.com</td></tr>
+    <tr><td><strong>Fix &amp; Flip</strong></td><td>HGTV-inspired buyers with cash</td><td>hotspringsfixerupper.com, fliphotsprings.com</td></tr>
+    <tr><td><strong>Owner Finance</strong></td><td>Underserved, zero competition online</td><td>ownerfinancehotsprings.com</td></tr>
+    <tr><td><strong>RV Parks &amp; Campgrounds</strong></td><td>Booming post-COVID niche</td><td>hotspringsrvpark.com, hotspringscampground.com</td></tr>
+    <tr><td><strong>Equestrian &amp; Ranch</strong></td><td>Oaklawn culture, high-dollar properties</td><td>hotspringsequestrian.com, arkansashorseranch.com</td></tr>
+    <tr><td><strong>B&amp;Bs &amp; Venues</strong></td><td>Tourism market, lifestyle buyers</td><td>hotspringsbandb.com, hotspringsweddingvenue.com</td></tr>
+    <tr><td><strong>Commercial &amp; Business</strong></td><td>Restaurants, car washes, laundromats</td><td>hotspringsbusinessforsale.com</td></tr>
+    <tr><td><strong>Barndominiums &amp; Tiny Homes</strong></td><td>Massive national trend</td><td>hotspringsbarndominiums.com, hotspringstinyhomes.com</td></tr>
+    <tr><td><strong>Golf &amp; Country Club</strong></td><td>HSV's 9 courses = built-in demand</td><td>hotspringsgolfhomes.com, hsvgolfhomes.com</td></tr>
+    <tr><td><strong>New Construction</strong></td><td>Builder referrals, new home buyers</td><td>hotspringsnewconstruction.com</td></tr>
+    <tr><td><strong>Relocation</strong></td><td>Families from Dallas, Memphis, LR</td><td>movingtohotsprings.com, livinginhotsprings.com</td></tr>
+    <tr><td><strong>Luxury &amp; Gated</strong></td><td>Your elite clients</td><td>hotspringsestates.com, hotspringsluxuryrealestate.com</td></tr>
+    <tr><td><strong>Neighborhoods</strong></td><td>Hyper-local searches</td><td>garlandcountyhomes.com, jessivillerealestate.com</td></tr>
+  </table>
+
+  <div class="highlight">
+    <p><strong>Someone Googling "Arkansas hunting land" or "Hot Springs fixer upper" is ready to buy.</strong> These searches have almost zero competition right now. One site ranking for "owner finance Hot Springs" could generate leads worth tens of thousands — for a domain that costs $12/year.</p>
+  </div>
+
+  <!-- COMPETITION -->
+  <h2>What Your Competitors Have Built</h2>
+
+  <p>I've researched every competitor in the Hot Springs market. Here's what they own:</p>
+
+  <table>
+    <tr><th>Competitor</th><th>What They Have</th><th>Threat</th></tr>
+    <tr><td>RE/MAX of Hot Springs Village</td><td>5+ domains — full multi-site strategy since 1994</td><td><strong style="color:var(--red);">They get it. They're already doing this.</strong></td></tr>
+    <tr><td>Big Red Realty (Jim Buss)</td><td>hotspringsvillagerealestate.com — since 1978</td><td>Established, single site</td></tr>
+    <tr><td>Taylor Realty (Kimberly Taylor)</td><td>bestofhotspringsvillage.com — Diamond Award</td><td>Strong in HSV only</td></tr>
+    <tr><td>Hot Springs Realty (Pfautz family)</td><td>hotspringsrealty.com + yourhotsprings.com — since 1946</td><td>Legacy brand, two sites</td></tr>
+    <tr><td>Alissa Nead (RE/MAX)</td><td>hotspringsvillagehomes.com — 36 years in RE</td><td>Individual agent, HSV only</td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>The gap:</strong> RE/MAX runs 5+ sites but only covers Hot Springs Village. Pfautz has two sites covering general Hot Springs. <em>Nobody</em> has a multi-domain strategy across the entire market — lake, luxury, land, investment, retirement, niche, commercial, neighborhoods. That's the gap we're filling with 50+ sites. By the time they realize what's happened, you'll have years of established Google authority they can never catch.
+  </div>
+
+  <!-- LEAD TRACKING -->
+  <h2>Every Lead Is Tracked</h2>
+
+  <p>You told me your CINC system shows you where leads come from — Google, Bing, whatever. My system does the same thing. When someone fills out a form on any site in the network, you get an email like this:</p>
+
+  <div class="callout">
+    <p style="font-family: monospace; font-size: 0.9rem; line-height: 2; margin:0;">
+      Subject: <strong>New Lead from lakehamiltonhomesforsale.com</strong><br>
+      Name: John &amp; Jane Smith<br>
+      Phone: (555) 123-4567<br>
+      Interest: Buying a Home<br>
+      Source: <strong>lakehamiltonhomesforsale.com</strong><br>
+      Message: "Waterfront on Lake Hamilton, $350-450K"
+    </p>
+  </div>
+
+  <p>You know instantly: who they are, what they want, and <strong>which of Paul's websites brought them to you</strong>. That source tag stays with the lead forever. When it closes at $7,500 commission, you know exactly which site earned it.</p>
+
+  <p>I'll provide a <strong>monthly report</strong> showing visitors per site, leads per site, Google keyword rankings, and which niches are performing. No jargon — just the numbers that matter.</p>
+
+  <!-- THE CINC QUESTION -->
+  <h2>The Path Away from CINC</h2>
+
+  <p>You're paying CINC for lead capture, Google marketing, MLS integration, and email notifications. You have 7,700 leads in that system. You told me: <em>"If you can replace CINC, I'd happily get rid of them."</em></p>
+
+  <p>Here's the honest answer: <strong>not yet, but yes — eventually.</strong></p>
+
+  <ul>
+    <li><strong>Right now:</strong> We build the website network alongside CINC. Your paid sites keep running. Nothing gets disrupted. The new sites are <em>additive</em> — more leads on top of what you're already getting.</li>
+    <li><strong>Phase 2:</strong> As the network proves itself and organic leads flow in, we explore IDX/MLS integration to replicate what CINC does — property search, auto-notifications, lead capture with all the fields you need.</li>
+    <li><strong>The goal:</strong> When your organic leads outperform your paid leads, you stop paying CINC. That money goes back into your business — more agents, more marketing, the coffee house, whatever you want.</li>
+  </ul>
+
+  <div class="highlight">
+    <p><strong>You said it yourself:</strong> <em>"If I can bring in leads to my site and capture the same information I'm capturing now without having to pay for them, I would rather take that money and apply it to something else."</em></p>
+    <p>That's exactly where we're headed. One step at a time.</p>
+  </div>
+
+  <!-- COMPLIANCE -->
+  <h2>Compliance &amp; Protection</h2>
+
+  <p>Nancy, I know competitors have reported you to the Arkansas Real Estate Commission before. I know they screenshot everything. I know they're watching.</p>
+
+  <p><strong>Every single website in this network will be bulletproof:</strong></p>
+
+  <ul>
+    <li><strong>Keller Williams logo</strong> and full brokerage identification on every page</li>
+    <li><strong>"Each Keller Williams office is independently owned and operated"</strong> on every site</li>
+    <li><strong>REALTOR&reg; trademark</strong> used correctly per NAR guidelines</li>
+    <li><strong>Equal Housing Opportunity</strong> logo and language</li>
+    <li><strong>No inflated claims</strong> — "top-producing," not "#1 in Arkansas" unless specifically verifiable</li>
+    <li>Your bluish-teal color palette, your branding, your look — consistent across all 50+ sites</li>
+  </ul>
+
+  <div class="callout">
+    <strong>And here's the future-proofing you mentioned:</strong> You said if you ever open your own brokerage or sell the brand, somebody can buy thebergerongroup.com and all its authority. That's exactly right. Every site is built under YOUR brand, not KW's. If anything changes down the road, the entire network — and all the Google authority we've built — stays with The Bergeron Group. We just swap the KW logo for whatever comes next.
+  </div>
+
+  <!-- TEAM BIOS -->
+  <h2>Building the Story Brand</h2>
+
+  <p>You talked about building a story brand for every agent. I'm 100% with you. Each team member gets their own professional page — not just a headshot and a phone number, but a real story that makes people want to hire them.</p>
+
+  <table>
+    <tr><th>Team Member</th><th>What I Need</th></tr>
+    <tr><td>Nancy &amp; Mark</td><td>Your story — I'll write it, you approve it</td></tr>
+    <tr><td>Each buyer's agent</td><td>Photo + short bio or bullet points</td></tr>
+    <tr><td>Other buyer's agents</td><td>Photo + short bio each</td></tr>
+    <tr><td>Fern</td><td>Photo + her story (the crystal connection is unique and memorable)</td></tr>
+    <tr><td>Michelle &amp; new agents</td><td>We build their pages as part of onboarding — first day, they're on the website</td></tr>
+  </table>
+
+  <p>This also becomes a <strong>recruiting tool</strong>. When a top-producing agent is thinking about joining The Bergeron Group, you show them: <em>"Every agent on our team gets a professionally built story brand page, lead flow from 50+ websites, and marketing that no other team in Hot Springs can offer."</em> That's how you attract mega agents.</p>
+
+  <!-- EVERYTHING CONNECTS -->
+  <h2>How It All Connects</h2>
+
+  <p>The websites aren't a standalone project. They tie into everything else you're building:</p>
+
+  <table>
+    <tr><th>Your Initiative</th><th>How the Websites Amplify It</th></tr>
+    <tr><td><strong>The kiosk</strong></td><td>Kiosk shows listings and agent profiles — same content feeds the websites, same branding, same leads funnel</td></tr>
+    <tr><td><strong>The coffee house (May)</strong></td><td>Co-branded marketing, event pages, "Featured Listings at The Bergeron Group Cafe" — a website for the coffee house drives foot traffic from Google</td></tr>
+    <tr><td><strong>Your reels &amp; photography</strong></td><td>Every photo and video you create feeds the website content. One reel of Mark checking a lakefront property becomes a blog post on lakehamiltonhomesforsale.com</td></tr>
+    <tr><td><strong>Your VA (Ian)</strong></td><td>If you need to delegate any of the asset-gathering to Ian, I'm happy to work with him on logistics</td></tr>
+    <tr><td><strong>Chamber ribbon cutting</strong></td><td>The day you cut the ribbon, 50+ websites are already live and ranking. The competitors find out about all of it on the same day. Shock and awe.</td></tr>
+  </table>
+
+  <!-- THE STEAMROLLER -->
+  <h2>The Steamroller</h2>
+
+  <p>Right now, your competitors have one website. Maybe two. RE/MAX has five. Here's what The Bergeron Group will have:</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <span class="number">50+</span>
+      <span class="label">Websites</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">196</span>
+      <span class="label">Domains</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">20+</span>
+      <span class="label">Niche Markets</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">7,700+</span>
+      <span class="label">Leads in Your Database</span>
+    </div>
+  </div>
+
+  <p>Your competitors will Google "Hot Springs real estate" and see you. "Lake Hamilton homes" — you. "Hot Springs fixer upper" — you. "Arkansas hunting land" — you. "Retire to Hot Springs" — you. "Hot Springs Airbnb investment" — you. <strong>Every search. Every niche. Every time.</strong></p>
+
+  <p>And the best part? The longer the sites are live, the stronger they get. Google rewards age and authority. A competitor who starts a year from now would need two years just to catch up — and by then you'll be even further ahead. <strong>The moat gets deeper every month.</strong></p>
+
+  <div class="highlight">
+    <p><strong>You said it perfectly:</strong> <em>"We're sneaking up on the enemy and they just don't know it."</em></p>
+    <p>When the ribbon cutting happens and the sites go public, they'll say: <em>"She's done it. How can I possibly catch up?"</em></p>
+    <p>They can't.</p>
+  </div>
+
+  <!-- WHAT APRIL LOOKS LIKE -->
+  <h2>What April Looks Like</h2>
+
+  <p>We're not talking about "someday." Here's exactly what gets done in April if we sign the agreement this week:</p>
+
+  <table>
+    <tr><th>Week</th><th>Deliverable</th><th>Result</th></tr>
+    <tr><td><strong>Week 1</strong><br>(March 24-31)</td><td>Agreement signed, GoDaddy access, domain audit complete, priority domains registered before competitors take them</td><td>Foundation locked in</td></tr>
+    <tr><td><strong>Week 2</strong><br>(April 1-7)</td><td>thebergerongroup.com goes LIVE with your custom domain, Google Analytics &amp; Search Console active</td><td>Hub site is live and indexing</td></tr>
+    <tr><td><strong>Week 3</strong><br>(April 7-14)</td><td>First 3 niche spoke sites built, branded, deployed, and cross-linked to hub</td><td>Network effect begins</td></tr>
+    <tr><td><strong>Week 4</strong><br>(April 14-21)</td><td>Next 4 spoke sites built and deployed (7 total), all cross-linked</td><td>8 sites live and working</td></tr>
+    <tr><td><strong>Week 5</strong><br>(April 21-30)</td><td>All sites submitted to Google, lead tracking verified, first leads arriving</td><td>The steamroller is rolling</td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>By end of April you'll have 8 live websites</strong> — the hub plus 7 high-priority niche sites — all generating leads, all building Google authority, all cross-linking to make each other stronger. That's more than any single competitor in Hot Springs has, built in 30 days.
+  </div>
+
+  <h3>Which 7 Sites Go First?</h3>
+  <p>I recommend these based on search volume, competition gaps, and commission potential:</p>
+  <ol>
+    <li><strong>lakehamiltonhomesforsale.com</strong> — you already own this domain, highest-value niche</li>
+    <li><strong>retirehotsprings.com</strong> — massive retirement migration market</li>
+    <li><strong>hsvhomesforsale.com</strong> — Hot Springs Village is its own huge market</li>
+    <li><strong>hotspringsluxuryhomes.com</strong> — your elite clients, highest commissions</li>
+    <li><strong>hotspringsinvestments.com</strong> — out-of-state investors searching online</li>
+    <li><strong>sellinginhotsprings.com</strong> — captures seller leads, not just buyers</li>
+    <li><strong>relocatetohotsprings.com</strong> — families moving from Dallas, Memphis, Little Rock</li>
+  </ol>
+  <p>You can swap any of these — this is your network, your call. But these seven cover the widest range of high-intent searches with the least competition.</p>
+
+  <!-- URGENCY -->
+  <h2>Why This Week Matters</h2>
+
+  <p>Every one of those 196 domains I've identified? <strong>They're available right now.</strong> But they won't be forever. Domain squatters and competitors are registering real estate domains every day. Every week we wait is a week someone else could grab retirehotsprings.com or hotspringsfixerupper.com or arkansashuntingland.com.</p>
+
+  <p>You already saw what happened with hotspringsvillagehomes.com — Alissa Nead at RE/MAX grabbed it. That domain is gone forever. She's using it to capture buyers that could have been yours.</p>
+
+  <div class="highlight">
+    <p><strong>The cost of waiting:</strong></p>
+    <ul style="margin:12px 0 0 20px; color: rgba(255,255,255,0.85);">
+      <li>Every day a domain sits unregistered, a competitor could take it — for $12</li>
+      <li>Every week without sites live is a week Google isn't indexing your content</li>
+      <li>Every month of delay is a month RE/MAX extends their head start</li>
+      <li>The kiosk is going in the window. The coffee house opens in May. The ribbon cutting is coming. <strong>The websites need to be live when all of that launches</strong></li>
+    </ul>
+  </div>
+
+  <!-- COSTS -->
+  <h2>The Investment</h2>
+
+  <table>
+    <tr><th>Item</th><th>Cost</th><th>Notes</th></tr>
+    <tr><td>Website builds</td><td><strong>$420 per site</strong></td><td>Invoiced as each batch is completed</td></tr>
+    <tr><td>Domain management</td><td><strong>$4/month per live site</strong></td><td>DNS, SSL, uptime, maintenance</td></tr>
+    <tr><td>Domain registrations</td><td>~$12/year each</td><td>At cost</td></tr>
+    <tr><td>Web hosting</td><td>TBD</td><td>At cost — we'll find the best option</td></tr>
+    <tr><td>Google Analytics &amp; Search Console</td><td>Free</td><td>—</td></tr>
+    <tr><td>Lead tracking &amp; source tagging</td><td>Free</td><td>Built into every form</td></tr>
+  </table>
+
+  <h3>April Investment</h3>
+  <table>
+    <tr><th>What</th><th>Amount</th></tr>
+    <tr><td>Hub site + 7 niche sites (8 &times; $420)</td><td><strong>$3,360</strong></td></tr>
+    <tr><td>Domain management (8 sites &times; $4)</td><td><strong>$32</strong></td></tr>
+    <tr><td>Domain registrations (~10 domains &times; $12)</td><td><strong>~$120</strong></td></tr>
+    <tr><td style="font-weight:700;">Total April Investment</td><td style="font-weight:700;">~$3,512</td></tr>
+  </table>
+
+  <div class="highlight">
+    <p><strong>The math that matters:</strong> Your team sold 30+ deals last year from leads you generated — averaging $7,500 commission per deal. That's $225,000+ in commissions from your lead flow alone. If this 8-site network produces just <strong>one extra deal in its first 90 days</strong>, that single $7,500 commission pays for the entire April investment <em>twice over</em> — and the sites keep working forever after that.</p>
+    <p>You're not buying websites. You're buying a <strong>permanent lead-generation machine</strong> that pays for itself with one deal and then keeps producing for years.</p>
+  </div>
+
+  <!-- WHAT I NEED -->
+  <h2>What I Need This Week</h2>
+
+  <p>If we're going to have 8 sites live by end of April, here's what I need in the next few days:</p>
+
+  <table>
+    <tr><th>Item</th><th>Who</th><th>Time Needed</th></tr>
+    <tr><td><strong>Signed service agreement</strong></td><td>Nancy</td><td>Review &amp; sign today or this week</td></tr>
+    <tr><td><strong>GoDaddy domain list export (CSV)</strong></td><td>Nancy</td><td>2 minutes</td></tr>
+    <tr><td><strong>GoDaddy login or DNS access</strong></td><td>Nancy</td><td>1 minute</td></tr>
+    <tr><td><strong>Netfirms login</strong> (if applicable)</td><td>Nancy</td><td>1 minute</td></tr>
+    <tr><td><strong>Email for lead notifications</strong></td><td>Nancy</td><td>30 seconds — just tell me which email</td></tr>
+    <tr><td><strong>Google account (Gmail)</strong></td><td>Nancy</td><td>Already have one? I'll set up Analytics under it</td></tr>
+    <tr><td><strong>Approve the hub site</strong></td><td>Nancy</td><td>You're seeing it today</td></tr>
+    <tr><td><strong>Approval to register priority domains</strong></td><td>Nancy</td><td>Before competitors grab them</td></tr>
+  </table>
+
+  <div class="green-box">
+    <p><strong>None of this takes more than a few minutes.</strong> The GoDaddy export is the biggest item and it's literally clicking a download button. Everything else is just sharing a login or telling me an email address. If you want to delegate any of the logistics to Ian, that's fine — but I work directly with you.</p>
+    <p style="margin-top:12px;"><strong>Team bios and photos can come later</strong> — they don't hold up the launch. I'll collect those over the next few weeks while I'm building sites.</p>
+  </div>
+
+  <!-- THE BOTTOM LINE -->
+  <h2>The Bottom Line</h2>
+
+  <p>Nancy, you've sold 413+ homes. You're the top producer at Keller Williams in your region. You've got 69+ five-star reviews. You've got 7,700 leads in your database. You're already number one.</p>
+
+  <p>But right now, your 30+ domains are sitting idle. Your competitors — especially RE/MAX — are already running multi-domain strategies. Every day those domains aren't working is a day a buyer searches Google, doesn't find The Bergeron Group, and calls someone else.</p>
+
+  <p>We're about to change that. Not with one website. With <strong>fifty</strong>. Covering every niche, every neighborhood, every type of buyer and seller in Hot Springs. All feeding your team. All building authority that gets stronger every month. All under a brand you own outright and can take with you anywhere.</p>
+
+  <p>You said you want to get to the point where the business manages itself, your agents are fed, and you only handle the clients you want. <strong>This is how we get there.</strong></p>
+
+  <div class="highlight">
+    <p style="text-align:center; font-size: 1.2rem; margin:0;"><strong>One website competes. Fifty websites dominate.</strong></p>
+    <p style="text-align:center; margin: 12px 0 0; color: rgba(255,255,255,0.7);">The steamroller is warmed up. Let's go.</p>
+  </div>
+
+  <div class="footer-note">
+    <p>Prepared by Paul Walhus &bull; March 23, 2026</p>
+  </div>
+
+</body>
+</html>

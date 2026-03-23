@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Agreement — Paul Walhus &amp; The Bergeron Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #c8973e;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --gray-100: #f3f2ef;
+      --gray-200: #e5e3de;
+      --gray-400: #9c9a94;
+      --gray-600: #5c5a55;
+      --text: #2d2b28;
+      --radius: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 14px;
+      background: var(--white);
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--navy); }
+    h1 { font-size: 1.8rem; text-align: center; margin-bottom: 4px; }
+    h2 { font-size: 1.2rem; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--gray-200); }
+    h3 { font-size: 1rem; margin: 20px 0 8px; }
+    p { margin-bottom: 10px; }
+    ul, ol { margin: 8px 0 14px 24px; }
+    li { margin-bottom: 4px; }
+    strong { color: var(--navy); }
+
+    .header-sub { text-align: center; color: var(--gray-600); font-size: 0.95rem; margin-bottom: 32px; }
+
+    .parties {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+      margin: 24px 0; padding: 20px 24px; background: var(--gray-100); border-radius: var(--radius);
+    }
+    .parties h3 { margin-top: 0; font-size: 0.9rem; color: var(--gold); font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+    .parties p { margin-bottom: 4px; font-size: 0.9rem; }
+
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.9rem; }
+    th { background: var(--navy); color: var(--white); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--gray-200); }
+    tr:nth-child(even) { background: var(--gray-100); }
+    .money { color: var(--navy); font-weight: 700; }
+
+    .highlight { background: var(--off-white); border-left: 3px solid var(--gold); padding: 16px 20px; margin: 16px 0; font-size: 0.92rem; }
+
+    .sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin: 48px 0 24px; }
+    .sig-block { border-top: 1px solid var(--text); padding-top: 8px; }
+    .sig-block p { font-size: 0.85rem; margin-bottom: 2px; color: var(--gray-600); }
+    .sig-line { height: 48px; }
+
+    .footer-note { text-align: center; font-size: 0.8rem; color: var(--gray-400); margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--gray-200); }
+
+    @media print { body { padding: 32px; font-size: 12px; } .sig-line { height: 60px; } }
+    @media (max-width: 600px) { body { padding: 24px 20px; } .parties, .sig-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <h1>Service Agreement</h1>
+  <p class="header-sub">Between Paul Walhus and The Bergeron Group</p>
+
+  <div class="parties">
+    <div>
+      <h3>Service Provider</h3>
+      <p><strong>Paul Walhus</strong></p>
+      <p>Web Developer &amp; AI Consultant</p>
+      <p>walhus@gmail.com</p>
+    </div>
+    <div>
+      <h3>Client</h3>
+      <p><strong>Nancy Bergeron</strong></p>
+      <p>The Bergeron Group</p>
+      <p>Keller Williams Realty Hot Springs</p>
+      <p>801 Central Ave, Ste 30</p>
+      <p>Hot Springs, AR 71901</p>
+    </div>
+  </div>
+
+  <p><strong>Effective Date:</strong> __________________, 2026</p>
+
+  <!-- WHAT THIS AGREEMENT COVERS -->
+  <h2>1. What This Agreement Covers</h2>
+  <p>Paul Walhus ("Paul") will build a network of professional, SEO-optimized real estate websites for The Bergeron Group ("Nancy"), each targeting specific markets, neighborhoods, and buyer types in the Hot Springs, Arkansas area.</p>
+
+  <p>Each website includes:</p>
+  <ul>
+    <li>Custom design with Bergeron Group and Keller Williams branding</li>
+    <li>Mobile-responsive layout that works on all devices</li>
+    <li>SEO optimization — Schema.org data, meta tags, FAQ sections</li>
+    <li>Contact form with lead source tracking (you'll know which site each lead came from)</li>
+    <li>Cross-linking to the hub site and other sites in the network</li>
+    <li>Google Analytics and Search Console setup</li>
+    <li>Custom domain configuration with SSL</li>
+  </ul>
+
+  <!-- PRICING -->
+  <h2>2. Pricing</h2>
+
+  <table>
+    <tr><th>Service</th><th>Rate</th><th>How It Works</th></tr>
+    <tr>
+      <td>Website Development</td>
+      <td class="money">$________ per site</td>
+      <td>You're invoiced only when a site is completed and you've seen it</td>
+    </tr>
+    <tr>
+      <td>Domain Management</td>
+      <td class="money">$________/month per live site</td>
+      <td>DNS, SSL, uptime monitoring — invoiced monthly for active sites only</td>
+    </tr>
+  </table>
+
+  <div class="highlight">
+    <strong>You control the pace.</strong> There is no minimum number of sites per month. You decide how fast or slow we build. If you want 8 sites in April and 3 in May, that's fine. If you want to pause for a month, that's fine too. You're never locked into a number you're not comfortable with.
+  </div>
+
+  <h3>What's NOT included in the per-site fee (paid at cost by Nancy):</h3>
+  <ul>
+    <li><strong>Domain registrations</strong> — approximately $10-15 per domain per year</li>
+    <li><strong>Web hosting</strong> — we'll find the most cost-effective option together</li>
+  </ul>
+  <p>Paul will recommend domains and hosting but will not purchase anything without Nancy's approval. All costs are reimbursed at cost with no markup.</p>
+
+  <!-- HOW WE START -->
+  <h2>3. Getting Started — Phase 1</h2>
+  <p>To get the network rolling, the initial plan is:</p>
+
+  <table>
+    <tr><th>Deliverable</th><th>Target</th><th>Investment</th></tr>
+    <tr>
+      <td>Hub site (thebergerongroup.com) + ________ niche sites</td>
+      <td>End of April 2026</td>
+      <td class="money">$________ (________ sites &times; $________)</td>
+    </tr>
+  </table>
+
+  <div class="highlight">
+    <strong>This is a target, not a commitment.</strong> We'll agree on the number of sites and the pace together. The priority sites are chosen together, and you approve each one before I build it. Nothing gets built that you haven't agreed to.
+  </div>
+
+  <p>After Phase 1, we'll review results together and decide on the pace going forward based on what's working and what fits your budget.</p>
+
+  <!-- PAYMENT -->
+  <h2>4. Payment Terms</h2>
+  <ul>
+    <li>Website builds are invoiced in small batches as sites are completed (typically 2-4 sites at a time)</li>
+    <li>Domain Management is invoiced monthly based on number of live sites</li>
+    <li>Payment is due within <strong>14 days</strong> of invoice date</li>
+    <li>Accepted payment methods: __________________ (check / Zelle / Venmo / other)</li>
+  </ul>
+
+  <!-- WHAT NANCY PROVIDES -->
+  <h2>5. What Nancy Provides</h2>
+  <ul>
+    <li><strong>Domain registrar access</strong> — GoDaddy and/or Netfirms login (or DNS management access) so Paul can point domains to their new sites</li>
+    <li><strong>Domain list</strong> — CSV export from GoDaddy for planning purposes</li>
+    <li><strong>Feedback</strong> — timely review of website content and design (typically 48 hours)</li>
+    <li><strong>Brand assets</strong> — logos, photos, KW branding guidelines</li>
+    <li><strong>Approval</strong> — for any new domain registrations before Paul registers them</li>
+  </ul>
+
+  <!-- OWNERSHIP -->
+  <h2>6. You Own Everything</h2>
+  <ul>
+    <li>All websites, content, and design assets are <strong>owned by Nancy / The Bergeron Group</strong> upon payment</li>
+    <li>All domain names registered on Nancy's behalf are owned by Nancy</li>
+    <li>All platform accounts (Google Analytics, Search Console, form services) are created under Nancy's accounts and owned by Nancy</li>
+    <li>If this agreement ends for any reason, Nancy keeps everything — every site, every file, every login</li>
+  </ul>
+
+  <!-- CONFIDENTIALITY -->
+  <h2>7. Confidentiality</h2>
+  <p>Both parties agree that the multi-site strategy, domain portfolio, and competitive positioning are <strong>strictly confidential</strong>. Paul will not disclose any project details to third parties without Nancy's written consent. This obligation survives the end of this agreement.</p>
+
+  <!-- FLEXIBILITY -->
+  <h2>8. Flexibility &amp; Pausing</h2>
+  <ul>
+    <li>Nancy may <strong>pause new site development</strong> at any time with written notice. No fees are charged during paused periods except Domain Management for existing live sites.</li>
+    <li>Nancy may <strong>adjust the pace</strong> — more sites per month or fewer — at any time by mutual agreement</li>
+    <li>Either party may <strong>end this agreement</strong> with 30 days written notice</li>
+    <li>Upon ending, Nancy pays for all completed work, and Paul delivers all files and access within 14 days</li>
+  </ul>
+
+  <!-- REVISIONS -->
+  <h2>9. Revisions</h2>
+  <ul>
+    <li>Each website includes up to <strong>2 rounds of revisions</strong> after Nancy reviews it</li>
+    <li>Additional revisions beyond that are billed at <strong>$________/hour</strong></li>
+    <li>Any new services or expanded scope will be discussed and agreed upon before work begins</li>
+  </ul>
+
+  <!-- WORKSPACE -->
+  <h2>10. Workspace</h2>
+  <p>If mutually convenient, Nancy may offer shared workspace at the office (801 Central Ave, Ste 30) for Paul to use during the project. This is optional and at-will — either party can adjust this arrangement at any time.</p>
+
+  <!-- LIMITATION -->
+  <h2>11. Expectations</h2>
+  <ul>
+    <li>Paul will follow SEO best practices to maximize visibility, but cannot guarantee specific Google rankings — those are determined by third-party algorithms</li>
+    <li>Paul is not liable for issues caused by third-party services (hosting, domain registrars, form providers)</li>
+    <li>Paul's total liability shall not exceed fees paid in the preceding 3 months</li>
+  </ul>
+
+  <!-- AGREEMENT -->
+  <h2>12. Agreement</h2>
+  <p>By signing below, both parties agree to the terms outlined above. This is a straightforward working agreement — no hidden terms, no surprises. Nancy controls the pace, owns everything, and can pause or stop at any time.</p>
+
+  <div class="sig-grid">
+    <div>
+      <div class="sig-line"></div>
+      <div class="sig-block">
+        <p><strong>Paul Walhus</strong></p>
+        <p>Service Provider</p>
+        <p>Date: __________________</p>
+      </div>
+    </div>
+    <div>
+      <div class="sig-line"></div>
+      <div class="sig-block">
+        <p><strong>Nancy Bergeron</strong></p>
+        <p>The Bergeron Group</p>
+        <p>Date: __________________</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <p>This agreement may be executed electronically or in print. Both formats are equally binding.</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Menu — Bergeron Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #c8973e;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --gray-100: #f3f2ef;
+      --gray-200: #e5e3de;
+      --gray-600: #5c5a55;
+      --text: #2d2b28;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--off-white);
+      padding: 48px 32px;
+      line-height: 1.6;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+    h1 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 2rem; margin-bottom: 8px; }
+    .subtitle { color: var(--gray-600); margin-bottom: 40px; font-size: 0.95rem; }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
+      font-size: 1.2rem;
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    a.card {
+      display: block;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 20px 24px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+    a.card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .card-title {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+    .card-file {
+      font-size: 0.72rem;
+      color: var(--gold);
+      font-family: monospace;
+      margin-top: 8px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .tag-live { background: #e8f5e9; color: #2a7c4f; }
+    .tag-internal { background: #fff3e0; color: #c8973e; }
+    .tag-agreement { background: #e3f2fd; color: #1565c0; }
+    .tag-old { background: var(--gray-100); color: var(--gray-600); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bergeron Project — All Pages</h1>
+    <p class="subtitle">Internal navigation — not linked from any public page</p>
+
+    <h2>thebergerongroup.com — The Hub Site</h2>
+    <div class="grid">
+      <a class="card" href="index.html">
+        <span class="tag tag-live">Live Site</span>
+        <div class="card-title">Home — The Bergeron Group</div>
+        <div class="card-desc">The anchor hub site. Nancy & Mark, services, areas, Mark Bergeron Advantage, testimonials, FAQ, contact form with lead tracking.</div>
+        <div class="card-file">index.html</div>
+      </a>
+    </div>
+
+    <h2>Proposals &amp; Strategy</h2>
+    <div class="grid">
+      <a class="card" href="proposal.html">
+        <span class="tag tag-internal">Proposal</span>
+        <div class="card-title">50+ Site Network Proposal</div>
+        <div class="card-desc">The main proposal — domain portfolio, 196 niche domains, competitor analysis, ROI, rollout plan.</div>
+        <div class="card-file">proposal.html</div>
+      </a>
+      <a class="card" href="strategy.html">
+        <span class="tag tag-internal">Strategy</span>
+        <div class="card-title">Strategy Playbook</div>
+        <div class="card-desc">Phased execution plan with alternate hub domain options.</div>
+        <div class="card-file">strategy.html</div>
+      </a>
+      <a class="card" href="moonshot.html">
+        <span class="tag tag-internal">Strategy</span>
+        <div class="card-title">Moonshot Plan</div>
+        <div class="card-desc">The ambitious long-range vision for The Bergeron Group.</div>
+        <div class="card-file">moonshot.html</div>
+      </a>
+      <a class="card" href="revenue-projections.html">
+        <span class="tag tag-internal">Revenue</span>
+        <div class="card-title">Revenue Projections &amp; Performance Partnership</div>
+        <div class="card-desc">4 scenarios from conservative ($112K) to full steamroller ($675K+). Includes 10% performance referral partnership proposal.</div>
+        <div class="card-file">revenue-projections.html</div>
+      </a>
+      <a class="card" href="meeting-notes-march23.html">
+        <span class="tag tag-internal">Meeting Prep</span>
+        <div class="card-title">March 23 Meeting Briefing</div>
+        <div class="card-desc">Full briefing for Nancy — steamroller vision, niche markets, lead tracking, CINC path, compliance, team bios, April plan.</div>
+        <div class="card-file">meeting-notes-march23.html</div>
+      </a>
+      <a class="card" href="hosting.html">
+        <span class="tag tag-internal">Reference</span>
+        <div class="card-title">Hosting Info</div>
+        <div class="card-desc">Hosting setup and configuration details.</div>
+        <div class="card-file">hosting.html</div>
+      </a>
+    </div>
+
+    <h2>Agreements</h2>
+    <div class="grid">
+      <a class="card" href="agreement-final.html">
+        <span class="tag tag-agreement">Agreement</span>
+        <div class="card-title">Service Agreement (With Numbers)</div>
+        <div class="card-desc">$420/site, $4/month domain management. Non-threatening, flexible, she controls the pace.</div>
+        <div class="card-file">agreement-final.html</div>
+      </a>
+      <a class="card" href="agreement-blank.html">
+        <span class="tag tag-agreement">Agreement</span>
+        <div class="card-title">Service Agreement (Fill-in-the-Blank)</div>
+        <div class="card-desc">Same agreement with blank lines for Nancy to write in her own numbers.</div>
+        <div class="card-file">agreement-blank.html</div>
+      </a>
+      <a class="card" href="agreement.html">
+        <span class="tag tag-old">Previous Version</span>
+        <div class="card-title">Service Agreement (Original)</div>
+        <div class="card-desc">Earlier version — kept for reference. Superseded by agreement-final.html.</div>
+        <div class="card-file">agreement.html</div>
+      </a>
+    </div>
+
+    <h2>Podcast (Future Upsell)</h2>
+    <div class="grid">
+      <a class="card" href="podcast-proposal.html">
+        <span class="tag tag-internal">Proposal</span>
+        <div class="card-title">Podcast Proposal</div>
+        <div class="card-desc">Anton Stetner model, content multiplier, episode categories, competitive moat. Present after websites prove value.</div>
+        <div class="card-file">podcast-proposal.html</div>
+      </a>
+      <a class="card" href="podcast-agreement.html">
+        <span class="tag tag-agreement">Agreement</span>
+        <div class="card-title">Podcast Service Agreement</div>
+        <div class="card-desc">$2,500 studio setup + $400/month production. Separate from website agreement.</div>
+        <div class="card-file">podcast-agreement.html</div>
+      </a>
+    </div>
+
+    <h2>For Nancy</h2>
+    <div class="grid">
+      <a class="card" href="getting-started.html">
+        <span class="tag tag-internal">For Nancy</span>
+        <div class="card-title">Getting Started Guide</div>
+        <div class="card-desc">What Nancy needs to do, what Paul handles, lead tracking explainer, cost summary, checklist.</div>
+        <div class="card-file">getting-started.html</div>
+      </a>
+      <a class="card" href="BrettBelau.html">
+        <span class="tag tag-internal">Team</span>
+        <div class="card-title">Brett Belau</div>
+        <div class="card-desc">Brett Belau page.</div>
+        <div class="card-file">BrettBelau.html</div>
+      </a>
+    </div>
+
+    <h2>Internal Strategy (Paul's Eyes Only)</h2>
+    <div class="grid">
+      <a class="card" href="ai-accelerator.html">
+        <span class="tag" style="background:#fff3e0; color:#e65100;">Confidential</span>
+        <div class="card-title">AI Accelerator — Internal Strategy</div>
+        <div class="card-desc">AI tools, Office Hours Global team, margin math, what to say / not say to Nancy, upsell roadmap, $3-5K/month recurring potential.</div>
+        <div class="card-file">ai-accelerator.html</div>
+      </a>
+      <a class="card" href="revenue-projections.html">
+        <span class="tag tag-internal">Revenue</span>
+        <div class="card-title">Revenue Projections (Client-Facing)</div>
+        <div class="card-desc">4 scenarios from $112K to $675K+, CINC comparison, search volume data, quarter-by-quarter ramp, performance bonus seed.</div>
+        <div class="card-file">revenue-projections.html</div>
+      </a>
+    </div>
+
+    <h2>Data Files</h2>
+    <div class="grid">
+      <a class="card" href="domains.csv">
+        <span class="tag tag-internal">Data</span>
+        <div class="card-title">Domain Spreadsheet (CSV)</div>
+        <div class="card-desc">196 domains — all owned, proposed, niche, and competitor domains. Import into Google Sheets.</div>
+        <div class="card-file">domains.csv</div>
+      </a>
+    </div>
+
+    <h2>realestatehotsprings.com — Original Site</h2>
+    <div class="grid">
+      <a class="card" href="../realestatehotsprings.com/index.html" target="_blank">
+        <span class="tag tag-old">Original Site</span>
+        <div class="card-title">Home — Real Estate Hot Springs</div>
+        <div class="card-desc">The original site on the realestatehotsprings.com domain.</div>
+        <div class="card-file">realestatehotsprings.com/index.html</div>
+      </a>
+      <a class="card" href="../realestatehotsprings.com/proposal.html" target="_blank">
+        <span class="tag tag-old">Original</span>
+        <div class="card-title">Proposal</div>
+        <div class="card-desc">Earlier copy of the proposal on the old domain.</div>
+        <div class="card-file">realestatehotsprings.com/proposal.html</div>
+      </a>
+      <a class="card" href="../realestatehotsprings.com/agreement.html" target="_blank">
+        <span class="tag tag-old">Original</span>
+        <div class="card-title">Agreement</div>
+        <div class="card-desc">Earlier copy of the agreement on the old domain.</div>
+        <div class="card-file">realestatehotsprings.com/agreement.html</div>
+      </a>
+      <a class="card" href="../realestatehotsprings.com/strategy.html" target="_blank">
+        <span class="tag tag-old">Original</span>
+        <div class="card-title">Strategy</div>
+        <div class="card-desc">Strategy playbook on the old domain.</div>
+        <div class="card-file">realestatehotsprings.com/strategy.html</div>
+      </a>
+      <a class="card" href="../realestatehotsprings.com/moonshot.html" target="_blank">
+        <span class="tag tag-old">Original</span>
+        <div class="card-title">Moonshot</div>
+        <div class="card-desc">Moonshot plan on the old domain.</div>
+        <div class="card-file">realestatehotsprings.com/moonshot.html</div>
+      </a>
+      <a class="card" href="../realestatehotsprings.com/hosting.html" target="_blank">
+        <span class="tag tag-old">Original</span>
+        <div class="card-title">Hosting</div>
+        <div class="card-desc">Hosting info on the old domain.</div>
+        <div class="card-file">realestatehotsprings.com/hosting.html</div>
+      </a>
+      <a class="card" href="../realestatehotsprings.com/getting-started.html" target="_blank">
+        <span class="tag tag-old">Original</span>
+        <div class="card-title">Getting Started</div>
+        <div class="card-desc">Getting started guide on the old domain.</div>
+        <div class="card-file">realestatehotsprings.com/getting-started.html</div>
+      </a>
+      <a class="card" href="../realestatehotsprings.com/BrettBelau.html" target="_blank">
+        <span class="tag tag-old">Original</span>
+        <div class="card-title">Brett Belau</div>
+        <div class="card-desc">Brett Belau page on the old domain.</div>
+        <div class="card-file">realestatehotsprings.com/BrettBelau.html</div>
+      </a>
+    </div>
+
+  </div>
+</body>
+</html>
