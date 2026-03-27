@@ -145,6 +145,197 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Inline styles for social proof badge, exit-intent popup, and contact-method radios -->
+  <style>
+    /* Floating social proof badge */
+    .social-proof-badge {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background: #c8973e;
+      color: #1a2744;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      z-index: 998;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 320px;
+      line-height: 1.3;
+    }
+    .social-proof-badge.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .social-proof-badge .badge-close {
+      background: none;
+      border: none;
+      color: #1a2744;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0 0 0 4px;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      flex-shrink: 0;
+    }
+    .social-proof-badge .badge-close:hover {
+      opacity: 1;
+    }
+
+    /* Exit-intent popup */
+    .exit-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .exit-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    .exit-modal {
+      background: #fff;
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+    }
+    .exit-modal .exit-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: #5c5a55;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .exit-modal .exit-close:hover { color: #1a2744; }
+    .exit-modal .exit-pretitle {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #c8973e;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .exit-modal h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem;
+      color: #1a2744;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .exit-modal .exit-sub {
+      color: #5c5a55;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+    .exit-modal form { display: flex; flex-direction: column; gap: 12px; }
+    .exit-modal input[type="email"] {
+      padding: 12px 16px;
+      border: 1px solid #e5e3de;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .exit-modal input[type="email"]:focus {
+      outline: none;
+      border-color: #c8973e;
+      box-shadow: 0 0 0 3px rgba(200,151,62,0.15);
+    }
+    .exit-modal button[type="submit"] {
+      background: #c8973e;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.3s;
+    }
+    .exit-modal button[type="submit"]:hover { background: #d4a94f; }
+    .exit-modal .exit-disclaimer {
+      font-size: 0.75rem;
+      color: #9c9a94;
+      margin-top: 8px;
+    }
+
+    /* Contact method radio group */
+    .contact-method-group {
+      margin-bottom: 20px;
+    }
+    .contact-method-group label.group-label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: #1a2744;
+    }
+    .contact-method-options {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .contact-method-options label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: #2d2b28;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .contact-method-options input[type="radio"] {
+      accent-color: #c8973e;
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Google Maps embed */
+    .contact-map {
+      margin-top: 24px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .contact-map iframe {
+      display: block;
+      width: 100%;
+      height: 200px;
+      border: 0;
+    }
+
+    /* $ prefix for stat */
+    .stat-prefix {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #c8973e;
+    }
+  </style>
 </head>
 <body>
 
@@ -184,7 +375,7 @@
           <span class="stat-label">Homes Sold</span>
         </div>
         <div class="stat">
-          <span class="stat-number" data-target="110">0</span><span class="stat-plus">M+</span>
+          <span class="stat-prefix">$</span><span class="stat-number" data-target="110">0</span><span class="stat-plus">M+</span>
           <span class="stat-label">Sales Volume</span>
         </div>
         <div class="stat">
@@ -513,6 +704,10 @@
               <a href="https://www.facebook.com/RealtorHotSprings/" target="_blank" rel="noopener">Facebook — Nancy Bergeron Hot Springs Realtor</a>
             </div>
           </div>
+          <!-- Google Maps Embed -->
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3266.8!2d-93.0552!3d34.5037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87cd2a0e1f3bbbbb%3A0x0!2s801+Central+Ave%2C+Hot+Springs%2C+AR+71901!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Bergeron Group office location — 801 Central Ave, Hot Springs, AR 71901"></iframe>
+          </div>
         </div>
         <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
           <!-- Web3Forms — REPLACE with actual access key from https://web3forms.com -->
@@ -539,6 +734,14 @@
           <div class="form-group">
             <label for="phone">Phone Number</label>
             <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+          </div>
+          <div class="contact-method-group">
+            <label class="group-label">Preferred Contact Method</label>
+            <div class="contact-method-options">
+              <label><input type="radio" name="contact_method" value="email" checked> Email</label>
+              <label><input type="radio" name="contact_method" value="phone"> Phone Call</label>
+              <label><input type="radio" name="contact_method" value="text"> Text Message</label>
+            </div>
           </div>
           <div class="form-group">
             <label for="interest">I'm Interested In</label>
@@ -602,6 +805,103 @@
     </div>
   </footer>
 
+  <!-- Floating Social Proof Badge -->
+  <div class="social-proof-badge" id="social-proof-badge">
+    <span>#1 Keller Williams Team &mdash; Hot Springs Region</span>
+    <button class="badge-close" aria-label="Dismiss badge">&times;</button>
+  </div>
+
+  <!-- Exit-Intent Popup -->
+  <div class="exit-overlay" id="exit-overlay">
+    <div class="exit-modal">
+      <button class="exit-close" id="exit-close" aria-label="Close popup">&times;</button>
+      <p class="exit-pretitle">Before you go...</p>
+      <h2>Get Our Free Hot Springs Market Report</h2>
+      <p class="exit-sub">See what homes are selling for in Hot Springs, Lake Hamilton, and Hot Springs Village — delivered straight to your inbox.</p>
+      <form id="exit-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="source" value="thebergerongroup.com-exit-popup">
+        <input type="hidden" name="subject" value="Market Report Request — Exit Popup">
+        <input type="checkbox" name="botcheck" style="display:none;">
+        <input type="email" name="email" placeholder="Enter your email address" required>
+        <button type="submit">Send Me the Report</button>
+      </form>
+      <p class="exit-disclaimer">No spam. Unsubscribe anytime. Your info is never shared.</p>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+
+  <!-- Social proof badge fade-in + dismiss -->
+  <script>
+  (function() {
+    var badge = document.getElementById('social-proof-badge');
+    if (!badge) return;
+    setTimeout(function() {
+      badge.classList.add('visible');
+    }, 3000);
+    badge.querySelector('.badge-close').addEventListener('click', function() {
+      badge.style.opacity = '0';
+      badge.style.transform = 'translateY(20px)';
+      setTimeout(function() { badge.style.display = 'none'; }, 500);
+    });
+  })();
+  </script>
+
+  <!-- Exit-intent popup -->
+  <script>
+  (function() {
+    var overlay = document.getElementById('exit-overlay');
+    var closeBtn = document.getElementById('exit-close');
+    if (!overlay || !closeBtn) return;
+
+    var shown = false;
+    var SESSION_KEY = 'bgExitShown';
+
+    function showPopup() {
+      if (shown || sessionStorage.getItem(SESSION_KEY)) return;
+      shown = true;
+      sessionStorage.setItem(SESSION_KEY, '1');
+      overlay.classList.add('active');
+    }
+
+    function hidePopup() {
+      overlay.classList.remove('active');
+    }
+
+    // Detect mouse leaving viewport toward the top
+    document.addEventListener('mouseout', function(e) {
+      if (e.clientY <= 0 && e.relatedTarget === null) {
+        showPopup();
+      }
+    });
+
+    closeBtn.addEventListener('click', hidePopup);
+
+    // Close on overlay click (outside modal)
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) hidePopup();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') hidePopup();
+    });
+
+    // Handle form submit
+    var exitForm = document.getElementById('exit-form');
+    if (exitForm) {
+      exitForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var emailInput = exitForm.querySelector('input[type="email"]');
+        var btn = exitForm.querySelector('button[type="submit"]');
+        btn.textContent = 'Thank you! Check your inbox.';
+        btn.disabled = true;
+        btn.style.background = '#2a7c4f';
+        setTimeout(hidePopup, 2500);
+      });
+    }
+  })();
+  </script>
 </body>
 </html>

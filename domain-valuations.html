@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain Portfolio Valuation — The Bergeron Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #c8973e;
+      --white: #ffffff;
+      --off-white: #f8f7f4;
+      --gray-100: #f3f2ef;
+      --gray-200: #e5e3de;
+      --gray-400: #9c9a94;
+      --gray-600: #5c5a55;
+      --text: #2d2b28;
+      --green: #2a7c4f;
+      --red: #c0392b;
+      --radius: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 14px;
+      background: var(--white);
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--navy); }
+    h1 { font-size: 2rem; text-align: center; margin-bottom: 4px; }
+    h2 { font-size: 1.3rem; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--gold); }
+    h3 { font-size: 1.05rem; margin: 24px 0 8px; }
+    p { margin-bottom: 12px; }
+    .subtitle { text-align: center; color: var(--gray-600); font-size: 0.95rem; margin-bottom: 12px; }
+    .disclaimer { text-align: center; color: var(--gray-400); font-size: 0.8rem; margin-bottom: 40px; font-style: italic; }
+
+    .highlight {
+      background: var(--navy);
+      color: var(--white);
+      padding: 24px 28px;
+      border-radius: var(--radius);
+      margin: 24px 0;
+    }
+    .highlight strong { color: var(--gold); }
+
+    .callout {
+      background: var(--off-white);
+      border-left: 4px solid var(--gold);
+      padding: 20px 24px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .stat-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 24px 0;
+    }
+    .stat-box {
+      flex: 1;
+      min-width: 160px;
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-box .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-box .label {
+      font-size: 0.75rem;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.85rem; }
+    th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: sticky;
+      top: 0;
+    }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--gray-200); }
+    tr:nth-child(even) { background: var(--gray-100); }
+    tr:hover { background: #eef0e8; }
+
+    .val-premium { color: var(--green); font-weight: 700; }
+    .val-high { color: var(--navy); font-weight: 700; }
+    .val-mid { color: var(--text); font-weight: 600; }
+    .val-entry { color: var(--gray-600); font-weight: 600; }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .badge-owned { background: #e8f5e9; color: #2a7c4f; }
+    .badge-register { background: #fff3e0; color: #e65100; }
+    .badge-taken { background: #fce4ec; color: #c0392b; }
+
+    .methodology { font-size: 0.85rem; color: var(--gray-600); }
+    .methodology li { margin-bottom: 6px; }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    @media print {
+      body { padding: 24px; font-size: 12px; }
+      .highlight { background: var(--gray-100) !important; color: var(--text) !important; border: 2px solid var(--navy); }
+      .highlight strong { color: var(--navy) !important; }
+    }
+    @media (max-width: 600px) {
+      body { padding: 24px 16px; }
+      .stat-row { flex-direction: column; }
+      table { font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Domain Portfolio Valuation</h1>
+  <p class="subtitle">The Bergeron Group &mdash; Steamroller Website Network</p>
+  <p class="disclaimer">Estimated fair market values based on keyword relevance, search volume, commercial intent, domain length, and comparable sales. Values reflect resale potential to a motivated real estate buyer in this market.</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <span class="number">28</span>
+      <span class="label">Domains Owned</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">$48,800</span>
+      <span class="label">Owned (Domains Only)</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">$213,000</span>
+      <span class="label">Owned (With Websites)</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">144</span>
+      <span class="label">Domains Available</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">$875,000</span>
+      <span class="label">Full Network (With Websites)</span>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>What this means:</strong> Nancy's existing 28 domains have an estimated resale value of ~$48,800 as bare domains &mdash; but <strong>~$213,000 with professionally built websites</strong>. If the full Steamroller network were built out with websites on every domain, the total portfolio would be worth an estimated <strong>~$875,000</strong> &mdash; acquired for roughly $1,700 in registration fees. That's a <strong>500x return</strong> on investment. A $12 domain with a $400 website becomes a $5,000&ndash;$20,000 digital asset &mdash; and that's before counting the leads it generates for years.</p>
+  </div>
+
+  <!-- OWNED DOMAINS -->
+  <h2>Domains Currently Owned &mdash; Estimated Value: $48,800</h2>
+
+  <table>
+    <tr>
+      <th>Domain</th>
+      <th>Category</th>
+      <th>Status</th>
+      <th>Domain Value</th>
+      <th>With Website</th>
+      <th>Valuation Rationale</th>
+    </tr>
+    <tr>
+      <td><strong>thebergerongroup.com</strong></td>
+      <td>Brand &amp; Hub</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$3,000</td>
+      <td class="val-premium">$13,500</td>
+      <td>Branded business domain with active site &amp; Google authority. Value tied to the business itself.</td>
+    </tr>
+    <tr>
+      <td><strong>realestatehotsprings.com</strong></td>
+      <td>Anchor / Hub</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-premium">$5,000</td>
+      <td class="val-premium">$20,000</td>
+      <td>Exact-match keyword domain for a geographic real estate market. High commercial intent. These routinely sell $3K-$8K.</td>
+    </tr>
+    <tr>
+      <td><strong>lakehamiltonhomesforsale.com</strong></td>
+      <td>Lake &amp; Waterfront</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-premium">$4,000</td>
+      <td class="val-premium">$16,000</td>
+      <td>Exact-match for the highest-value niche in Hot Springs. Lake Hamilton waterfront homes average $400K+. Domain directly captures buyer intent.</td>
+    </tr>
+    <tr>
+      <td><strong>kellerwilliamshotsprings.com</strong></td>
+      <td>Brokerage</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-premium">$4,500</td>
+      <td class="val-premium">$18,000</td>
+      <td>Brand-name brokerage + geographic keyword. KW is a nationally recognized brand. Captures "Keller Williams Hot Springs" searches directly.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringspropertygroup.com</strong></td>
+      <td>Anchor / Hub</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$2,500</td>
+      <td class="val-premium">$11,000</td>
+      <td>Professional real estate brand domain. Clean, authoritative, suitable as a standalone brokerage site.</td>
+    </tr>
+    <tr>
+      <td><strong>propertyforsaleinhotsprings.com</strong></td>
+      <td>Anchor / Hub</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>Long but exact-match buyer intent. "Property for sale in [city]" is a high-volume search pattern.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsnationalparkhomesforsale.com</strong></td>
+      <td>Park &amp; Historic</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>National Park tourism keyword + real estate. Unique niche — Hot Springs is the only city inside a national park.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsparkavenuerealestate.com</strong></td>
+      <td>Park &amp; Historic</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$1,800</td>
+      <td class="val-premium">$9,000</td>
+      <td>Park Avenue / Bathhouse Row area is the premium historic district. Hyper-local luxury keyword.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringshistoricdistrictproperty.com</strong></td>
+      <td>Park &amp; Historic</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td>
+      <td>Historic district niche. Attracts preservation-minded buyers and B&amp;B investors.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringshomesforsale.ai</strong></td>
+      <td>Anchor / Hub</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td>
+      <td>.ai TLD is trending in tech. Novelty value + forward-thinking brand signal. Less SEO weight than .com but memorable.</td>
+    </tr>
+    <tr>
+      <td><strong>nancybergeron.com</strong></td>
+      <td>Brand</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>Personal brand domain for the #1 KW agent in the region. Value tied directly to Nancy's reputation and production.</td>
+    </tr>
+    <tr>
+      <td><strong>cabinshotsprings.com</strong></td>
+      <td>Vacation &amp; Cabins</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$2,500</td>
+      <td class="val-premium">$11,000</td>
+      <td>"Cabins Hot Springs" is a high-volume tourism keyword. Captures both vacation rental investors and cabin buyers.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsrealtygroup.com</strong></td>
+      <td>Anchor / Hub</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>Clean professional brand domain. Competitor-blocking value — prevents other teams from using this name.</td>
+    </tr>
+    <tr>
+      <td><strong>brgreviews.com</strong></td>
+      <td>Brand</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td>
+      <td>Review/reputation domain. Value as a trust signal and review aggregation landing page.</td>
+    </tr>
+    <tr>
+      <td><strong>kwhotsprings.com</strong></td>
+      <td>Brokerage</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>Short KW brand abbreviation + geography. Easy to remember, type, and put on signage.</td>
+    </tr>
+    <tr>
+      <td><strong>lakehamiltonhomesforsale.ai</strong></td>
+      <td>Lake &amp; Waterfront</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td>
+      <td>.ai variant of the premium lake domain. Defensive registration + tech-forward branding.</td>
+    </tr>
+    <tr>
+      <td><strong>bergeronteam.com</strong></td>
+      <td>Brand</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td>
+      <td>Short team brand domain. Clean URL for business cards, signage, and marketing materials.</td>
+    </tr>
+    <tr>
+      <td><strong>nancybergeronteam.com</strong></td>
+      <td>Brand</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td>
+      <td>Personal + team brand variant. Defensive value — prevents impersonation or competitor confusion.</td>
+    </tr>
+    <tr>
+      <td><strong>bergeronrealtygroup.com</strong></td>
+      <td>Brand</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td>
+      <td>Professional brokerage-style brand domain. Future-proofs if Nancy opens her own brokerage.</td>
+    </tr>
+    <tr>
+      <td><strong>naturalchoicerealty.com</strong></td>
+      <td>Lifestyle</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$1,800</td>
+      <td class="val-premium">$9,000</td>
+      <td>Brandable lifestyle domain. "The Natural Choice" works as a tagline. Plays on Arkansas "Natural State" identity.</td>
+    </tr>
+    <tr>
+      <td><strong>letsmaketheoffer.com</strong></td>
+      <td>Lifestyle</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-mid">$1,000</td>
+      <td class="val-premium">$5,000</td>
+      <td>Action-oriented brand domain. Could power a buyer engagement app or CTA-focused landing page.</td>
+    </tr>
+    <tr>
+      <td><strong>rememberwhencabins.com</strong></td>
+      <td>Vacation &amp; Cabins</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td>
+      <td>Branded cabin property domain. Nostalgic, memorable — specific to a property or rental brand.</td>
+    </tr>
+    <tr>
+      <td><strong>lakedegraycabins.com</strong></td>
+      <td>Vacation &amp; Cabins</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td>
+      <td>Lake DeGray is a popular recreation destination. Captures cabin rental and purchase searches for this specific lake.</td>
+    </tr>
+    <tr>
+      <td><strong>kellerwilliamsrealtyhotsprings.com</strong></td>
+      <td>Brokerage</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td>
+      <td>Full-name brokerage variant. Defensive registration — long but captures exact brand searches.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsparkavenueproperty.com</strong></td>
+      <td>Park &amp; Historic</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td>
+      <td>Park Avenue variant. Defensive value — redirects to the primary Park Avenue site.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsparkavenuepropertyforsale.com</strong></td>
+      <td>Park &amp; Historic</td>
+      <td><span class="badge badge-owned">Owned</span></td>
+      <td class="val-entry">$300</td>
+      <td class="val-high">$1,000</td>
+      <td>Long variant. Minimal standalone value but completes the Park Avenue domain cluster.</td>
+    </tr>
+  </table>
+
+  <!-- AVAILABLE - HIGH VALUE -->
+  <h2>Available Domains &mdash; Highest Value Targets</h2>
+  <p>These are the domains with the strongest keyword match, highest commercial intent, and greatest lead-generation potential. Sorted by estimated value.</p>
+
+  <table>
+    <tr>
+      <th>Domain</th>
+      <th>Category</th>
+      <th>Domain Value</th>
+      <th>With Website</th>
+      <th>Reg. Cost</th>
+      <th>Valuation Rationale</th>
+    </tr>
+    <tr>
+      <td><strong>arkansashuntingland.com</strong></td>
+      <td>Hunting &amp; Rec Land</td>
+      <td class="val-premium">$5,000</td>
+      <td class="val-premium">$20,000</td>
+      <td>~$12</td>
+      <td>Statewide keyword, massive out-of-state buyer pool (TX, OK, MO). Hunting land domains with state names routinely sell $3K-$8K. High-ticket transactions ($200K-$1M+).</td>
+    </tr>
+    <tr>
+      <td><strong>arkansastimberland.com</strong></td>
+      <td>Hunting &amp; Timber</td>
+      <td class="val-premium">$4,500</td>
+      <td class="val-premium">$18,000</td>
+      <td>~$12</td>
+      <td>Timberland is a generational investment asset class. Institutional investors and families search this exact term. Six- and seven-figure transactions.</td>
+    </tr>
+    <tr>
+      <td><strong>arkansasranchland.com</strong></td>
+      <td>Land &amp; Rural</td>
+      <td class="val-premium">$4,000</td>
+      <td class="val-premium">$16,000</td>
+      <td>~$12</td>
+      <td>State + "ranch land" is a high-value exact match. Cattle ranch and recreational ranch buyers search statewide. Comparable: texasranchland.com sold for $12K.</td>
+    </tr>
+    <tr>
+      <td><strong>arkansasfarmland.com</strong></td>
+      <td>Land &amp; Rural</td>
+      <td class="val-premium">$4,000</td>
+      <td class="val-premium">$16,000</td>
+      <td>~$12</td>
+      <td>Agricultural land investment domain. Farmland values have surged nationally. Captures institutional and hobby farm buyers.</td>
+    </tr>
+    <tr>
+      <td><strong>retirehotsprings.com</strong></td>
+      <td>Retirement</td>
+      <td class="val-premium">$3,500</td>
+      <td class="val-premium">$16,000</td>
+      <td>~$12</td>
+      <td>Hot Springs is a top retirement destination. "Retire + [city]" domains have strong search volume from boomers researching relocations. High lifetime customer value.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsluxuryhomes.com</strong></td>
+      <td>Luxury</td>
+      <td class="val-premium">$3,500</td>
+      <td class="val-premium">$16,000</td>
+      <td>~$12</td>
+      <td>Luxury real estate keyword + geography. These buyers have the highest transaction values. Comparable luxury geo domains sell $2K-$6K.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsinvestments.com</strong></td>
+      <td>Investment</td>
+      <td class="val-premium">$3,000</td>
+      <td class="val-premium">$13,500</td>
+      <td>~$12</td>
+      <td>Broad investment keyword. Captures Airbnb investors, rental property buyers, commercial investors. Out-of-state money searches this.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringscommercialrealestate.com</strong></td>
+      <td>Commercial</td>
+      <td class="val-premium">$3,000</td>
+      <td class="val-premium">$13,500</td>
+      <td>~$12</td>
+      <td>Commercial RE keyword domains are premium. Business buyers, investors, and developers search this exact phrase. High-value transactions.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsairbnb.com</strong></td>
+      <td>Investment</td>
+      <td class="val-high">$2,800</td>
+      <td class="val-premium">$12,500</td>
+      <td>~$12</td>
+      <td>"Airbnb" is a globally recognized brand keyword. Hot Springs is a top STR market. Captures out-of-state investors searching for Airbnb properties.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsbusinessforsale.com</strong></td>
+      <td>Commercial</td>
+      <td class="val-high">$2,500</td>
+      <td class="val-premium">$11,000</td>
+      <td>~$12</td>
+      <td>Exact-match for business acquisition searches. Restaurants, car washes, laundromats — high commercial intent keyword.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsestates.com</strong></td>
+      <td>Luxury &amp; Gated</td>
+      <td class="val-high">$2,500</td>
+      <td class="val-premium">$11,000</td>
+      <td>~$12</td>
+      <td>Short, clean luxury keyword. "Estates" implies high-end. Memorable for signage and print marketing.</td>
+    </tr>
+    <tr>
+      <td><strong>movingtohotsprings.com</strong></td>
+      <td>Relocation</td>
+      <td class="val-high">$2,500</td>
+      <td class="val-premium">$11,000</td>
+      <td>~$12</td>
+      <td>"Moving to [city]" is one of the highest-intent relocation searches. These people are actively planning a move and need an agent.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsfixerupper.com</strong></td>
+      <td>Fix &amp; Flip</td>
+      <td class="val-high">$2,500</td>
+      <td class="val-premium">$11,000</td>
+      <td>~$12</td>
+      <td>HGTV has made "fixer upper" a mainstream search term. Captures cash buyers and renovators. Fun, memorable domain.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsequestrian.com</strong></td>
+      <td>Equestrian</td>
+      <td class="val-high">$2,500</td>
+      <td class="val-premium">$11,000</td>
+      <td>~$12</td>
+      <td>Oaklawn Racing gives Hot Springs built-in equestrian culture. Horse property buyers are high-net-worth. Premium niche with zero competition.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsbandb.com</strong></td>
+      <td>Hospitality</td>
+      <td class="val-high">$2,500</td>
+      <td class="val-premium">$11,000</td>
+      <td>~$12</td>
+      <td>Hot Springs' tourism economy makes B&amp;B properties a hot commodity. Lifestyle buyers with capital. Short, clean keyword.</td>
+    </tr>
+    <tr>
+      <td><strong>hsvhomesforsale.com</strong></td>
+      <td>Hot Springs Village</td>
+      <td class="val-high">$2,500</td>
+      <td class="val-premium">$11,000</td>
+      <td>~$12</td>
+      <td>HSV is a massive market — 26,000-acre gated community. "HSV" is the universally recognized abbreviation. Captures local search intent.</td>
+    </tr>
+    <tr>
+      <td><strong>garlandcountyhomes.com</strong></td>
+      <td>Neighborhood</td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>~$12</td>
+      <td>County-level domain captures broad geographic searches. "Garland County homes" is a common buyer search pattern.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsnewconstruction.com</strong></td>
+      <td>New Construction</td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>~$12</td>
+      <td>New construction buyers are high-intent and often work directly with the first agent they find. Builder referral revenue potential.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsgolfhomes.com</strong></td>
+      <td>Golf &amp; Country Club</td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>~$12</td>
+      <td>HSV has 9 golf courses. Golf community buyers are affluent and relocate specifically for course access. Clean niche keyword.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsrvpark.com</strong></td>
+      <td>RV Parks</td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>~$12</td>
+      <td>RV park investment has exploded post-COVID. Out-of-state investors searching for this exact term. High-cap-rate commercial properties.</td>
+    </tr>
+    <tr>
+      <td><strong>ownerfinancehotsprings.com</strong></td>
+      <td>Creative Finance</td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>~$12</td>
+      <td>Zero competition online for owner-finance in Hot Springs. Underserved market with desperate buyers willing to pay premium.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsbarndominiums.com</strong></td>
+      <td>Alternative Living</td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>~$12</td>
+      <td>"Barndominium" search volume has exploded nationally. Massive trend in Arkansas and rural markets. Captures builders and buyers.</td>
+    </tr>
+  </table>
+
+  <!-- AVAILABLE - MID VALUE -->
+  <h2>Available Domains &mdash; Strong Niche Value ($1,000 &ndash; $1,800)</h2>
+
+  <table>
+    <tr>
+      <th>Domain</th>
+      <th>Category</th>
+      <th>Domain Value</th>
+      <th>With Website</th>
+      <th>Rationale</th>
+    </tr>
+    <tr><td><strong>lakefronthotsprings.com</strong></td><td>Lake &amp; Waterfront</td><td class="val-high">$1,800</td>
+      <td class="val-premium">$9,000</td><td>Strong buyer keyword. "Lakefront" implies premium waterfront with direct access.</td></tr>
+    <tr><td><strong>hotspringslakehomes.com</strong></td><td>Lake &amp; Waterfront</td><td class="val-high">$1,800</td>
+      <td class="val-premium">$9,000</td><td>Alternate lake keyword. Captures searches that don't specify Hamilton or Catherine.</td></tr>
+    <tr><td><strong>lakecatherinehomes.com</strong></td><td>Lake &amp; Waterfront</td><td class="val-high">$1,800</td>
+      <td class="val-premium">$9,000</td><td>Lake Catherine is the second major lake. Own both lakes = own the waterfront market.</td></tr>
+    <tr><td><strong>hotsprings55plus.com</strong></td><td>Retirement</td><td class="val-high">$1,800</td>
+      <td class="val-premium">$9,000</td><td>"55+" is the standard search term for active adult communities. High-intent retiree keyword.</td></tr>
+    <tr><td><strong>relocatetohotsprings.com</strong></td><td>Relocation</td><td class="val-high">$1,800</td>
+      <td class="val-premium">$9,000</td><td>High-intent relocation keyword. Families researching moves from Dallas, Memphis, Little Rock.</td></tr>
+    <tr><td><strong>sellinginhotsprings.com</strong></td><td>Seller-Focused</td><td class="val-high">$1,800</td>
+      <td class="val-premium">$9,000</td><td>Rare seller-focused domain. Most sites target buyers. Listing leads are the most valuable leads in RE.</td></tr>
+    <tr><td><strong>livinginhotsprings.com</strong></td><td>Relocation</td><td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td><td>Lifestyle keyword captures people researching the area before they're ready to buy.</td></tr>
+    <tr><td><strong>hotspringsluxuryrealestate.com</strong></td><td>Luxury</td><td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td><td>Long but exact-match luxury keyword. Reinforces the luxury cluster in the network.</td></tr>
+    <tr><td><strong>arkansashorseranch.com</strong></td><td>Equestrian</td><td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td><td>Statewide equestrian keyword. Horse ranch buyers are high-net-worth out-of-state purchasers.</td></tr>
+    <tr><td><strong>hotspringsincomeproperty.com</strong></td><td>Investment</td><td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td><td>Income property is a high-intent investor keyword. Passive income seekers with capital.</td></tr>
+    <tr><td><strong>hotspringsvacationhomes.com</strong></td><td>Vacation Homes</td><td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td><td>Vacation home buyers from nearby metros. Second-home market is strong in Hot Springs.</td></tr>
+    <tr><td><strong>arkansashuntingproperty.com</strong></td><td>Hunting &amp; Rec</td><td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td><td>Variant of the premium hunting keyword. Captures "property" searches vs "land" searches.</td></tr>
+    <tr><td><strong>hotspringsweddingvenue.com</strong></td><td>Hospitality</td><td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td><td>Wedding venue investment is a growing niche. Tourism market + event industry crossover.</td></tr>
+    <tr><td><strong>hotspringscampground.com</strong></td><td>RV &amp; Camping</td><td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td><td>Campground investment keyword. Outdoor recreation boom drives this niche.</td></tr>
+    <tr><td><strong>hotspringsforeclosures.com</strong></td><td>Fix &amp; Flip</td><td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td><td>"Foreclosures" is an evergreen high-volume search. Captures bargain hunters and investors.</td></tr>
+    <tr><td><strong>hotspringsduplex.com</strong></td><td>Investment</td><td class="val-high">$1,200</td>
+      <td class="val-premium">$6,000</td><td>House hacking keyword. FHA buyers looking for owner-occupied investment properties.</td></tr>
+    <tr><td><strong>hotspringsrental.com</strong></td><td>Rentals</td><td class="val-high">$1,500</td>
+      <td class="val-premium">$7,500</td><td>Broad rental keyword captures both STR investors and landlords. Short, clean domain.</td></tr>
+    <tr><td><strong>hotspringsgatedcommunity.com</strong></td><td>Luxury</td><td class="val-high">$1,200</td>
+      <td class="val-premium">$6,000</td><td>Gated community buyers have specific security and lifestyle requirements. High-value properties.</td></tr>
+    <tr><td><strong>hotspringsacreage.com</strong></td><td>Land</td><td class="val-high">$1,200</td>
+      <td class="val-premium">$6,000</td><td>"Acreage" captures buyers wanting space. Privacy seekers and hobby farmers.</td></tr>
+    <tr><td><strong>hotspringslandforsale.com</strong></td><td>Land</td><td class="val-high">$1,200</td>
+      <td class="val-premium">$6,000</td><td>Direct land search keyword. Builders, developers, and rural lifestyle buyers.</td></tr>
+    <tr><td><strong>fliphotsprings.com</strong></td><td>Fix &amp; Flip</td><td class="val-high">$1,200</td>
+      <td class="val-premium">$6,000</td><td>Short, punchy domain. "Flip" captures the HGTV crowd. Memorable for marketing.</td></tr>
+    <tr><td><strong>hotspringstinyhomes.com</strong></td><td>Alternative Living</td><td class="val-high">$1,200</td>
+      <td class="val-premium">$6,000</td><td>Tiny home movement is mainstream. Minimalists, retirees downsizing, and ADU builders.</td></tr>
+    <tr><td><strong>newtohotsprings.com</strong></td><td>Relocation</td><td class="val-high">$1,200</td>
+      <td class="val-premium">$6,000</td><td>Newcomer-focused. Captures the research phase before they've committed to buying.</td></tr>
+    <tr><td><strong>hotspringscustomhomes.com</strong></td><td>New Construction</td><td class="val-high">$1,200</td>
+      <td class="val-premium">$6,000</td><td>Custom home buyers have high budgets and strong agent loyalty. Builder referral potential.</td></tr>
+    <tr><td><strong>hotspringsmobilehomes.com</strong></td><td>Mobile &amp; Mfg</td><td class="val-high">$1,200</td>
+      <td class="val-premium">$6,000</td><td>Affordable housing keyword with high search volume. Underserved market online.</td></tr>
+    <tr><td><strong>hotspringsrestaurantforsale.com</strong></td><td>Commercial</td><td class="val-high">$1,200</td>
+      <td class="val-premium">$6,000</td><td>Restaurant acquisition is a specific buyer persona. High commercial intent.</td></tr>
+    <tr><td><strong>hsvgolfhomes.com</strong></td><td>Golf</td><td class="val-high">$1,000</td>
+      <td class="val-premium">$5,000</td><td>HSV-specific golf keyword. Targets the 9-course community directly.</td></tr>
+    <tr><td><strong>hotspringsfirsttimebuyer.com</strong></td><td>First-Time Buyers</td><td class="val-high">$1,000</td>
+      <td class="val-premium">$5,000</td><td>First-time buyer keyword. Captures a large segment with specific financing needs.</td></tr>
+    <tr><td><strong>hotspringsMHP.com</strong></td><td>Mobile Home Parks</td><td class="val-high">$1,000</td>
+      <td class="val-premium">$5,000</td><td>MHP is the industry abbreviation for mobile home parks. Investors know this term.</td></tr>
+    <tr><td><strong>lakedegrayrealestate.com</strong></td><td>Lake</td><td class="val-high">$1,000</td>
+      <td class="val-premium">$5,000</td><td>Lake DeGray is a popular recreation lake. Completes the multi-lake portfolio.</td></tr>
+    <tr><td><strong>hotspringsbedandbreakfast.com</strong></td><td>Hospitality</td><td class="val-high">$1,000</td>
+      <td class="val-premium">$5,000</td><td>Full keyword variant of B&amp;B domain. Captures the long-form search.</td></tr>
+  </table>
+
+  <!-- AVAILABLE - SUPPORTING -->
+  <h2>Available Domains &mdash; Supporting &amp; Defensive Value ($300 &ndash; $900)</h2>
+  <p>These domains have solid niche value as part of the network. Many are keyword variants, statewide expansions, or defensive registrations that complete a category cluster.</p>
+
+  <table>
+    <tr>
+      <th>Domain</th>
+      <th>Category</th>
+      <th>Domain Value</th>
+      <th>With Website</th>
+    </tr>
+    <tr><td>ouachitalandforsale.com</td><td>Land</td><td class="val-mid">$900</td>
+      <td class="val-high">$4,500</td></tr>
+    <tr><td>ouachitahuntingland.com</td><td>Hunting</td><td class="val-mid">$900</td>
+      <td class="val-high">$4,500</td></tr>
+    <tr><td>arkansascattleranch.com</td><td>Equestrian</td><td class="val-mid">$900</td>
+      <td class="val-high">$4,500</td></tr>
+    <tr><td>arkansasrentalproperties.com</td><td>Investment</td><td class="val-mid">$900</td>
+      <td class="val-high">$4,500</td></tr>
+    <tr><td>arkansasmobilehomeparks.com</td><td>Mobile &amp; Mfg</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>arkansasrvparkforsale.com</td><td>RV Parks</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>arkansascampgroundforsale.com</td><td>RV &amp; Camping</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>arkansaseventvenues.com</td><td>Hospitality</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>arkansasequestrianproperty.com</td><td>Equestrian</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>arkansasownerfinance.com</td><td>Creative Finance</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>arkansaswildlifeproperty.com</td><td>Hunting</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>arkansasdeercamp.com</td><td>Hunting</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>arkansasbarndominiums.com</td><td>Alternative Living</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>arkansastinyhouse.com</td><td>Alternative Living</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>arkansascontainerhomes.com</td><td>Alternative Living</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>arkansaswineryforsale.com</td><td>Hospitality</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>arkansasvacationproperty.com</td><td>Vacation</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>arkansasretirementcommunity.com</td><td>Senior Living</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>arkansasstorageforsale.com</td><td>Self-Storage</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>arkansasgolfcourseforsale.com</td><td>Golf</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsseniorliving.com</td><td>Senior Living</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>hotspringsassistedliving.com</td><td>Senior Living</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsactiveadult.com</td><td>Senior Living</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsindependentliving.com</td><td>Senior Living</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>retireinhotsprings.com</td><td>Retirement</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>hotspringsinvestmentproperty.com</td><td>Investment</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>hotspringsmultifamily.com</td><td>Investment</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>hotspringsapartmentsforsale.com</td><td>Investment</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsfourplex.com</td><td>Investment</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsownerfinance.com</td><td>Creative Finance</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsrenttoown.com</td><td>Creative Finance</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsleaseoption.com</td><td>Creative Finance</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>hotspringsnomonedown.com</td><td>Creative Finance</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>hotspringsmanufacturedhomes.com</td><td>Mobile &amp; Mfg</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsmobilehomepark.com</td><td>Mobile &amp; Mfg</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsrvresort.com</td><td>RV Parks</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsglamping.com</td><td>RV &amp; Camping</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsretreatcenter.com</td><td>Hospitality</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsboutiquehotel.com</td><td>Hospitality</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsresortproperty.com</td><td>Hospitality</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsinnforsale.com</td><td>Hospitality</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>hotspringshorseproperty.com</td><td>Equestrian</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsfarmandranch.com</td><td>Equestrian</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsoffgrid.com</td><td>Alternative Living</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsecovillage.com</td><td>Alternative Living</td><td class="val-mid">$400</td>
+      <td class="val-high">$1,500</td></tr>
+    <tr><td>hotspringshomestead.com</td><td>Land</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsruralproperty.com</td><td>Land</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringslotsforsale.com</td><td>Land</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsrecland.com</td><td>Hunting &amp; Rec</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>lakehamiltonboatslips.com</td><td>Lake</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>lakehamiltonmarina.com</td><td>Lake</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>lakehamiltonrentals.com</td><td>Lake</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>lakehamiltonluxury.com</td><td>Lake</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>hotspringswaterfrontlots.com</td><td>Lake</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>lakebalboahomes.com</td><td>Lake</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringshomesunder100k.com</td><td>Fix &amp; Flip</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringshomesunder200k.com</td><td>Fix &amp; Flip</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsforsalebyowner.com</td><td>Fix &amp; Flip</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>hotspringshandymanspecial.com</td><td>Fix &amp; Flip</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>hotspringsdistressedhomes.com</td><td>Fix &amp; Flip</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>hotspringsretailspace.com</td><td>Commercial</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringswarehouse.com</td><td>Commercial</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsofficesforsale.com</td><td>Commercial</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringscarwashforsale.com</td><td>Commercial</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringslaundromat.com</td><td>Commercial</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsstorageforsale.com</td><td>Self-Storage</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsministorage.com</td><td>Self-Storage</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>arkansasselfstorage.com</td><td>Self-Storage</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringssecondhome.com</td><td>Vacation</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringsgetaway.com</td><td>Vacation</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringslakehouse.com</td><td>Vacation</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>hotspringsweekendhome.com</td><td>Vacation</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>hotspringsvillagerealestate.com</td><td>Neighborhood</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>royalhomesforsale.com</td><td>Neighborhood</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>jessivillerealestate.com</td><td>Neighborhood</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>mountainpinerealestate.com</td><td>Neighborhood</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>pearcyrealestate.com</td><td>Neighborhood</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>salinesiderealestate.com</td><td>Neighborhood</td><td class="val-mid">$400</td>
+      <td class="val-high">$1,500</td></tr>
+    <tr><td>bentonrealestate.com</td><td>Neighborhood</td><td class="val-mid">$800</td>
+      <td class="val-high">$4,000</td></tr>
+    <tr><td>hotspringsrelocationguide.com</td><td>Relocation</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsstarterhomes.com</td><td>First-Time</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsnewresidents.com</td><td>Relocation</td><td class="val-mid">$400</td>
+      <td class="val-high">$1,500</td></tr>
+    <tr><td>hotspringsnewbuildhomes.com</td><td>New Construction</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringshomebuilder.com</td><td>New Construction</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringssubdivision.com</td><td>New Construction</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>hotspringsmodelkomes.com</td><td>New Construction</td><td class="val-mid">$300</td>
+      <td class="val-high">$1,000</td></tr>
+    <tr><td>hotspringsgolfproperty.com</td><td>Golf</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringscountryclubrealestate.com</td><td>Golf</td><td class="val-mid">$500</td>
+      <td class="val-high">$2,500</td></tr>
+    <tr><td>hotspringsmilliondollarhomes.com</td><td>Luxury</td><td class="val-mid">$700</td>
+      <td class="val-high">$3,500</td></tr>
+    <tr><td>hotspringspoolhomes.com</td><td>Luxury</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+    <tr><td>hotspringsexecutivehomes.com</td><td>Luxury</td><td class="val-mid">$600</td>
+      <td class="val-high">$3,000</td></tr>
+  </table>
+
+  <!-- COMPETITOR DOMAINS -->
+  <h2>Competitor-Held Domains &mdash; What They'd Be Worth</h2>
+  <p>These domains are taken. Included here to show what competitors are sitting on &mdash; and why securing the available domains <em>now</em> matters.</p>
+
+  <table>
+    <tr>
+      <th>Domain</th>
+      <th>Held By</th>
+      <th>Domain Value</th>
+      <th>With Website</th>
+      <th>Why It Matters</th>
+    </tr>
+    <tr>
+      <td><strong>hotspringsrealestate.com</strong></td>
+      <td>Parked (bot verification)</td>
+      <td class="val-premium">$15,000+</td>
+      <td class="val-premium">$60,000</td>
+      <td>THE premium keyword domain for this market. Exact-match geographic RE domains of this caliber sell $10K-$50K.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsvillage.com</strong></td>
+      <td>HSV RE Portal</td>
+      <td class="val-premium">$8,000</td>
+      <td class="val-premium">$32,000</td>
+      <td>Premium community domain with massive authority. Established portal site.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsvillagehomes.com</strong></td>
+      <td>Alissa Nead (RE/MAX)</td>
+      <td class="val-premium">$4,000</td>
+      <td class="val-premium">$16,000</td>
+      <td>The one that got away. She grabbed it and is using it to capture HSV buyers.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsrealty.com</strong></td>
+      <td>Pfautz family (since 1946)</td>
+      <td class="val-premium">$6,000</td>
+      <td class="val-premium">$24,000</td>
+      <td>80 years of domain authority. Impossible to replicate.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsforsale.com</strong></td>
+      <td>Resort/property portal</td>
+      <td class="val-premium">$5,000</td>
+      <td class="val-premium">$20,000</td>
+      <td>Premium generic. Captures "hot springs for sale" searches broadly.</td>
+    </tr>
+    <tr>
+      <td><strong>lakehamiltonrealty.com</strong></td>
+      <td>Lake Hamilton Realty</td>
+      <td class="val-premium">$4,000</td>
+      <td class="val-premium">$16,000</td>
+      <td>This is why owning lakehamiltonhomesforsale.com matters — it's the alternative keyword.</td>
+    </tr>
+    <tr>
+      <td><strong>hotspringsvillagerealestate.com</strong></td>
+      <td>Big Red Realty (since 1978)</td>
+      <td class="val-premium">$5,000</td>
+      <td class="val-premium">$20,000</td>
+      <td>Exact-match HSV domain with 46 years of authority. Untouchable.</td>
+    </tr>
+    <tr>
+      <td><strong>luxuryhotsprings.com</strong></td>
+      <td>Parked</td>
+      <td class="val-high">$3,000</td>
+      <td class="val-premium">$13,500</td>
+      <td>Premium luxury keyword. Parked — someone is squatting on it.</td>
+    </tr>
+    <tr>
+      <td><strong>yourhotsprings.com</strong></td>
+      <td>Pfautz family</td>
+      <td class="val-high">$2,500</td>
+      <td class="val-premium">$11,000</td>
+      <td>Their second domain. Smart multi-site strategy from a legacy brokerage.</td>
+    </tr>
+    <tr>
+      <td><strong>bestofhotspringsvillage.com</strong></td>
+      <td>Taylor Realty</td>
+      <td class="val-high">$2,000</td>
+      <td class="val-premium">$9,000</td>
+      <td>Strong brand keyword in HSV. Diamond Award winner uses this effectively.</td>
+    </tr>
+  </table>
+
+  <!-- SUMMARY -->
+  <h2>Portfolio Summary</h2>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <span class="number">$48,800</span>
+      <span class="label">Domains Only (Owned)</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">$213,000</span>
+      <span class="label">Owned (With Websites)</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">$875,000</span>
+      <span class="label">Full Network (With Websites)</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">~$1,700</span>
+      <span class="label">Cost to Register All</span>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>The real value isn't in resale &mdash; it's in what these domains produce.</strong></p>
+    <p>A single domain like hotspringsrvpark.com costs $12 to register. If it generates one lead that closes at $7,500 commission, that's a <strong>625x return</strong>. The domain's resale value of $2,000 is almost irrelevant compared to its lead-generation value over 5, 10, or 20 years.</p>
+    <p style="margin-top:12px;">But the resale value matters for one critical reason: <strong>these domains are assets on a balance sheet.</strong> If Nancy ever sells The Bergeron Group, opens her own brokerage, or brings in a partner &mdash; this portfolio has tangible, appraised value that adds to the enterprise worth of the business.</p>
+  </div>
+
+  <!-- METHODOLOGY -->
+  <h2>Valuation Methodology</h2>
+  <div class="callout methodology">
+    <p><strong>"With Website" values</strong> reflect the estimated resale value of each domain with a professionally built, SEO-optimized website &mdash; the kind Paul builds: custom design, lead capture forms, Schema.org markup, Google Analytics, mobile-responsive, cross-linked to the network, branded to The Bergeron Group. A developed site with content and authority is worth 4&ndash;5x a bare domain. After 12+ months of Google indexing, lead history, and traffic data, values increase further.</p>
+    <p>These estimates are based on:</p>
+    <ul>
+      <li><strong>Comparable domain sales</strong> &mdash; GoDaddy Aftermarket, Sedo, and NameBio data for geographic real estate domains</li>
+      <li><strong>Keyword commercial intent</strong> &mdash; domains matching high-intent buyer searches (e.g., "[city] homes for sale") command premium prices</li>
+      <li><strong>Transaction value of the niche</strong> &mdash; domains in high-commission niches (luxury, lake, commercial, land) are worth more because each lead is worth more</li>
+      <li><strong>Domain length and memorability</strong> &mdash; shorter, cleaner domains score higher</li>
+      <li><strong>Competition for the keyword</strong> &mdash; less online competition = more valuable domain (owner finance, RV parks, barndominiums)</li>
+      <li><strong>Geographic exclusivity</strong> &mdash; there is only one hotspringsrvpark.com. Once registered, no competitor can ever have it.</li>
+    </ul>
+    <p style="margin-top:12px;"><em>These are estimated fair market values for private-party sales to a motivated buyer in the real estate industry. Actual resale prices depend on market conditions, buyer urgency, and negotiation. Values do not include the SEO authority, lead history, or website content that would significantly increase value once sites are live and ranking.</em></p>
+  </div>
+
+  <div class="footer-note">
+    <p>Prepared by Paul Walhus &bull; March 2026</p>
+  </div>
+
+</body>
+</html>
